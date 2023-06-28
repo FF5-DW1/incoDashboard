@@ -1,0 +1,35 @@
+FROM composer:2.4.1 AS composer
+
+FROM php:8.1-fpm-buster
+
+# copy the Composer PHAR from the Composer image into the PHP image
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+
+RUN apt-get update && apt-get install -y \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libpng-dev \
+        libzip-dev \
+        libcurl4 \
+        libssl-dev \
+        libcurl4-openssl-dev \
+        libjpeg-dev \
+        libxml2-dev \
+        libbz2-dev  \
+        libldap-dev  \
+        nano \
+        zip \
+        # postgresql-dev \
+        # libpq-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    # && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+    # && docker-php-ext-install -j$(nproc) gd pdo pdo_mysql zip xml bz2 bcmath ldap \
+    # && docker-php-ext-enable  ldap
+    && docker-php-ext-install -j$(nproc) gd pdo pdo_mysql zip xml bz2 bcmath
+
+
+
+# show that both Composer and PHP run as expected
+# RUN composer --version && php -v
+RUN php -v
