@@ -4,19 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\alumno;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rules\Exists;
-use Symfony\Contracts\Service\Attribute\Required;
+#use Illuminate\Validation\Rules\Exists;
+#use Symfony\Contracts\Service\Attribute\Required;
 
 class AlumnoController extends Controller
 {
     //traer los datos
     public function index(Request $request){
-        //$alumno = alumno::where(alumno_id,1)->get();
-        $alumno = alumno::orderBy('updated_at','DESC')->get();
-        return view('formulario.index', ['alumno' => $alumno]);
-        //dd($alumno->toArray());
-
-
+        #$alumnos = alumno::orderBy('updated_at','DESC')->get();
+        #return view('formulario.index', ['alumno' => $alumnos]);
+        $alumnos = alumno::all();
+        return view('formulario.index',['alumno' => $alumnos]);
+        #dump('$alumno');
     }
     
     //Muestra el formulario para crear un nuevo recurso.
@@ -45,7 +44,7 @@ class AlumnoController extends Controller
             'permisoTrabajo'=>'required',
             'tienes_ordenador'=>'required',
             'cingles'=>'required',
-            'disponibilidad'=>'required',
+            'disponibilidad'=>'required'
 
         ]);
 
@@ -82,9 +81,9 @@ class AlumnoController extends Controller
  
         ]);
         
-        //return redirect()->route('home');  
+        return redirect()->route('home');  
         //return redirect('/formulario.registro')->with('success', 'Alumno guardado correctamente');
-        //dump('Alumno guardado correctamente');
+        dump('Alumno guardado correctamente');
 
 
       

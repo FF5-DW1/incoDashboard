@@ -527,7 +527,7 @@
                 </div> 
                 <div class="enviar ">
                     <input class="bt_enviar" type="submit" value="Enviar">
-                    <!--<input class="bt_enviar" type="submit" value="siguiente">--
+                    <!--<input class="bt_enviar" type="submit" value="siguiente">-->
                     
                 </div>
             </form>
