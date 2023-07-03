@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlumnoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AlumnoController::class, 'index'])->name('home');
+
+# Route::get('/registro', [UserController::class, 'create'])->name('registro');
+#Route::post('/guardar_registro', [UserController::class, 'store'])->name('guardar_registro');
+//creo un registro
+Route::get('/formulario/registro',[AlumnoController::class,  'create'])->name('registro');
+//guardo un registro
+Route::post('/formulario/guardar_registro',[AlumnoController::class, 'store'])->name('guardar_registro');
+
