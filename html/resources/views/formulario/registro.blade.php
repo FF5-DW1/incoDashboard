@@ -86,6 +86,15 @@
         <div class="formulario">
            
             <form action="{{ route('guardar_registro') }}" method="POST">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                 <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 @csrf   
                 <div class="label_input">
                     <label for="nombre">Nombre</label>
@@ -459,28 +468,27 @@
                     <label for="situacion">¿Que situacón que define mejor? </label>
                         <!--lista desplegable varias opciones -->
                     <select name="situacion" id="situacion">
-                            <option value="">No tengo expectativas profesionales</option>
-                            <option value="">Prefiero no decirlo</option>
-                            <option value="">Tengo acceso limitado a la educación superior</option>
-                            <option value="">Cuido a un miembro de mi familia</option>
-                            <option value="">Tengo origen migrante</option>
-                            <option value="">Tengo origen migrante</option>
+                            <option value="expectativas">No tengo expectativas profesionales</option>
+                            <option value="prefiero">Prefiero no decirlo</option>
+                            <option value="acceso">Tengo acceso limitado a la educación superior</option>
+                            <option value="cuidado">Cuido a un miembro de mi familia</option>
+                            <option value="origen">Tengo origen migrante</option>
+                            
                     </select>
                 </div>
                 
                 <div class="label_input">
-                    <label for="neducación">Nivel de educación </label>
-                    <select name="neducación" id="neducación">
+                    <label for="neducacion">Nivel de educación </label>
+                    <select name="neducacion" id="neducacion">
                         <!-- no coinciden los campos comprobar y si tiene que seleccionar dos opciones
                             oh crear otro campo-->
-                            <option value=""> </option>
-                            <option value="">Empleado a tiempo completo</option>
-                            <option value="">Empleado a tiempo parcial</option>
-                            <option value="">Desempleado, en busca de trabajo</option>
-                            <option value="">Formación Profesional</option>
-                            <option value="">Secundaria (ESO)</option>
-                            <option value="">Estudios Universitarios</option>
-                            <option value="">Máster</option>
+                            <option value="completo">Empleado a tiempo completo</option>
+                            <option value="parcial">Empleado a tiempo parcial</option>
+                            <option value="trabajo">Desempleado, en busca de trabajo</option>
+                            <option value="formacion">Formación Profesional</option>
+                            <option value="eso">Secundaria (ESO)</option>
+                            <option value="estudios">Estudios Universitarios</option>
+                            <option value="master">Máster</option>
                         </select>
                 </div>
                 
@@ -519,6 +527,8 @@
                 </div> 
                 <div class="enviar ">
                     <input class="bt_enviar" type="submit" value="Enviar">
+                    <!--<input class="bt_enviar" type="submit" value="siguiente">--
+                    
                 </div>
             </form>
         </div>

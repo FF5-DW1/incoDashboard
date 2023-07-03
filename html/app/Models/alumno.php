@@ -14,7 +14,7 @@ class alumno extends Model
         'telefono', 
         'programa', 
         'cprograma', 
-        'residencia', 
+        'vivesE', 
         'fnacimiento', 
         'residencia', 
         'pnacimiento', 
