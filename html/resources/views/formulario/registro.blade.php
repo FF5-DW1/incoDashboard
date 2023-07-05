@@ -107,10 +107,10 @@
             transition: .1s ease all;
         }
         .btn-success {
-            float: left;
+            float: right;
         }
         .btn-primary {
-        float: left;
+            float: left;
         }
 
         .btn-primary {
@@ -175,42 +175,51 @@
             <div class="form-section">
                 <div class="label_input">
                     <label for="nombre">Nombre</label>
-                    <input class="form-control " type="text" id= "nombre" name="nombre" required value="">
+                    <input class="form-control " type="text" id= "nombre" name="nombre" value="{{ -old('nombre') }}">
                 </div>
                 
                 <div class="label_input">
                     <label for="apellido">Apellidos</label>
-                    <input class="form-control " type="text"  required id= "apellido" name="apellido" value="">
+                    <input class="form-control " type="text"  required id= "apellido" name="apellido" value="{{ old('apellido') }}">
                 </div>
                 
                 <div class="label_input">
                     <label for="dni">D.N.I</label>
-                    <input class="form-control " type="text"  required id= "dni" name="dni" value="">
+                    <input class="form-control " type="text"  required id= "dni" name="dni" value="{{ old('dni') }}">
                 </div>
                 
                 <div class="label_input">
                     <label for="email">Email</label>
-                    <input  class="form-control" type="email" id= "email" name="email" value="">
+                    <input  class="form-control" type="email" id= "email" name="email" value="{{ old('email') }}">
                 </div>
                 
                 <div class="label_input">
-                    <label for="telefono">Telefono </label>
-                        <input class="form-control" type="text" id= "telefono" name="telefono" value="">
+                    <label for="vivesE">¿Vives es España?</label>
+                    <select class="form-control " name="vivesE" id="vivesE" value=" "  onchange="validateVivesE(this)">
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                    </select>
+                    <p  id="salirBtn" style="display: none"> Lo siento no puede continuar</p>    
                 </div>
             </div>
             
             <div class="form-section">
                 <div class="label_input">
-                    <label for="programa">¿Qué programa te interesa?</label>
-                        <select class="form-control" name="programa" id="programa">
-                            <option value="analisisDatos">Certificado de Analisis de Dato</option>
-                            <option value="SoporteTI">Certificado de Soporte en TI</option>
-                        </select>
+                    <label for="telefono">Telefono </label>
+                    <input class="form-control" type="text" id= "telefono" name="telefono" value="{{ old('telefono') }}">
                 </div>
-                
+
+                <div class="label_input">
+                    <label for="programa">¿Qué programa te interesa?</label>
+                    <select class="form-control" name="programa" id="programa">
+                        <option value="analisisDatos">Certificado de Analisis de Dato</option>
+                        <option value="SoporteTI">Certificado de Soporte en TI</option>
+                    </select>
+                </div>
+
                 <div class="label_input">
                     <label for="cprograma">¿Como as conocido este programa?</label>
-                        <select class="form-control -mb-3" name="cprograma" id="cprograma">
+                    <select class="form-control -mb-3" name="cprograma" id="cprograma">
                             <option value="google">Búsqueda en Google</option>
                             <option value="amigosFamilia">De un amigo/familiar</option>
                             <option value="asociacion">Asociación</option>
@@ -224,15 +233,7 @@
                             <option value="instagram">Instagram</option>
                             <option value="fundacion">ONG/Fundación/Asociación</option>
                             <option value="veritechie">Influencer - @veritechie</option>
-                        </select>
-                </div>
-            
-                <div class="label_input">
-                    <label for="vivesE">¿Vives es España?</label>
-                        <select class="form-control -mb-3" name="vivesE" id="vivesE">
-                            <option value="si">Si</option>
-                            <option value="no">No</option>
-                        </select>
+                    </select>
                 </div>
                 
                 <div class="label_input">
@@ -614,61 +615,69 @@
                 </div> 
             </div>   
 
-                <div class="enviar form-navigation -mt-3 ">
+                <div class="enviar form-navigation ">
                     <input class="previous btn btn-primary" type="button" class="" value="Previous">
-                    <input class="next btn btn-primary" type="button" class="" value="Next">
+                    <input class="next btn btn-primary"  id ="next1"type="button" class="" value="Next">
                     <input  class="btn btn-success" type="submit" value="Submit">
+                    <input  class="salir" type="button" value="Salir">
                                        
                 </div>
             </form>
         </div>
     </main>
     </div>
+    <script>
+        
+    </script>
 
     <script>
+            function validateVivesE(selectElement) {
+                if (selectElement.value === 'no') {
+                    alert('Lo siento, no puedes continuar si no vives en España');
+                    document.getElementById('salirBtn').style.display = 'block';
+                    document.getElementById('next1').style.display = 'none';
+                } else {
+                    //document.getElementById('next').style.display = 'none';
+                }
+            }
+    
+    $(function() {
+            var $sections = $('.form-section');
 
-$(function() {
-  var $sections = $('.form-section');
+            function navigateTo(registro) {
+                $sections.removeClass('current').eq(registro).addClass('current');
 
-  function navigateTo(registro) {
-    $sections.removeClass('current').eq(registro).addClass('current');
+                $('.form-navigation .previous').toggle(registro > 0);
+                var atTheEnd = registro >= $sections.length - 1;
+                $('.form-navigation .next').toggle(!atTheEnd);
+                $('.form-navigation [type=submit]').toggle(atTheEnd);
+                const step = document.querySelector('.step' + registro);
+                step.style.backgroundColor = "#17a2b8";
+                step.style.color = "white";
+            }
 
-    $('.form-navigation .previous').toggle(registro > 0);
-    var atTheEnd = registro >= $sections.length - 1;
-    $('.form-navigation .next').toggle(!atTheEnd);
-    $('.form-navigation [type=submit]').toggle(atTheEnd);
+            function curIndex() {
+                return $sections.index($sections.filter('.current'));
+            }
 
-    // Corregir el selector: querySelector en lugar de querSelector
-    const step = document.querySelector('.step' + registro);
-    step.style.backgroundColor = "#17a2b8";
-    step.style.color = "white";
-  }
+            $('.form-navigation .previous').click(function() {
+                navigateTo(curIndex() - 1);
+            });
 
-  function curIndex() {
-    // Corregir el uso de index() en lugar de registro()
-    return $sections.index($sections.filter('.current'));
-  }
+            $('.form-navigation .next').click(function() {
+                $('.employee-form').parsley().whenValidate({
+                group: 'block-' + curIndex()
+                }).done(function() {
+                navigateTo(curIndex() + 1);
+                });
+            });
 
-  $('.form-navigation .previous').click(function() {
-    navigateTo(curIndex() - 1);
-  });
+            $sections.each(function(registro, section) {
+                $(section).find(':input').attr('data-parsley-group', 'block-' + registro);
+            });
 
-  $('.form-navigation .next').click(function() {
-    // Corregir el selector: $('.employee-form') en lugar de $('.employee-form')
-    $('.employee-form').parsley().whenValidate({
-      group: 'block-' + curIndex()
-    }).done(function() {
-      navigateTo(curIndex() + 1);
-    });
-  });
-
-  $sections.each(function(registro, section) {
-    // Corregir el atributo: 'date-parsley-group' en lugar de 'date-parsley-group'
-    $(section).find(':input').attr('data-parsley-group', 'block-' + registro);
-  });
-
-  navigateTo(0);
-});
+            navigateTo(0);
+            });
 
     </script>
 
