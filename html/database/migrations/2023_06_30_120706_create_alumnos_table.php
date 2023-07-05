@@ -34,7 +34,7 @@ return new class extends Migration
             $table->string('cingles')->nullable();
             $table->string('disponibilidad')->nullable();
             $table->string('estado')->default('pendiente');
-            #$table->string('id_inco')->default(' ');
+            $table->string('id_inco')->default(' ');
             #$table->rememberToken();
             $table->timestamps();
         });

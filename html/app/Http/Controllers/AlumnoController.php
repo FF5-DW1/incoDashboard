@@ -11,11 +11,10 @@ class AlumnoController extends Controller
 {
     //traer los datos
     public function index(Request $request){
-        #$alumnos = alumno::orderBy('updated_at','DESC')->get();
-        #return view('formulario.index', ['alumno' => $alumnos]);
-        $alumnos = alumno::all();
-        return view('formulario.index',['alumno' => $alumnos]);
+        $alumno = alumno::orderBy('updated_at','DESC')->get();
+        return view('formulario.index', ['alumnos' => $alumno]);
         #dump('$alumno');
+          //return view('formulario.registro');
     }
     
     //Muestra el formulario para crear un nuevo recurso.
@@ -83,7 +82,7 @@ class AlumnoController extends Controller
         
         return redirect()->route('home');  
         //return redirect('/formulario.registro')->with('success', 'Alumno guardado correctamente');
-        dump('Alumno guardado correctamente');
+        //dump('Alumno guardado correctamente');
 
 
       

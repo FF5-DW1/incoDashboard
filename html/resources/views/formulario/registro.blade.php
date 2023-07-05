@@ -5,22 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registro Alumnos</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js" integrity="sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <style>
         .principal{
+            width: 80%;
+            margin: auto;
+            -border: 1px solid #701616;
+            
+        }
+        main{
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-content: center;
             align-items: center;
-        
         }
         .formulario{
-            background-color: #212e9e;
+            
+            background-color: #012060;
             color: white;
             padding: 2rem;
             font-size: 18px;
         
         } 
+        .titulo{
+            padding: 2rem;
+            letter-spacing: 1rem;
+        }
+        .formulario, .faces, .titulo{
+            width: 50%;
+            
+        }
+        .faces{
+            border: 2px solid  #012060;
+            text-align: center;
+            font-size: 18px;
+            text-align: center;
+            display: flex;
+            flex-direction:row;
+            justify-content:space-between ;
+            
+        }
         .label_input{
             padding-bottom: 1rem;
             display: grid;
@@ -29,26 +58,13 @@
 
         } 
         .enviar{
-            width: 50%;
-            margin:auto ;
+            display: flex;
+            flex-direction:row;
+            justify-content:space-between ;
             margin-top: 1rem;
         }  
-        .bt_enviar {
-            width: 100%;
-            background: white ;
-            color: #212e9e;
-            border: none;
-            border-radius: 10px;
-            font-size: 25px;
-            font-weight: bolder;
-            letter-spacing: 1rem;
-            padding: 0.5em .7em;
-            cursor: pointer;
-            transition: .1s ease all;
-        }
-        .enviar:hover {
-            box-shadow: 1px 0px 30px rgb(186, 145, 98);
-        }
+       
+        
         
         .titulo h1{
             color: #212e9e;
@@ -62,6 +78,53 @@
             border-radius: 5px;
             -padding-left: 10px;
         }
+        
+        /*------nuevo css*/
+        
+        .border{
+            color: #012060;
+            padding: 1rem;
+            width: 25%;
+            border: 1px solid #327016;
+
+        }
+        .form-section{
+            display: none
+        }
+
+        .form-section.current{
+            display: inline;
+        }
+        .parsley-error-list{
+            color: red;
+        }
+        .btn{
+            background: white;
+            color: #012060;
+            border-radius: 5px;
+            padding : 5px 10px;
+            -letter-spacing: 1rem;
+            transition: .1s ease all;
+        }
+        .btn-success {
+            float: left;
+        }
+        .btn-primary {
+        float: left;
+        }
+
+        .btn-primary {
+            float: right;
+        }
+        .btn-success,.btn-primary:hover {
+            box-shadow: 1px 0px 30px rgb(186, 145, 98);
+        }
+        .form-control{
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        /* version mobil*/  
 
     @media screen and (max-width: 800px) {
     .label_input {
@@ -72,21 +135,33 @@
         width: 100%; 
     }
     .bt_enviar{
-    width: 100%;
-    padding-left: 10px;
+    -width: 100%;
+    -padding-left: 10px;
     }
     }
 </style>
 </head>
 <body>
-    <div class="principal ">    
+    <div class="principal "> 
+        <main>   
         <div class="titulo">
-            <h1>Formulario Inscripcion</h1> 
+            <h1 class="text-danger text-center mt-3 mb4">Inscripcion</h1> 
         </div>
+
+        <div class="faces">
+            <div class="border step0"><label >Uno</label></div>
+            <div class="border step1"><label >Dos</label></div>
+            <div class="border  step2" ><label >Tres</label></div>
+            <div class="border step3"><label >Cuatro</label></div>
+        </div>
+        
         <div class="formulario">
-           
-            <form action="{{ route('guardar_registro') }}" method="POST">
-                @if ($errors->any())
+            
+            
+            
+            <form action="{{ route('guardar_registro') }}" method="POST" class="employee-form">
+            <!--para verificar si pasan todos lo regisro a la base de datos--> 
+              @if ($errors->any())
                 <div class="alert alert-danger">
                  <ul>
                         @foreach ($errors->all() as $error)
@@ -96,29 +171,33 @@
                 </div>
                 @endif
                 @csrf   
+
+            <div class="form-section">
                 <div class="label_input">
                     <label for="nombre">Nombre</label>
-                    <input type="text" id= "nombre" name="nombre" value="">
+                    <input class="form-control " type="text" id= "nombre" name="nombre" required value="">
                 </div>
                 
                 <div class="label_input">
                     <label for="apellido">Apellidos</label>
-                    <input type="text" id= "apellido" name="apellido" value="">
+                    <input class="form-control " type="text"  required id= "apellido" name="apellido" value="">
                 </div>
                 
                 <div class="label_input">
                     <label for="email">Email</label>
-                    <input type="email" id= "email" name="email" value="">
+                    <input  class="form-control" type="email" id= "email" name="email" value="">
                 </div>
                 
                 <div class="label_input">
                     <label for="telefono">Telefono </label>
-                        <input type="text" id= "telefono" name="telefono" value="">
+                        <input class="form-control" type="text" id= "telefono" name="telefono" value="">
                 </div>
-                
+            </div>
+            
+            <div class="form-section">
                 <div class="label_input">
                     <label for="programa">¿Qué programa te interesa?</label>
-                        <select name="programa" id="programa">
+                        <select class="form-control" name="programa" id="programa">
                             <option value="analisisDatos">Certificado de Analisis de Dato</option>
                             <option value="SoporteTI">Certificado de Soporte en TI</option>
                         </select>
@@ -126,7 +205,7 @@
                 
                 <div class="label_input">
                     <label for="cprograma">¿Como as conocido este programa?</label>
-                        <select name="cprograma" id="cprograma">
+                        <select class="form-control -mb-3" name="cprograma" id="cprograma">
                             <option value="google">Búsqueda en Google</option>
                             <option value="amigosFamilia">De un amigo/familiar</option>
                             <option value="asociacion">Asociación</option>
@@ -145,7 +224,7 @@
             
                 <div class="label_input">
                     <label for="vivesE">¿Vives es España?</label>
-                        <select name="vivesE" id="vivesE">
+                        <select class="form-control -mb-3" name="vivesE" id="vivesE">
                             <option value="si">Si</option>
                             <option value="no">No</option>
                         </select>
@@ -153,11 +232,13 @@
                 
                 <div class="label_input">
                     <label for="fnacimiento">Fecha nacimeinto</label>
-                        <input type="date" id= "fnacimiento" name="fnacimiento" value="">
+                    <input class="form-control -mb-3" type="date" id= "fnacimiento" name="fnacimiento" value="">
+                </div>
             </div>
-                
+            
+            <div class="form-section">
                 <div class="label_input">
-                    <label for="residencia">Ciudad de Residencia</label>
+                    <label class="form-control -mb-3" for="residencia">Ciudad de Residencia</label>
                         <!--lista desplegable de provinciasde españa -->
                         <select name="residencia" id="residencia">                
                             <option value="Álava/Araba">Álava/Araba</option>
@@ -218,7 +299,7 @@
                 <div class="label_input">
                     <label for="pnacimiento">País de nacimieneto</label>
                     <!--lista de paises --> 
-                    <select name="pnacimiento" id="pnacimiento">                
+                    <select class="form-control -mb-3" name="pnacimiento" id="pnacimiento">                
                             <option value="AF">Afganistán</option>
                             <option value="AL">Albania</option>
                             <option value="DE">Alemania</option>
@@ -458,7 +539,7 @@
     
                 <div class="label_input">
                     <label for="sprofesional">¿Situación profecional actual?  </label>   
-                        <select name="sprofesional" id="sprofesional">
+                        <select class="form-control -mb-3" name="sprofesional" id="sprofesional">
                             <option value="desempleado">Desempleado, en busca de trabajo</option>
                             <option value="empleado">Empleado a tiempo completo</option>
                         </select>
@@ -467,7 +548,7 @@
                 <div class="label_input">
                     <label for="situacion">¿Que situacón que define mejor? </label>
                         <!--lista desplegable varias opciones -->
-                    <select name="situacion" id="situacion">
+                    <select class="form-control -mb-3" name="situacion" id="situacion">
                             <option value="expectativas">No tengo expectativas profesionales</option>
                             <option value="prefiero">Prefiero no decirlo</option>
                             <option value="acceso">Tengo acceso limitado a la educación superior</option>
@@ -476,10 +557,12 @@
                             
                     </select>
                 </div>
-                
+            </div>
+
+            <div class="form-section">
                 <div class="label_input">
                     <label for="neducacion">Nivel de educación </label>
-                    <select name="neducacion" id="neducacion">
+                    <select class="form-control -mb-3" name="neducacion" id="neducacion">
                         <!-- no coinciden los campos comprobar y si tiene que seleccionar dos opciones
                             oh crear otro campo-->
                             <option value="completo">Empleado a tiempo completo</option>
@@ -495,7 +578,7 @@
                 <div class="label_input">
                     <label for="permisoTrabajo">¿Tienes permiso de trabajo en Españ? </label>
                         <!--lista desplegable -->
-                        <select name="permisoTrabajo" id="permisoTrabajo">
+                        <select class="form-control -mb-3" name="permisoTrabajo" id="permisoTrabajo">
                             <option value="permisosi">Si</option>
                             <option value="permisono">No</option>
                         </select>
@@ -503,7 +586,7 @@
                 
                 <div class="label_input">
                     <label for="tienes_ordenador">¿Tienes Ordenador/tablet/wifi? </label>
-                        <select name="tienes_ordenador" id="tienes_ordenador">
+                        <select class="form-control -mb-3" name="tienes_ordenador" id="tienes_ordenador">
                             <option value="ordenadorsi">Si</option>
                             <option value="ordenadorno">No</option>
                         </select>    
@@ -511,27 +594,78 @@
                 
                 <div class="label_input">
                     <label for="cingles">¿Conocimientos de ingles? </label>
-                        <select name="cingles" id="cingles">
+                        <select class="form-control -mb-3" name="cingles" id="cingles">
                                 <option value="inglessi">Si</option>
                                 <option value="inglesno">No</option>
                         </select>    
                 </div>
-                
                 <div class="label_input">
                     <label for="disponibilidad">¿Disponibilidad? </label>
-                        <select name="disponibilidad" id="disponibilidad">
+                        <select class="form-control -mb-3" name="disponibilidad" id="disponibilidad">
                                 <option value="tarde">Tarde</option>
                                 <option value="mañana">Mañana</option>
                                 <option value="ambas">Ambas</option>
                         </select>    
                 </div> 
-                <div class="enviar ">
-                    <input class="bt_enviar" type="submit" value="Enviar">
-                    <!--<input class="bt_enviar" type="submit" value="siguiente">-->
-                    
+            </div>   
+
+                <div class="enviar form-navigation -mt-3 ">
+                    <input class="previous btn btn-primary" type="button" class="" value="Previous">
+                    <input class="next btn btn-primary" type="button" class="" value="Next">
+                    <input  class="btn btn-success" type="submit" value="Submit">
+                                       
                 </div>
             </form>
         </div>
+    </main>
     </div>
+
+    <script>
+
+$(function() {
+  var $sections = $('.form-section');
+
+  function navigateTo(registro) {
+    $sections.removeClass('current').eq(registro).addClass('current');
+
+    $('.form-navigation .previous').toggle(registro > 0);
+    var atTheEnd = registro >= $sections.length - 1;
+    $('.form-navigation .next').toggle(!atTheEnd);
+    $('.form-navigation [type=submit]').toggle(atTheEnd);
+
+    // Corregir el selector: querySelector en lugar de querSelector
+    const step = document.querySelector('.step' + registro);
+    step.style.backgroundColor = "#17a2b8";
+    step.style.color = "white";
+  }
+
+  function curIndex() {
+    // Corregir el uso de index() en lugar de registro()
+    return $sections.index($sections.filter('.current'));
+  }
+
+  $('.form-navigation .previous').click(function() {
+    navigateTo(curIndex() - 1);
+  });
+
+  $('.form-navigation .next').click(function() {
+    // Corregir el selector: $('.employee-form') en lugar de $('.employee-form')
+    $('.employee-form').parsley().whenValidate({
+      group: 'block-' + curIndex()
+    }).done(function() {
+      navigateTo(curIndex() + 1);
+    });
+  });
+
+  $sections.each(function(registro, section) {
+    // Corregir el atributo: 'date-parsley-group' en lugar de 'date-parsley-group'
+    $(section).find(':input').attr('data-parsley-group', 'block-' + registro);
+  });
+
+  navigateTo(0);
+});
+
+    </script>
+
 </body>
 </html>
