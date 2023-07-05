@@ -5,246 +5,206 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registro Alumnos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js" integrity="sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <style>
-        .principal{
-            width: 80%;
-            margin: auto;
-            -border: 1px solid #701616;
-            
+        *{ 
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            box-sizing: border-box;
         }
-        main{
-            width: 100%;
+
+        main {
+            background-color: #3EADA2;
+        }
+
+        .faces {
+            display: none;
+        }
+
+        .form-section {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            padding: 5% 10%;
+            gap: 5%;
+            height: 100vh;
+        }
+
+        .form-questions {
+            background-color: white;
+            border-radius: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
+            padding: 5% 10%;   
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
         }
-        .formulario{
-            
-            background-color: #012060;
-            color: white;
-            padding: 2rem;
-            font-size: 18px;
-        
-        } 
-        .titulo{
-            padding: 2rem;
-            letter-spacing: 1rem;
+
+        .label_input label {
+            margin-bottom: 1%;
         }
-        .formulario, .faces, .titulo{
-            width: 50%;
-            
-        }
-        .faces{
-            border: 2px solid  #012060;
-            text-align: center;
-            font-size: 18px;
-            text-align: center;
+
+        .label_input {
+            font-weight: 200;
             display: flex;
-            flex-direction:row;
-            justify-content:space-between ;
+            flex-direction: column;
+            margin-bottom: 4%;
+            width: 100%;
+        }
+
+        .label_input_part {
+            display: flex;
+            justify-content: space-between;
+            gap: 5%;
+        }
+
+        .form-part-title {
+            color: #012060;
+            font-weight: 700;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            margin-bottom: 4%;
+        }
+
+        .input-box {
+            height: 45px;
+            border: solid black 1px;
             
         }
-        .label_input{
-            padding-bottom: 1rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
 
-        } 
-        .enviar{
-            display: flex;
-            flex-direction:row;
-            justify-content:space-between ;
-            margin-top: 1rem;
-        }  
-       
-        
-        
-        .titulo h1{
-            color: #212e9e;
-            font-size: 45px;
-            text-align: center;
+        .title-section-page {
+            padding-top: 30vh;
+            text-align: right;
+            text-transform: uppercase;
+        }
 
-            border: #212e9e;
-        } 
-        .label_input input, select{
-            padding : 5px 10px;
-            border-radius: 5px;
-            -padding-left: 10px;
+        .part-title {
+            font-weight: 700;
+            color: gray;
         }
         
-        /*------nuevo css*/
-        
-        .border{
-            color: #012060;
-            padding: 1rem;
-            width: 25%;
-            border: 1px solid #327016;
-
-        }
-        .form-section{
-            display: none
+        .title-text-section {
+            font-weight: 900;          
+            font-size: 2.5rem;
+            color:white;
         }
 
-        .form-section.current{
-            display: inline;
-        }
-        .parsley-error-list{
-            color: red;
-        }
-        .btn{
-            background: white;
-            color: #012060;
-            border-radius: 5px;
-            padding : 5px 10px;
-            -letter-spacing: 1rem;
-            transition: .1s ease all;
-        }
-        .btn-success {
-            float: left;
-        }
-        .btn-primary {
-        float: left;
+        .radio-options input {
+            border: solid black 1px;
+            background-color: red;
+            border-radius: 20px;
         }
 
-        .btn-primary {
-            float: right;
-        }
-        .btn-success,.btn-primary:hover {
-            box-shadow: 1px 0px 30px rgb(186, 145, 98);
-        }
-        .form-control{
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
 
-        /* version mobil*/  
 
-    @media screen and (max-width: 800px) {
-    .label_input {
-        grid-template-columns: 1fr;
-    } 
-
-    .enviar,.label_input {
-        width: 100%; 
-    }
-    .bt_enviar{
-    -width: 100%;
-    -padding-left: 10px;
-    }
-    }
-</style>
+    </style>    
 </head>
 <body>
     <div class="principal "> 
-        <main>   
-        <div class="titulo">
-            <h1 class="text-danger text-center mt-3 mb4">Inscripcion</h1> 
-        </div>
-
+        <main> 
+            
         <div class="faces">
-            <div class="border step0"><label >Uno</label></div>
-            <div class="border step1"><label >Dos</label></div>
-            <div class="border  step2" ><label >Tres</label></div>
-            <div class="border step3"><label >Cuatro</label></div>
+            <div class="border step0"><label>Parte 1/5</label></div>
+            <div class="border step1"><label>Parte 2/5</label></div>
+            <div class="border step2" ><label>Parte 3/5</label></div>
+            <div class="border step3"><label>Parte 4/5</label></div>
+            <div class="border step4"><label>Parte 5/5</label></div>
         </div>
         
         <div class="formulario">
-            
-            
-            
             <form action="{{ route('guardar_registro') }}" method="POST" class="employee-form">
-            <!--para verificar si pasan todos lo regisro a la base de datos--> 
-              @if ($errors->any())
+            <!--para verificar si pasan todos los registros a la base de datos--> 
+            @if ($errors->any())
                 <div class="alert alert-danger">
-                 <ul>
+                    <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>
                 </div>
-                @endif
-                @csrf   
+            @endif
+
+            @csrf   
+            <div class="form-section">
+
+                <div class="title-section-page">
+                    <p class="part-title">Parte 1/5</p>
+                    <h2 class="title-text-section">Datos personales</h2> 
+                </div>
+
+                <div class="form-questions">
+                    <div class="form-part-title step0">
+                        <label>Parte 1/5</label>
+                    </div>
+
+                    <!--campo 1-->
+                    <div class="label_input">
+                        <label for="nombre">Nombres</label>
+                        <input class="input-box form-control" type="text" id= "nombre" name="nombre" placeholder="Maria Esperanza" required value="">
+                    </div>
+
+                    <!--campo 2-->
+                    <div class="label_input">
+                        <label for="apellido">Apellidos</label>
+                        <input class="input-box form-control" type="text" placeholder="Perez Sanchez" required id= "apellido" name="apellido" value="">
+                    </div>
+
+                    <!--campo 3-->
+                    <div class="label_input">
+                        <label for="email">Email</label>
+                        <input  class="input-box form-control" type="email" placeholder="email@example.com" id= "email" name="email" value="">
+                    </div>
+
+                    <div class="label_input_part">
+                            <!--campo 4-->
+                        <div class="label_input">
+                            <label for="dni">DNI/NIE/Pasaporte</label>
+                            <input class="input-box form-control" type="text" placeholder="12345678X" required id= "dni" name="dni" value="">
+                        </div>
+
+                        <!--campo 5-->
+                        <div class="label_input">
+                            <label for="telefono">Teléfono </label>
+                                <input class="input-box form-control" type="text" placeholder="+34 666 66 66 66" id= "telefono" name="telefono" value="">
+                        </div>           
+
+                    </div>
+                   
+                    <!--campo 6-->  
+                    <div class="label_input">
+                        <label for="vivesE">¿resides en España?</label>
+                        <div class="radio-options">
+                            <input type="radio" class="bg-radio-option form-control" name="vivesE" id="vivesE" value="si">Si</input>
+
+                            <input type="radio" class="bg-radio-option form-control" name="vivesE" id="vivesE" value="no">No</input>     
+                        </div>                              
+                    </div>
+                </div>
+            </div>
 
             <div class="form-section">
-                <div class="label_input">
-                    <label for="nombre">Nombre</label>
-                    <input class="form-control " type="text" id= "nombre" name="nombre" required value="">
+      
+                <div class="title-section-page">
+                    <p class="part-title">Parte 2/5</p>
+                    <h2 class="title-text-section">Datos personales</h2> 
                 </div>
-                
-                <div class="label_input">
-                    <label for="apellido">Apellidos</label>
-                    <input class="form-control " type="text"  required id= "apellido" name="apellido" value="">
-                </div>
-                
-                <div class="label_input">
-                    <label for="dni">D.N.I</label>
-                    <input class="form-control " type="text"  required id= "dni" name="dni" value="">
-                </div>
-                
-                <div class="label_input">
-                    <label for="email">Email</label>
-                    <input  class="form-control" type="email" id= "email" name="email" value="">
-                </div>
-                
-                <div class="label_input">
-                    <label for="telefono">Telefono </label>
-                        <input class="form-control" type="text" id= "telefono" name="telefono" value="">
-                </div>
-            </div>
-            
-            <div class="form-section">
-                <div class="label_input">
-                    <label for="programa">¿Qué programa te interesa?</label>
-                        <select class="form-control" name="programa" id="programa">
-                            <option value="analisisDatos">Certificado de Analisis de Dato</option>
-                            <option value="SoporteTI">Certificado de Soporte en TI</option>
-                        </select>
-                </div>
-                
-                <div class="label_input">
-                    <label for="cprograma">¿Como as conocido este programa?</label>
-                        <select class="form-control -mb-3" name="cprograma" id="cprograma">
-                            <option value="google">Búsqueda en Google</option>
-                            <option value="amigosFamilia">De un amigo/familiar</option>
-                            <option value="asociacion">Asociación</option>
-                            <option value="centroS">Centre Sant Jaume</option>
-                            <option value="chicaGeek">Influencer - @ChicaGeek</option>
-                            <option value="ong">ONG/Fundación/Asociación</option>
-                            <option value="facebook">Grupo en Facebook</option>
-                            <option value="inco">Por INCO Academy España</option>
-                            <option value="anuncio">Anuncio en FB / IG / LinkedIN</option>
-                            <option value="internet">Búsqueda en internet</option>
-                            <option value="instagram">Instagram</option>
-                            <option value="fundacion">ONG/Fundación/Asociación</option>
-                            <option value="veritechie">Influencer - @veritechie</option>
-                        </select>
-                </div>
-            
-                <div class="label_input">
-                    <label for="vivesE">¿Vives es España?</label>
-                        <select class="form-control -mb-3" name="vivesE" id="vivesE">
-                            <option value="si">Si</option>
-                            <option value="no">No</option>
-                        </select>
-                </div>
-                
-                <div class="label_input">
-                    <label for="fnacimiento">Fecha nacimeinto</label>
-                    <input class="form-control -mb-3" type="date" id= "fnacimiento" name="fnacimiento" value="">
-                </div>
-            </div>
-            
-            <div class="form-section">
-                <div class="label_input">
-                    <label class="form-control -mb-3" for="residencia">Ciudad de Residencia</label>
-                        <!--lista desplegable de provinciasde españa -->
+
+                <div class="form-questions">
+
+                    <div class="form-part-title step1">
+                        <label>Parte 2/5</label>
+                    </div>
+
+                    <!--campo 7-->  
+                    <div class="label_input">
+                        <label class="form-control -mb-3" for="residencia">Ciudad de Residencia</label>
+                            <!--lista desplegable de provincias de españa -->
                         <select name="residencia" id="residencia">                
                             <option value="Álava/Araba">Álava/Araba</option>
                             <option value="Albacete">Albacete</option>
@@ -299,12 +259,13 @@
                             <option value="Zamora">Zamora</option>
                             <option value="Zaragoza">Zaragoza</option>
                         </select>
-                </div>
-                
-                <div class="label_input">
-                    <label for="pnacimiento">País de nacimieneto</label>
-                    <!--lista de paises --> 
-                    <select class="form-control -mb-3" name="pnacimiento" id="pnacimiento">                
+                    </div>
+
+                    <!--campo 8-->  
+                    <div class="label_input">
+                        <label for="pnacimiento">País de nacimiento</label>
+                        <!--lista de paises --> 
+                        <select class="form-control -mb-3" name="pnacimiento" id="pnacimiento">                
                             <option value="AF">Afganistán</option>
                             <option value="AL">Albania</option>
                             <option value="DE">Alemania</option>
@@ -540,84 +501,162 @@
                             <option value="ZM">Zambia</option>
                             <option value="ZW">Zimbabue</option>
                         </select>
-                </div>
-    
-                <div class="label_input">
-                    <label for="sprofesional">¿Situación profecional actual?  </label>   
-                        <select class="form-control -mb-3" name="sprofesional" id="sprofesional">
-                            <option value="desempleado">Desempleado, en busca de trabajo</option>
-                            <option value="empleado">Empleado a tiempo completo</option>
-                        </select>
-                </div>
-            
-                <div class="label_input">
-                    <label for="situacion">¿Que situacón que define mejor? </label>
-                        <!--lista desplegable varias opciones -->
-                    <select class="form-control -mb-3" name="situacion" id="situacion">
-                            <option value="expectativas">No tengo expectativas profesionales</option>
-                            <option value="prefiero">Prefiero no decirlo</option>
-                            <option value="acceso">Tengo acceso limitado a la educación superior</option>
-                            <option value="cuidado">Cuido a un miembro de mi familia</option>
-                            <option value="origen">Tengo origen migrante</option>
-                            
-                    </select>
-                </div>
+                    </div>
+
+                    <!--definir que tipo de campo pedimos aqui-->
+                    <!--campo 9-->  
+                    <div class="label_input">
+                        <label for="fnacimiento">Año de nacimiento</label>
+                        <input class="form-control -mb-3" type="date" id= "fnacimiento" name="fnacimiento" value="">
+                    </div>
+
+                    <!--campo 10-->
+                    <div class="label_input">
+                        <label for="gender">¿con qué género te identificas?</label>
+
+                        <input type="radio" class="form-control" name="gender" value="mujer">Mujer</input>
+
+                        <input type="radio" class="form-control" name="gender" value="hombre">Hombre</input>
+
+                        <input type="radio" class="form-control" name="gender" value="nb"> No binario</input>
+
+                        <input type="radio" class="form-control" name="gender" value="otra">Otra</input>
+
+                        <input type="radio" class="form-control" name="gender" value="no-responde">Prefiero no responder</input>
+                    </div>
+                </div>                   
             </div>
 
+            
             <div class="form-section">
-                <div class="label_input">
-                    <label for="neducacion">Nivel de educación </label>
-                    <select class="form-control -mb-3" name="neducacion" id="neducacion">
-                        <!-- no coinciden los campos comprobar y si tiene que seleccionar dos opciones
-                            oh crear otro campo-->
-                            <option value="completo">Empleado a tiempo completo</option>
-                            <option value="parcial">Empleado a tiempo parcial</option>
-                            <option value="trabajo">Desempleado, en busca de trabajo</option>
-                            <option value="formacion">Formación Profesional</option>
-                            <option value="eso">Secundaria (ESO)</option>
-                            <option value="estudios">Estudios Universitarios</option>
-                            <option value="master">Máster</option>
+
+                <div class="title-section-page">
+                    <p class="part-title">Parte 3/5</p>
+                    <h2 class="title-text-section">Datos profesionales</h2> 
+                </div>
+
+                <div class="form-questions">
+
+                    <!--campo 11-->
+                    <div class="label_input">
+                    <label for="programa">¿Qué programa te interesa?</label>
+                        <select class="form-control" name="programa" id="programa">
+                            <option value="analisisDatos">Certificado de Analisis de Datos</option>
+                            <option value="SoporteTI">Certificado de Soporte en TI</option>
                         </select>
-                </div>
-                
-                <div class="label_input">
-                    <label for="permisoTrabajo">¿Tienes permiso de trabajo en Españ? </label>
-                        <!--lista desplegable -->
-                        <select class="form-control -mb-3" name="permisoTrabajo" id="permisoTrabajo">
-                            <option value="permisosi">Si</option>
-                            <option value="permisono">No</option>
+                    </div>
+
+                    <!--campo 12-->
+                    <div class="label_input">
+                    <label for="cprograma">¿Como has conocido este programa?</label>
+                        <select class="form-control -mb-3" name="cprograma" id="cprograma">
+                            <option value="google">Búsqueda en Google</option>
+                            <option value="amigosFamilia">De un amigo/familiar</option>
+                            <option value="asociacion">Asociación</option>
+                            <option value="centroS">Centre Sant Jaume</option>
+                            <option value="chicaGeek">Influencer - @ChicaGeek</option>
+                            <option value="ong">ONG/Fundación/Asociación</option>
+                            <option value="facebook">Grupo en Facebook</option>
+                            <option value="inco">Por INCO Academy España</option>
+                            <option value="anuncio">Anuncio en FB / IG / LinkedIN</option>
+                            <option value="internet">Búsqueda en internet</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="fundacion">ONG/Fundación/Asociación</option>
+                            <option value="veritechie">Influencer - @veritechie</option>
                         </select>
+                    </div>
+
+                    <!--campo 13-->
+                    <div class="label_input">
+                        <label for="sprofesional">¿Situación profecional actual?  </label>   
+                            <select class="form-control -mb-3" name="sprofesional" id="sprofesional">
+                                <option value="desempleado">Desempleado, en busca de trabajo</option>
+                                <option value="empleado">Empleado a tiempo completo</option>
+                            </select>
+                    </div>
                 </div>
+
+                <div class="form-section">
+
+                    <div class="title-section-page">
+                        <p class="part-title">Parte 4/5</p>
+                        <h2 class="title-text-section">Datos profesionales</h2> 
+                    </div>
+                    
+                    <div class="form-questions">
+                        <!--campo 14-->
+                        <div class="label_input">
+                            <label for="situacion">¿Que situación que define mejor? </label>
+                                <!--lista desplegable varias opciones -->
+                            <select class="form-control -mb-3" name="situacion" id="situacion">
+                                    <option value="expectativas">No tengo expectativas profesionales</option>
+                                    <option value="prefiero">Prefiero no decirlo</option>
+                                    <option value="acceso">Tengo acceso limitado a la educación superior</option>
+                                    <option value="cuidado">Cuido a un miembro de mi familia</option>
+                                    <option value="origen">Tengo origen migrante</option>                     
+                            </select>
+                        </div>
+
+                        <!--campo 15-->
+                        <div class="label_input">
+                            <label for="neducacion">Nivel de educación </label>
+                            <select class="form-control -mb-3" name="neducacion" id="neducacion">
+                                <!-- no coinciden los campos comprobar y si tiene que seleccionar dos opciones
+                                    o crear otro campo-->
+                                    <option value="completo">Empleado a tiempo completo</option>
+                                    <option value="parcial">Empleado a tiempo parcial</option>
+                                    <option value="trabajo">Desempleado, en busca de trabajo</option>
+                                    <option value="formacion">Formación Profesional</option>
+                                    <option value="eso">Secundaria (ESO)</option>
+                                    <option value="estudios">Estudios Universitarios</option>
+                                    <option value="master">Máster</option>
+                                </select>
+                        </div>
                 
-                <div class="label_input">
-                    <label for="tienes_ordenador">¿Tienes Ordenador/tablet/wifi? </label>
-                        <select class="form-control -mb-3" name="tienes_ordenador" id="tienes_ordenador">
-                            <option value="ordenadorsi">Si</option>
-                            <option value="ordenadorno">No</option>
-                        </select>    
-                </div>
-                
-                <div class="label_input">
-                    <label for="cingles">¿Conocimientos de ingles? </label>
-                        <select class="form-control -mb-3" name="cingles" id="cingles">
-                                <option value="inglessi">Si</option>
-                                <option value="inglesno">No</option>
-                        </select>    
-                </div>
+                        <!--campo 16-->
+                        <div class="label_input">
+                            <label for="permisoTrabajo">¿Tienes permiso de trabajo en Españ? </label>
+                                <!--lista desplegable -->
+                                <select class="form-control -mb-3" name="permisoTrabajo" id="permisoTrabajo">
+                                    <option value="permisosi">Si</option>
+                                    <option value="permisono">No</option>
+                                </select>
+                        </div>
+
+                        <!--campo 17-->
+                        <div class="label_input">
+                            <label for="tienes_ordenador">¿Tienes Ordenador/tablet/wifi? </label>
+                                <select class="form-control" name="tienes_ordenador" id="tienes_ordenador">
+                                    <option value="ordenadorsi">Si</option>
+                                    <option value="ordenadorno">No</option>
+                                </select>    
+                        </div>
+                    </div>
+
+                    <!--campo 18-->
+                    <div class="label_input">
+                        <label for="cingles">¿Conocimientos de ingles? </label>
+                            <select class="form-control" name="cingles" id="cingles">
+                                    <option value="inglessi">Si</option>
+                                    <option value="inglesno">No</option>
+                            </select>    
+                    </div>
+
+                 <!--campo 19-->
                 <div class="label_input">
                     <label for="disponibilidad">¿Disponibilidad? </label>
-                        <select class="form-control -mb-3" name="disponibilidad" id="disponibilidad">
+                        <select class="form-control" name="disponibilidad" id="disponibilidad">
                                 <option value="tarde">Tarde</option>
                                 <option value="mañana">Mañana</option>
                                 <option value="ambas">Ambas</option>
                         </select>    
                 </div> 
-            </div>   
+             
 
-                <div class="enviar form-navigation -mt-3 ">
+                <div class="enviar form-navigation">
                     <input class="previous btn btn-primary" type="button" class="" value="Previous">
-                    <input class="next btn btn-primary" type="button" class="" value="Next">
-                    <input  class="btn btn-success" type="submit" value="Submit">
+                    <input class="next btn btn-primary" type="button" class="" value="Continuar">
+                    <input  class="btn btn-success" type="submit" value="Enviar">
                                        
                 </div>
             </form>
@@ -627,48 +666,48 @@
 
     <script>
 
-$(function() {
-  var $sections = $('.form-section');
+        $(function() {
+        var $sections = $('.form-section');
 
-  function navigateTo(registro) {
-    $sections.removeClass('current').eq(registro).addClass('current');
+        function navigateTo(registro) {
+            $sections.removeClass('current').eq(registro).addClass('current');
 
-    $('.form-navigation .previous').toggle(registro > 0);
-    var atTheEnd = registro >= $sections.length - 1;
-    $('.form-navigation .next').toggle(!atTheEnd);
-    $('.form-navigation [type=submit]').toggle(atTheEnd);
+            $('.form-navigation .previous').toggle(registro > 0);
+            var atTheEnd = registro >= $sections.length - 1;
+            $('.form-navigation .next').toggle(!atTheEnd);
+            $('.form-navigation [type=submit]').toggle(atTheEnd);
 
-    // Corregir el selector: querySelector en lugar de querSelector
-    const step = document.querySelector('.step' + registro);
-    step.style.backgroundColor = "#17a2b8";
-    step.style.color = "white";
-  }
+            // Corregir el selector: querySelector en lugar de querSelector
+            const step = document.querySelector('.step' + registro);
+            step.style.backgroundColor = "#17a2b8";
+            step.style.color = "white";
+        }
 
-  function curIndex() {
-    // Corregir el uso de index() en lugar de registro()
-    return $sections.index($sections.filter('.current'));
-  }
+        function curIndex() {
+            // Corregir el uso de index() en lugar de registro()
+            return $sections.index($sections.filter('.current'));
+        }
 
-  $('.form-navigation .previous').click(function() {
-    navigateTo(curIndex() - 1);
-  });
+        $('.form-navigation .previous').click(function() {
+            navigateTo(curIndex() - 1);
+        });
 
-  $('.form-navigation .next').click(function() {
-    // Corregir el selector: $('.employee-form') en lugar de $('.employee-form')
-    $('.employee-form').parsley().whenValidate({
-      group: 'block-' + curIndex()
-    }).done(function() {
-      navigateTo(curIndex() + 1);
-    });
-  });
+        $('.form-navigation .next').click(function() {
+            // Corregir el selector: $('.employee-form') en lugar de $('.employee-form')
+            $('.employee-form').parsley().whenValidate({
+            group: 'block-' + curIndex()
+            }).done(function() {
+            navigateTo(curIndex() + 1);
+            });
+        });
 
-  $sections.each(function(registro, section) {
-    // Corregir el atributo: 'date-parsley-group' en lugar de 'date-parsley-group'
-    $(section).find(':input').attr('data-parsley-group', 'block-' + registro);
-  });
+        $sections.each(function(registro, section) {
+            // Corregir el atributo: 'date-parsley-group' en lugar de 'date-parsley-group'
+            $(section).find(':input').attr('data-parsley-group', 'block-' + registro);
+        });
 
-  navigateTo(0);
-});
+        navigateTo(0);
+        });
 
     </script>
 
