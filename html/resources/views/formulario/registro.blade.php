@@ -192,6 +192,15 @@
                     <label for="telefono">Telefono </label>
                         <input class="form-control" type="text" id= "telefono" name="telefono" value="">
                 </div>
+
+                <div class="label_input">
+                    <label for="vivesE">¿Vives es España?</label>
+                    <select class="form-control " name="vivesE" id="vivesE" value=" "  onchange="validateVivesE(this)">
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                    </select>
+                    <p  id="salirBtn" style="display: none"> Lo siento no puede continuar</p>
+                </div>
             </div>
             
             <div class="form-section">
@@ -222,13 +231,7 @@
                         </select>
                 </div>
             
-                <div class="label_input">
-                    <label for="vivesE">¿Vives es España?</label>
-                        <select class="form-control -mb-3" name="vivesE" id="vivesE">
-                            <option value="si">Si</option>
-                            <option value="no">No</option>
-                        </select>
-                </div>
+                
                 
                 <div class="label_input">
                     <label for="fnacimiento">Fecha nacimeinto</label>
@@ -610,10 +613,10 @@
             </div>   
 
                 <div class="enviar form-navigation -mt-3 ">
-                    <input class="previous btn btn-primary" type="button" class="" value="Previous">
-                    <input class="next btn btn-primary" type="button" class="" value="Next">
+                    <input class="previous btn btn-primary" type="button"  value="Previous">
+                    <input class="next btn btn-primary" type="button" id="next1" value="Next">
                     <input  class="btn btn-success" type="submit" value="Submit">
-                                       
+                    <input class=" btn" type="button" id="salir" value="salir" style="display: none" >                 
                 </div>
             </form>
         </div>
@@ -621,49 +624,57 @@
     </div>
 
     <script>
+        function validateVivesE(selectElement) {
+                if (selectElement.value === 'no') {
+                    //alert('Lo siento, no puedes continuar si no vives en España');
+                    document.getElementById('salirBtn').style.display = 'block';
+                    document.getElementById('next1').style.display = 'none';
+                    document.getElementById('salir').style.display = 'block';
+                } else {
+                    document.getElementById('next1').style.display = 'block';
+                    document.getElementById('salirBtn').style.display = 'none';
+                    document.getElementById('salir').style.display = 'none'; 
+                }
+            }
 
-$(function() {
-  var $sections = $('.form-section');
+        $(function() {
+        var $sections = $('.form-section');
 
-  function navigateTo(registro) {
-    $sections.removeClass('current').eq(registro).addClass('current');
+        function navigateTo(registro) {
+            $sections.removeClass('current').eq(registro).addClass('current');
 
-    $('.form-navigation .previous').toggle(registro > 0);
-    var atTheEnd = registro >= $sections.length - 1;
-    $('.form-navigation .next').toggle(!atTheEnd);
-    $('.form-navigation [type=submit]').toggle(atTheEnd);
+            $('.form-navigation .previous').toggle(registro > 0);
+            var atTheEnd = registro >= $sections.length - 1;
+            $('.form-navigation .next').toggle(!atTheEnd);
+            $('.form-navigation [type=submit]').toggle(atTheEnd);
 
-    // Corregir el selector: querySelector en lugar de querSelector
-    const step = document.querySelector('.step' + registro);
-    step.style.backgroundColor = "#17a2b8";
-    step.style.color = "white";
-  }
+            const step = document.querySelector('.step' + registro);
+            step.style.backgroundColor = "#17a2b8";
+            step.style.color = "white";
+        }
 
-  function curIndex() {
-    // Corregir el uso de index() en lugar de registro()
-    return $sections.index($sections.filter('.current'));
-  }
+        function curIndex() {
+            return $sections.index($sections.filter('.current'));
+        }
 
-  $('.form-navigation .previous').click(function() {
-    navigateTo(curIndex() - 1);
-  });
+        $('.form-navigation .previous').click(function() {
+            navigateTo(curIndex() - 1);
+        });
 
-  $('.form-navigation .next').click(function() {
-    // Corregir el selector: $('.employee-form') en lugar de $('.employee-form')
-    $('.employee-form').parsley().whenValidate({
-      group: 'block-' + curIndex()
-    }).done(function() {
-      navigateTo(curIndex() + 1);
-    });
-  });
+        $('.form-navigation .next').click(function() {
+            $('.employee-form').parsley().whenValidate({
+            group: 'block-' + curIndex()
+            }).done(function() {
+            navigateTo(curIndex() + 1);
+            });
+        });
 
-  $sections.each(function(registro, section) {
-    // Corregir el atributo: 'date-parsley-group' en lugar de 'date-parsley-group'
-    $(section).find(':input').attr('data-parsley-group', 'block-' + registro);
-  });
+        $sections.each(function(registro, section) {
+            $(section).find(':input').attr('data-parsley-group', 'block-' + registro);
+        });
 
-  navigateTo(0);
-});
+        navigateTo(0);
+        });
 
     </script>
 
