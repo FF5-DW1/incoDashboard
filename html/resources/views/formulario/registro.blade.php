@@ -184,6 +184,11 @@
                 </div>
                 
                 <div class="label_input">
+                    <label for="dni">D.N.I</label>
+                    <input class="form-control " type="text"  required id= "dni" name="dni" value="">
+                </div>
+                
+                <div class="label_input">
                     <label for="email">Email</label>
                     <input  class="form-control" type="email" id= "email" name="email" value="">
                 </div>
