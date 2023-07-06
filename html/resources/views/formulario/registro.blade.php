@@ -74,7 +74,7 @@
 
         .input-box {
             height: 45px;
-            border: solid black 1px;
+            border: solid #012060 1px;
             
         }
 
@@ -95,20 +95,69 @@
             color:white;
         }
 
-        .radio-options input {
-            border: solid black 1px;
-            background-color: red;
-            border-radius: 20px;
+        .label_input input::placeholder {
+            padding-left: 1%;
+            font-weight: 200;
+            font-size: 0.8rem;
+            color: gray;
         }
 
+        input[type="radio"] {
+            /* Add if not using autoprefixer */
+            -webkit-appearance: none;
+            /* Remove most all native input styles */
+            appearance: none;
+            /* For iOS < 15 */
+            background-color: var(--form-background);
+            /* Not removed via appearance */
+            margin: 0 5px;
+            width: 1.15em;
+            height: 1.15em;
+            border: 1px solid #012060;
+            border-radius: 50%;
+            transform: translateY(-0.075em);
+            display: grid;
+            place-content: center;
+            cursor: pointer;
+        }
 
+        input[type="radio"]::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em var(--form-control-color);
+            background-color: #012060;
+        }
 
+        input[type="radio"]:checked::before {
+            transform: scale(1);
+        } 
+
+        .radio-control {
+            display: flex;
+            width: 80%;
+        }
+
+        .radio-control-option {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            margin-right: 10px;
+            padding: 2% 3% 1% 2%;
+            border-radius: 20px;
+            border: 1px solid #012060;
+            background-color: white;
+            cursor: pointer;
+        }
     </style>    
 </head>
 <body>
     <div class="principal "> 
         <main> 
-            
+
         <div class="faces">
             <div class="border step0"><label>Parte 1/5</label></div>
             <div class="border step1"><label>Parte 2/5</label></div>
@@ -139,10 +188,10 @@
                 </div>
 
                 <div class="form-questions">
-                    <div class="form-part-title step0">
-                        <label>Parte 1/5</label>
+                    <div class="form-part-title">
+                        <p>Parte 1/5</p>
                     </div>
-
+                    
                     <!--campo 1-->
                     <div class="label_input">
                         <label for="nombre">Nombres</label>
@@ -154,37 +203,44 @@
                         <label for="apellido">Apellidos</label>
                         <input class="input-box form-control" type="text" placeholder="Perez Sanchez" required id= "apellido" name="apellido" value="">
                     </div>
-
-                    <!--campo 3-->
-                    <div class="label_input">
-                        <label for="email">Email</label>
-                        <input  class="input-box form-control" type="email" placeholder="email@example.com" id= "email" name="email" value="">
-                    </div>
+                    
 
                     <div class="label_input_part">
-                            <!--campo 4-->
+                        <!--campo 3-->
+                        <div class="label_input">
+                            <label for="email">Email</label>
+                            <input  class="input-box form-control" type="email" placeholder="email@example.com" id= "email" name="email" value="">
+                        </div>
+
+                        <!--campo 4-->
                         <div class="label_input">
                             <label for="dni">DNI/NIE/Pasaporte</label>
                             <input class="input-box form-control" type="text" placeholder="12345678X" required id= "dni" name="dni" value="">
                         </div>
-
+                    </div>
+   
+                    <div class="label_input_part">
                         <!--campo 5-->
                         <div class="label_input">
                             <label for="telefono">Teléfono </label>
-                                <input class="input-box form-control" type="text" placeholder="+34 666 66 66 66" id= "telefono" name="telefono" value="">
-                        </div>           
+                            <input class="input-box form-control" type="text" placeholder="+34 666 66 66 66" id= "telefono" name="telefono" value="">
+                        </div> 
+                        
+                        <!--campo 6-->  
+                        <div class="label_input">
+                            <label for="vivesE">¿resides en España?
+                                <div class="form-control radio-control">
+                                    <div class="radio-control-option">
+                                       <input type="radio" name="vivesE" id="si" value="si" checked>Si  
+                                    </div>
 
-                    </div>
-                   
-                    <!--campo 6-->  
-                    <div class="label_input">
-                        <label for="vivesE">¿resides en España?</label>
-                        <div class="radio-options">
-                            <input type="radio" class="bg-radio-option form-control" name="vivesE" id="vivesE" value="si">Si</input>
-
-                            <input type="radio" class="bg-radio-option form-control" name="vivesE" id="vivesE" value="no">No</input>     
-                        </div>                              
-                    </div>
+                                    <div class="radio-control-option">
+                                      <input type="radio" name="vivesE" id="no" value="no">No  
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>               
                 </div>
             </div>
 
@@ -512,22 +568,32 @@
 
                     <!--campo 10-->
                     <div class="label_input">
-                        <label for="gender">¿con qué género te identificas?</label>
+                        <label for="gender">¿con qué género te identificas?
+                            <div class="form-control radio-control">
+                                <div class="radio-control-option">      
+                                    <input type="radio" class="form-control" name="gender" id="mujer" value="mujer">Mujer
+                                </div>
 
-                        <input type="radio" class="form-control" name="gender" value="mujer">Mujer</input>
+                                <div class="radio-control-option">
+                                    <input type="radio" class="form-control" name="gender" id="hombre" value="hombre">Hombre
+                                </div>
 
-                        <input type="radio" class="form-control" name="gender" value="hombre">Hombre</input>
+                                <div class="radio-control-option">
+                                    <input type="radio" class="form-control" id="nb" name="gender" value="nb">No binario
+                                </div>
 
-                        <input type="radio" class="form-control" name="gender" value="nb"> No binario</input>
+                                <div class="radio-control-option">
+                                    <input type="radio" class="form-control" id="otra" name="gender" value="otra">Otra
+                                </div>
 
-                        <input type="radio" class="form-control" name="gender" value="otra">Otra</input>
-
-                        <input type="radio" class="form-control" name="gender" value="no-responde">Prefiero no responder</input>
+                                <div class="radio-control-option">
+                                    <input type="radio" class="form-control" id="no-responde" name="gender" value="no-responde">Prefiero no responder
+                                </div>
+                        </label>
                     </div>
                 </div>                   
             </div>
-
-            
+       
             <div class="form-section">
 
                 <div class="title-section-page">
