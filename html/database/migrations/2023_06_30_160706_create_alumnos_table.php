@@ -35,8 +35,14 @@ return new class extends Migration
             $table->string('disponibilidad')->nullable();
             $table->string('estado')->default('pendiente');
             $table->string('id_inco')->default(' ');
+
+            #$table->unsignedBigInteger('provincias_id');
+            #$table->unsignedBigInteger('paises_id');
             #$table->rememberToken();
             $table->timestamps();
+            
+            #$table->foreign('provincias_id')->references('id')->on('provincias');
+            #$table->foreign('paises_id')->references('id')->on('paises');
         });
     }
 

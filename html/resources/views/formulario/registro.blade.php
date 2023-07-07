@@ -243,9 +243,12 @@
                 <div class="label_input">
                     <label class="form-control -mb-3" for="residencia">Ciudad de Residencia</label>
                         <!--lista desplegable de provinciasde españa -->
-                        <select name="residencia" id="residencia">                
+                        <select name="residencia" id="residencia"> 
+                            @foreach($provincias as $provincia)
+                                <option value="{{ $provincias->id }}">{{ $provincia->nombre }}</option>
+                            @endforeach               
                             <option value="Álava/Araba">Álava/Araba</option>
-                            <option value="Albacete">Albacete</option>
+                            <!--<option value="Albacete">Albacete</option>
                             <option value="Alicante">Alicante</option>
                             <option value="Almería">Almería</option>
                             <option value="Asturias">Asturias</option>
@@ -295,7 +298,7 @@
                             <option value="Valladolid">Valladolid</option>
                             <option value="Vizcaya/Bizkaia">Vizcaya/Bizkaia</option>
                             <option value="Zamora">Zamora</option>
-                            <option value="Zaragoza">Zaragoza</option>
+                            <option value="Zaragoza">Zaragoza</option>-->
                         </select>
                 </div>
                 
@@ -303,7 +306,11 @@
                     <label for="pnacimiento">País de nacimieneto</label>
                     <!--lista de paises --> 
                     <select class="form-control -mb-3" name="pnacimiento" id="pnacimiento">                
-                            <option value="AF">Afganistán</option>
+                        @foreach($paises as $pais)
+                        <option value="{{ $paises->id }}">{{ $pais->nombre }}</option>
+                    @endforeach
+                        
+                        <!--<option value="AF">Afganistán</option>
                             <option value="AL">Albania</option>
                             <option value="DE">Alemania</option>
                             <option value="AD">Andorra</option>
@@ -536,7 +543,7 @@
                             <option value="YE">Yemen</option>
                             <option value="YU">Yugoslavia</option>
                             <option value="ZM">Zambia</option>
-                            <option value="ZW">Zimbabue</option>
+                            <option value="ZW">Zimbabue</option>-->
                         </select>
                 </div>
     
@@ -623,6 +630,7 @@
     </main>
     </div>
 
+    
     <script>
         function validateVivesE(selectElement) {
                 if (selectElement.value === 'no') {
@@ -680,3 +688,4 @@
 
 </body>
 </html>
+

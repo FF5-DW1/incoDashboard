@@ -25,4 +25,14 @@ class alumno extends Model
         'tienes_ordenador', 
         'cingles',
         'disponibilidad'];
+
+        public function pais()
+        {
+            return $this->hasOne(paises::class);
+        }
+    
+        public function provincia()
+        {
+            return $this->hasOne(provincias::class);
+        }
 }
