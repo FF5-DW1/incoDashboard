@@ -5,44 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lista de Alumnos Registrados</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <style>
-        main{
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            width: 80%;
-            margin: auto;
+        *{ 
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            box-sizing: border-box;
         }
-        .listado{
-            border:1px solid red;
-            display:flex;
-            flex-direction: row;
-            margin-bottom: 1rem;
+
+        main{
+            padding: 2% 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-content: center;
+            width: 90%;
+            margin: auto;
+
+            background-color: lightgray;
+            box-shadow: darkslategray;
+        }
+
+        main p {
+            position: relative;
+            padding: 2%;
+
+        }
+
+        h2 {
+            margin-bottom: 2%;
+            color: #012060;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        thead {
+            border-bottom: 1px #012060;
+        }
+
+        th {
+
+            padding: 0 2%;
+            font-weight: 400;
+            font-size: 0.8rem;
+            text-align: center;
+            border-bottom: 1px #012060;
         }
 
     </style>
 </head>
 <body>
     <main>
-        <p><a href="./formulario/registro"> crear nuevo</a></p>
+        <!-- <p><a href="./formulario/registro"> crear nuevo</a></p> -->
         <div>
             <div>
-                <h2>Lista de Alumnos</h2>
+                <h2>Inscripciones al formulario</h2>
             </div>
            
             <table>           
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellidos</th>
-                        <th scope="col">email</th>
-                        <th scope="col">Telefono</th>
-                        <th scope="col">Programa</th>
-                        <th scope="col">C_programa</th>
-                        <th scope="col">Vives_España</th>
-                        <th scope="col">Fecha_nacimeinto</th>
-                        <th scope="col">Recidencia</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Programa elegido</th>
+                        <th scope="col">Cómo conoció el programa</th>
+                        <th scope="col">Residente en España</th>
+                        <th scope="col">Año de nacimiento</th>
+                        <th scope="col">Ciudad de residencia</th>
                         <!--<th scope="col">Pais_Nacimiento</th>
                         <th scope="col">S_profecional</th>
                         <th scope="col">Situacion</th>

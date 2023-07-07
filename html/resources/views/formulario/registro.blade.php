@@ -22,12 +22,26 @@
         }
 
         main {
-            background-color: #3EADA2;
+            /* background-image: url("/html/public/img/mimi-thian-vdXMSiX-n6M-unsplash.jpg"); */
+            background-color: rgb(62, 173, 162,0.7);
         }
 
-        .faces {
-            display: none;
+        .faces{
+            border-bottom: 1px solid  #012060;
+            padding: 1% 1%;
+            background-color: lightgray;
+            font-size: 0.9rem;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;  
+            width: 100%; 
+
         }
+
+        /* .faces {
+            display: none;
+        } */
 
         .form-section {
             display: grid;
@@ -152,6 +166,36 @@
             background-color: white;
             cursor: pointer;
         }
+
+
+        .parsley-error-list{
+            color: red;
+        }
+        .btn{
+            background: white;
+            color: #012060;
+            border-radius: 5px;
+            padding : 5px 10px;
+            letter-spacing: 1rem;
+            transition: .1s ease all;
+        }
+        .btn-success {
+            float: left;
+        }
+        .btn-primary {
+        float: right;
+        }
+
+        .btn-primary {
+            float: right;
+        }
+        .btn-success,.btn-primary:hover {
+            box-shadow: 1px 0px 30px rgb(186, 145, 98);
+        }
+        .form-control{
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
     </style>    
 </head>
 <body>
@@ -244,7 +288,7 @@
                 </div>
             </div>
 
-            <div class="form-section">
+            <!-- <div class="form-section">
       
                 <div class="title-section-page">
                     <p class="part-title">Parte 2/5</p>
@@ -255,13 +299,13 @@
 
                     <div class="form-part-title step1">
                         <label>Parte 2/5</label>
-                    </div>
+                    </div> -->
 
                     <!--campo 7-->  
-                    <div class="label_input">
-                        <label class="form-control -mb-3" for="residencia">Ciudad de Residencia</label>
+                    <!-- <div class="label_input">
+                        <label class="form-control" for="residencia">Ciudad de Residencia</label> -->
                             <!--lista desplegable de provincias de españa -->
-                        <select name="residencia" id="residencia">                
+                        <!-- <select name="residencia" id="residencia">                
                             <option value="Álava/Araba">Álava/Araba</option>
                             <option value="Albacete">Albacete</option>
                             <option value="Alicante">Alicante</option>
@@ -315,13 +359,13 @@
                             <option value="Zamora">Zamora</option>
                             <option value="Zaragoza">Zaragoza</option>
                         </select>
-                    </div>
+                    </div> -->
 
                     <!--campo 8-->  
-                    <div class="label_input">
-                        <label for="pnacimiento">País de nacimiento</label>
+                    <!-- <div class="label_input">
+                        <label for="pnacimiento">País de nacimiento</label> -->
                         <!--lista de paises --> 
-                        <select class="form-control -mb-3" name="pnacimiento" id="pnacimiento">                
+                        <!-- <select class="form-control -mb-3" name="pnacimiento" id="pnacimiento">                
                             <option value="AF">Afganistán</option>
                             <option value="AL">Albania</option>
                             <option value="DE">Alemania</option>
@@ -557,17 +601,17 @@
                             <option value="ZM">Zambia</option>
                             <option value="ZW">Zimbabue</option>
                         </select>
-                    </div>
+                    </div> -->
 
                     <!--definir que tipo de campo pedimos aqui-->
                     <!--campo 9-->  
-                    <div class="label_input">
+                    <!-- <div class="label_input">
                         <label for="fnacimiento">Año de nacimiento</label>
                         <input class="form-control -mb-3" type="date" id= "fnacimiento" name="fnacimiento" value="">
-                    </div>
+                    </div> -->
 
                     <!--campo 10-->
-                    <div class="label_input">
+                    <!-- <div class="label_input">
                         <label for="gender">¿con qué género te identificas?
                             <div class="form-control radio-control">
                                 <div class="radio-control-option">      
@@ -592,30 +636,30 @@
                         </label>
                     </div>
                 </div>                   
-            </div>
+            </div> -->
        
-            <div class="form-section">
+            <!-- <div class="form-section">
 
                 <div class="title-section-page">
                     <p class="part-title">Parte 3/5</p>
                     <h2 class="title-text-section">Datos profesionales</h2> 
-                </div>
+                </div> -->
 
-                <div class="form-questions">
+                <!-- <div class="form-questions"> -->
 
                     <!--campo 11-->
-                    <div class="label_input">
+                    <!-- <div class="label_input">
                     <label for="programa">¿Qué programa te interesa?</label>
                         <select class="form-control" name="programa" id="programa">
                             <option value="analisisDatos">Certificado de Analisis de Datos</option>
                             <option value="SoporteTI">Certificado de Soporte en TI</option>
                         </select>
-                    </div>
+                    </div> -->
 
                     <!--campo 12-->
-                    <div class="label_input">
+                    <!-- <div class="label_input">
                     <label for="cprograma">¿Como has conocido este programa?</label>
-                        <select class="form-control -mb-3" name="cprograma" id="cprograma">
+                        <select class="form-control" name="cprograma" id="cprograma">
                             <option value="google">Búsqueda en Google</option>
                             <option value="amigosFamilia">De un amigo/familiar</option>
                             <option value="asociacion">Asociación</option>
@@ -630,12 +674,12 @@
                             <option value="fundacion">ONG/Fundación/Asociación</option>
                             <option value="veritechie">Influencer - @veritechie</option>
                         </select>
-                    </div>
+                    </div> -->
 
                     <!--campo 13-->
-                    <div class="label_input">
+                    <!-- <div class="label_input">
                         <label for="sprofesional">¿Situación profecional actual?  </label>   
-                            <select class="form-control -mb-3" name="sprofesional" id="sprofesional">
+                            <select class="form-control" name="sprofesional" id="sprofesional">
                                 <option value="desempleado">Desempleado, en busca de trabajo</option>
                                 <option value="empleado">Empleado a tiempo completo</option>
                             </select>
@@ -649,27 +693,27 @@
                         <h2 class="title-text-section">Datos profesionales</h2> 
                     </div>
                     
-                    <div class="form-questions">
+                    <div class="form-questions"> -->
                         <!--campo 14-->
-                        <div class="label_input">
-                            <label for="situacion">¿Que situación que define mejor? </label>
+                        <!-- <div class="label_input">
+                            <label for="situacion">¿Que situación que define mejor? </label> -->
                                 <!--lista desplegable varias opciones -->
-                            <select class="form-control -mb-3" name="situacion" id="situacion">
+                            <!-- <select class="form-control" name="situacion" id="situacion">
                                     <option value="expectativas">No tengo expectativas profesionales</option>
                                     <option value="prefiero">Prefiero no decirlo</option>
                                     <option value="acceso">Tengo acceso limitado a la educación superior</option>
                                     <option value="cuidado">Cuido a un miembro de mi familia</option>
                                     <option value="origen">Tengo origen migrante</option>                     
                             </select>
-                        </div>
+                        </div> -->
 
                         <!--campo 15-->
-                        <div class="label_input">
+                        <!-- <div class="label_input">
                             <label for="neducacion">Nivel de educación </label>
-                            <select class="form-control -mb-3" name="neducacion" id="neducacion">
+                            <select class="form-control" name="neducacion" id="neducacion"> -->
                                 <!-- no coinciden los campos comprobar y si tiene que seleccionar dos opciones
                                     o crear otro campo-->
-                                    <option value="completo">Empleado a tiempo completo</option>
+                                    <!-- <option value="completo">Empleado a tiempo completo</option>
                                     <option value="parcial">Empleado a tiempo parcial</option>
                                     <option value="trabajo">Desempleado, en busca de trabajo</option>
                                     <option value="formacion">Formación Profesional</option>
@@ -678,53 +722,51 @@
                                     <option value="master">Máster</option>
                                 </select>
                         </div>
-                
+                 -->
                         <!--campo 16-->
-                        <div class="label_input">
-                            <label for="permisoTrabajo">¿Tienes permiso de trabajo en Españ? </label>
+                        <!-- <div class="label_input">
+                            <label for="permisoTrabajo">¿Tienes permiso de trabajo en Españ? </label> -->
                                 <!--lista desplegable -->
-                                <select class="form-control -mb-3" name="permisoTrabajo" id="permisoTrabajo">
+                                <!-- <select class="form-control" name="permisoTrabajo" id="permisoTrabajo">
                                     <option value="permisosi">Si</option>
                                     <option value="permisono">No</option>
                                 </select>
-                        </div>
+                        </div> -->
 
                         <!--campo 17-->
-                        <div class="label_input">
+                        <!-- <div class="label_input">
                             <label for="tienes_ordenador">¿Tienes Ordenador/tablet/wifi? </label>
                                 <select class="form-control" name="tienes_ordenador" id="tienes_ordenador">
                                     <option value="ordenadorsi">Si</option>
                                     <option value="ordenadorno">No</option>
                                 </select>    
                         </div>
-                    </div>
+                    </div> -->
 
                     <!--campo 18-->
-                    <div class="label_input">
+                    <!-- <div class="label_input">
                         <label for="cingles">¿Conocimientos de ingles? </label>
                             <select class="form-control" name="cingles" id="cingles">
                                     <option value="inglessi">Si</option>
                                     <option value="inglesno">No</option>
                             </select>    
-                    </div>
+                    </div> -->
 
                  <!--campo 19-->
-                <div class="label_input">
+                <!-- <div class="label_input">
                     <label for="disponibilidad">¿Disponibilidad? </label>
                         <select class="form-control" name="disponibilidad" id="disponibilidad">
                                 <option value="tarde">Tarde</option>
                                 <option value="mañana">Mañana</option>
                                 <option value="ambas">Ambas</option>
                         </select>    
-                </div> 
-             
+                </div>  -->
 
-                <div class="enviar form-navigation">
-                    <input class="previous btn btn-primary" type="button" class="" value="Previous">
+                <!-- <div class="enviar form-navigation">
+                    <input class="previous btn btn-primary" type="button" class="" value="Anterior">
                     <input class="next btn btn-primary" type="button" class="" value="Continuar">
                     <input  class="btn btn-success" type="submit" value="Enviar">
-                                       
-                </div>
+                </div> -->
             </form>
         </div>
     </main>
@@ -745,8 +787,9 @@
 
             // Corregir el selector: querySelector en lugar de querSelector
             const step = document.querySelector('.step' + registro);
-            step.style.backgroundColor = "#17a2b8";
-            step.style.color = "white";
+            // step.style.backgroundColor = "#3EADA2";
+            step.style.color = "#012060";
+            step.style.fontWeight = "700";
         }
 
         function curIndex() {
