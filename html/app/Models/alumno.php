@@ -8,22 +8,27 @@ use Illuminate\Database\Eloquent\Model;
 class alumno extends Model
 {
     use HasFactory;
-    protected $fillable = ['nombre', 
-        'apellido',
-        'email', 
+    protected $fillable = [
+        'nombres',
+        'apellidos',
+        'email',
+        'dni_nie_pasaporte',
         'telefono',
-        'gender',
-        'programa', 
-        'cprograma', 
-        'vivesE', 
-        'fnacimiento', 
-        'residencia', 
-        'pnacimiento', 
-        'sprofesional', 
-        'situacion', 
-        'neducacion', 
-        'permisoTrabajo', 
-        'tienes_ordenador', 
-        'cingles',
-        'disponibilidad'];
+        'residente',
+        'ciudad_residencia',
+        'pais_nacimiento',
+        'rango_edad',
+        'genero',
+        'programa_elegido',
+        'canal_captacion',
+        'situacion_profesional',
+        'situacion_actual',
+        'nivel_educacion',
+        'permiso_trabajo_Es',
+        'disponibilidad_ordenador',
+        'disponibilidad_horaria',
+        'nivel_ingles',
+        'presentacion_breve'
+        ];
+
 }

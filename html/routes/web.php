@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::controller(AlumnoController::class)->group(function(){
     Route::get('/', [AlumnoController::class, 'index'])->name('home');
     //creo un registro
-    Route::get('/formulario/registro',[AlumnoController::class,  'create'])->name('registro');
+    Route::get('/formulario/registro',[AlumnoController::class,'create'])->name('registro');
     //guardo un registro
     Route::post('/formulario/guardar_registro',[AlumnoController::class, 'store'])->name('guardar_registro');
 

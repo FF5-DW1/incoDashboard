@@ -26,25 +26,26 @@ class AlumnoController extends Controller
     public function store(Request $request){
         //Validar
         $request->validate([
-            //'user_id'=> 'required|exists:user.id',
-            'nombre' => 'required|max:100',
-            'apellido' => 'required|max:100',
-            'email' => 'required|max:100',
-            'telefono' => 'required',
-            'programa' =>'required',
-            'cprograma'=>'required',
-            'vivesE'=>'required',
-            'fnacimiento'=>'required',
-            'residencia'=>'required',
-            'pnacimiento'=>'required',
-            'sprofesional'=>'required',
-            'situacion'=>'required',
-            'neducacion'=>'required',
-            'permisoTrabajo'=>'required',
-            'tienes_ordenador'=>'required',
-            'cingles'=>'required',
-            'disponibilidad'=>'required'
-
+            'nombres'=>'required|max:50',
+            'apellidos'=>'required|max:50',
+            'email'=>'required|unique:users|email|max:60',
+            'dni_nie_pasaporte' =>'required|unique:users|email|max:12',
+            'telefono'=>'required',
+            'residente'=>'required',
+            'ciudad_residencia'=>'required',
+            'pais_nacimiento'=>'required',
+            'rango_edad'=>'required',
+            'genero'=>'required',
+            'programa_elegido'=>'required',
+            'canal_captacion'=>'required',
+            'situacion_profesional'=>'required',
+            'situacion_actual'=>'required',
+            'nivel_educacion'=>'required',
+            'permiso_trabajo_Es'=>'required',
+            'disponibilidad_ordenador'=>'required',
+            'disponibilidad_horaria'=>'required',
+            'nivel_ingles'=>'required',
+            'presentacion_breve'=>'required|max:300'
         ]);
 
         //otra forma de guardar datos en la BD
@@ -58,26 +59,26 @@ class AlumnoController extends Controller
 
         $alumno = alumno::create([
         //si pongo este codigo tengo que:en app/models/alumno, poner este codigo:protected $fillable = ['nombre', 'apellido', 'telefono']; 
-        //'user_id'=>1,
-            'nombre' => $request->nombre,
-            'apellido' => $request->apellido,
+            'nombres' => $request->nombres,
+            'apellidos' => $request->apellidos,
             'email' => $request->email,
-            'telefono' => $request->telefono,
-            'programa' =>$request->programa,
-            'cprograma'=>$request->cprograma,
-            'vivesE'=>$request->vivesE,
-            'fnacimiento'=>$request->fnacimiento,
-            'residencia'=>$request->residencia,
-            'pnacimiento'=>$request->pnacimiento,
-            'sprofesional'=>$request->sprofesional,
-            'situacion'=>$request->situacion,
-            'neducacion'=>$request->neducacion,
-            'permisoTrabajo'=>$request->permisoTrabajo,
-            'tienes_ordenador'=>$request->tienes_ordenador,
-            'cingles'=>$request->cingles,
-            'disponibilidad'=>$request->disponibilidad,
-
- 
+            'dni_nie_pasaporte' => $request->dni_nie_pasaporte,
+            'telefono' =>$request->telefono,
+            'residente'=>$request->residente,
+            'ciudad_residencia'=>$request->ciudad_residencia,
+            'pais_nacimiento'=>$request->pais_nacimiento,
+            'rango_edad'=>$request->rango_edad,
+            'genero'=>$request->genero,
+            'programa_elegido' =>$request->programa_elegido,
+            'canal_captacion'=>$request->canal_captacion,
+            'situacion_profesional'=>$request->situacion_profesional,
+            'situacion_actual'=>$request->situacion_actual,
+            'nivel_educacion'=>$request->nivel_educacion,
+            'permiso_trabajo_Es'=>$request->permiso_trabajo_Es,
+            'disponibilidad_ordenador'=>$request->disponibilidad_ordenador,
+            'disponibilidad_horaria'=>$request->disponibilidad_horaria,
+            'nivel_ingles'=>$request->nivel_ingles,
+            'presentacion_breve'=> $request->presentacion_breve
         ]);
         
         return redirect()->route('home');  

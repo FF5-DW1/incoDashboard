@@ -13,30 +13,32 @@ return new class extends Migration
     {
         Schema::create('alumnos', function (Blueprint $table) {
             $table->id();
-            #$table->bigInteger('id')->unsigned(); 
-            #&table->foreignid('user_id')->references('id')->on('users');
-           
-            $table->string('nombre')->nullable();
-            $table->string('apellido')->nullable();
+            $table->string('nombres')->nullable();
+            $table->string('apellidos')->nullable();
             $table->string('email')->unique();
+            $table->string('dni_nie_pasaporte')->unique();
             $table->string('telefono')->nullable();
-            $table->string('programa')->nullable();
-            $table->string('cprograma')->nullable();
-            $table->string('vivesE')->nullable();
-            $table->date('fnacimiento')->nullable();
-            $table->string('residencia')->nullable();
-            $table->string('pnacimiento')->nullable();
-            $table->string('sprofesional')->nullable();
-            $table->string('situacion')->nullable();
-            $table->string('neducacion')->nullable();
-            $table->string('permisoTrabajo')->nullable();
-            $table->string('tienes_ordenador')->nullable();
-            $table->string('cingles')->nullable();
-            $table->string('disponibilidad')->nullable();
+            $table->string('residente')->nullable();
+            $table->string('ciudad_residencia')->nullable();
+            $table->string('pais_nacimiento')->nullable();
+            $table->string('rango_edad')->nullable();
+            $table->string('genero')->nullable();
+            $table->string('programa_elegido')->nullable();
+            $table->string('canal_captacion')->nullable();
+            $table->string('situacion_profesional')->nullable();
+            $table->string('situacion_actual')->nullable();
+            $table->string('nivel_educacion')->nullable();
+            $table->string('permiso_trabajo_Es')->nullable();
+            $table->string('disponibilidad_ordenador')->nullable();
+            $table->string('disponibilidad_horaria')->nullable();
+            $table->string('nivel_ingles')->nullable();
+            $table->text('presentacion_breve')->nullable();
             $table->string('estado')->default('pendiente');
             $table->string('id_inco')->default(' ');
-            #$table->rememberToken();
             $table->timestamps();
+            #$table->bigInteger('id')->unsigned(); 
+            #&table->foreignid('user_id')->references('id')->on('users'); 
+            #$table->rememberToken();
         });
     }
 
