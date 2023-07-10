@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('situacion_profesional')->nullable();
             $table->string('situacion_actual')->nullable();
             $table->string('nivel_educacion')->nullable();
-            $table->string('permiso_trabajo_Es')->nullable();
+            $table->string('permiso_trabajo_es')->nullable();
             $table->string('disponibilidad_ordenador')->nullable();
             $table->string('disponibilidad_horaria')->nullable();
             $table->string('nivel_ingles')->nullable();

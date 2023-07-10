@@ -24,7 +24,7 @@ class alumno extends Model
         'situacion_profesional',
         'situacion_actual',
         'nivel_educacion',
-        'permiso_trabajo_Es',
+        'permiso_trabajo_es',
         'disponibilidad_ordenador',
         'disponibilidad_horaria',
         'nivel_ingles',

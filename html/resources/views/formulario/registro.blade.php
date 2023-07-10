@@ -650,7 +650,7 @@
                         <!--campo 13-->
                         <div class="field">
                             <div class="label_input">
-                                <label for="situacion_profesional">¿cuál es tu situación profesional actual</label>
+                                <label for="situacion_profesional">¿cuál es tu situación profesional actual?</label>
                                     <div class="radio-control">
                                         <div class="radio-control-option">
                                             <input type="radio" name="situacion_profesional" id="desempleado-busca-trabajo" value="desempleado-busca-trabajo" checked>Desempleado, en busca de trabajo
@@ -710,7 +710,7 @@
                         <!--campo 14-->
                         <div class="field">
                             <div class="label_input">
-                                <label for="situacion_actual">¿Que situación que define mejor? 
+                                <label for="situacion_actual">¿que situación que define mejor? 
                                     <div class="radio-control">
                                         <div class="radio-control-option">
                                             <input type="radio" name="situacion_actual" id="acceso-limitado-a-educacion" value="acceso-limitado-a-educacion" checked>Tengo acceso limitado a la educación superior
@@ -798,18 +798,18 @@
                             <!-- campo 17 -->  
                             <div class="field">
                                 <div class="label_input">
-                                    <label for="permiso_trabajo_Es">¿Tienes permiso de trabajo en España?
+                                    <label for="permiso_trabajo_es">¿Tienes permiso de trabajo en España?
                                         <div class="radio-control">
                                             <div class="radio-control-option">
-                                                <input type="radio" name="permiso_trabajo_Es" id="si" value="si" checked>Si  
+                                                <input type="radio" name="permiso_trabajo_es" id="si" value="si" checked>Si  
                                             </div>
 
                                             <div class="radio-control-option">
-                                                <input type="radio" name="permiso_trabajo_Es" id="no" value="no">No  
+                                                <input type="radio" name="permiso_trabajo_es" id="no" value="no">No  
                                             </div>
 
                                             <div class="radio-control-option">
-                                                <input type="radio" name="permiso_trabajo_Es" id="no" value="no">No, en proceso
+                                                <input type="radio" name="permiso_trabajo_es" id="no" value="no">No, en proceso
                                             </div>
                                         </div>
                                     </label>
@@ -869,7 +869,7 @@
                                         </div>
 
                                         <div class="radio-control-option">
-                                            <input type="radio" name="nivel_ingles" id="algo-de-ingles" value="algo-de-ingles">No entiendo al 100% pero puedo hacerme entender.
+                                            <input type="radio" name="nivel_ingles" id="algo-de-ingles" value="algo-de-ingles">No entiendo al 100% pero puedo hacerme entender
                                         </div>
 
                                         <div class="radio-control-option">
