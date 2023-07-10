@@ -13946,8 +13946,8 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
     line-height: .8;
     margin-left: .8rem;
     margin-right: .5rem;
-    margin-top: 4px;
-    max-height: px;
+    margin-top: -3px;
+    max-height: 33px;
     width: auto;
 }
 
@@ -23077,7 +23077,7 @@ body.text-sm .control-sidebar {
 
 .btn-group-vertical .btn.btn-flat:first-of-type,
 .btn-group-vertical .btn.btn-flat:last-of-type {
-    border-radius: 0;
+    border-radius: 1;
 }
 
 .form-control-feedback.fa,
@@ -33797,7 +33797,7 @@ html.maximized-card {
 }
 
 .btn.btn-flat {
-    border-radius: 0;
+    border-radius: 1;
     border-width: 1px;
     box-shadow: none;
 }
