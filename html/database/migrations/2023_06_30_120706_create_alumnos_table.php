@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string('disponibilidad_ordenador')->nullable();
             $table->string('disponibilidad_horaria')->nullable();
             $table->string('nivel_ingles')->nullable();
-            $table->text('presentacion_breve')->nullable();
+            $table->longText('presentacion_breve')->nullable();
             $table->string('estado')->default('pendiente');
             $table->string('id_inco')->default(' ');
             $table->timestamps();

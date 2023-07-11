@@ -28,7 +28,7 @@ class alumno extends Model
         'disponibilidad_ordenador',
         'disponibilidad_horaria',
         'nivel_ingles',
-        'presentacion_breve'
+        'presentacion_breve',
         ];
 
 }
