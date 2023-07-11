@@ -364,8 +364,13 @@
                     <div class="label_input">
                         <label for="genero">¿con qué género te identificas?
                             <div class="radio-control">
-                                <div class="radio-control-option">      
+                                <div class="radio-control-option">
+                                    @if ($alumno->genero=="mujer") 
+                                    <input type="radio" name="genero" id="mujer" value="mujer" checked>Mujer
+                                    @else
                                     <input type="radio" name="genero" id="mujer" value="mujer">Mujer
+                                    @endif     
+                                   
                                 </div>
 
                                 <div class="radio-control-option">
