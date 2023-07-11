@@ -394,7 +394,7 @@
                 </div>
 
                 <div class="field btns">
-                    <a class="button-style" href="{{ route('formulario.step.one') }}">Anterior</a>
+                    <a href="{{ route('formulario.step.one') }}">Anterior</a>
                     <button class="button-style" type="submit">Siguiente</button>
                 </div>
 
