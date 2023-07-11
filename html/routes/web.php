@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,7 @@ Route::controller(AlumnoController::class)->group(function(){
 
     //Route::get('/','/formulario/registro');
 });
+
+
+Route::get('/login',[LoginController::class,'login']);
+Route::post('/login',[LoginController::class,'authenticate']);

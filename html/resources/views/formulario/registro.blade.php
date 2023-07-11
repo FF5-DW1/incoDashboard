@@ -244,15 +244,15 @@
                     <label class="form-control -mb-3" for="residencia">Ciudad de Residencia</label>
                         <!--lista desplegable de provinciasde españa -->
                         <select name="residencia" id="residencia"> 
-                            @foreach($provincias as $provincia)
+                            {{-- @foreach($provincias as $provincia)
                                 <option value="{{ $provincias->id }}">{{ $provincia->nombre }}</option>
-                            @endforeach               
+                            @endforeach                --}}
                             <option value="Álava/Araba">Álava/Araba</option>
-                            <!--<option value="Albacete">Albacete</option>
+                            <option value="Albacete">Albacete</option>
                             <option value="Alicante">Alicante</option>
                             <option value="Almería">Almería</option>
                             <option value="Asturias">Asturias</option>
-                            <option value="Ávila">Ávila</option>
+                            <!--<option value="Ávila">Ávila</option>
                             <option value="Badajoz">Badajoz</option>
                             <option value="Baleares">Baleares</option>
                             <option value="Barcelona">Barcelona</option>
@@ -306,11 +306,11 @@
                     <label for="pnacimiento">País de nacimieneto</label>
                     <!--lista de paises --> 
                     <select class="form-control -mb-3" name="pnacimiento" id="pnacimiento">                
-                        @foreach($paises as $pais)
-                        <option value="{{ $paises->id }}">{{ $pais->nombre }}</option>
-                    @endforeach
+                        {{-- @foreach($paises as $pais)
+                            <option value="{{ $paises->id }}">{{ $pais->nombre }}</option>
+                        @endforeach --}}
                         
-                        <!--<option value="AF">Afganistán</option>
+                            <option value="AF">Afganistán</option>
                             <option value="AL">Albania</option>
                             <option value="DE">Alemania</option>
                             <option value="AD">Andorra</option>
@@ -320,7 +320,7 @@
                             <option value="AG">Antigua y Barbuda</option>
                             <option value="AN">Antillas Holandesas</option>
                             <option value="SA">Arabia Saudí</option>
-                            <option value="DZ">Argelia</option>
+                            <!--<option value="DZ">Argelia</option>
                             <option value="AR">Argentina</option>
                             <option value="AM">Armenia</option>
                             <option value="AW">Aruba</option>

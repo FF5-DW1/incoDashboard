@@ -23,6 +23,12 @@
     </style>
 </head>
 <body>
+    <header>
+        @auth
+        Estoy logado
+        {{Auth::user()->email}}
+        @endauth
+    </header>
     <main>
         <p><a href="./formulario/registro"> crear nuevo</a></p>
         <div>
