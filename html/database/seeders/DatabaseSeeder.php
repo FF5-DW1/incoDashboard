@@ -41,6 +41,56 @@ class DatabaseSeeder extends Seeder
             'nivel_ingles'=>"algo-de-ingles",
             'presentacion_breve'=>"lorem ipsum",
         ]);
+
+        \App\Models\alumno::insert ([
+            'nombres' => "manuel",
+            'apellidos'=> "gomez gonzalez",
+            'email'=>"manuela@email.com",
+            'dni_nie_pasaporte' =>"01234567A",
+            'telefono'=>"666905475",
+            'residente'=>"si",
+            'ciudad_residencia'=> "Madrid",
+            'pais_nacimiento'=> "Ecuador",
+            'rango_edad'=>"26-35",
+            'genero'=>'hombre',
+            'programa_elegido'=>"analisis-de-datos",
+            'canal_captacion'=>"amigo-familiar",
+            'situacion_profesional'=>"becario-aprendiz",
+            'situacion_actual'=>"sin-expectativas-profesionales",
+            'nivel_educacion'=>"master",
+            'permiso_trabajo_es'=>"si",
+            'disponibilidad_ordenador'=>"si",
+            'disponibilidad_horaria'=>"tardes",
+            'nivel_ingles'=>"algo-de-ingles",
+            'presentacion_breve'=>"lorem ipsum",
+        ]);
+
+        \App\Models\alumno::insert ([
+            'nombres' => "oriol",
+            'apellidos'=> "gomez santillan",
+            'email'=>"oriol@email.com",
+            'dni_nie_pasaporte' =>"01534567A",
+            'telefono'=>"666105475",
+            'residente'=>"si",
+            'ciudad_residencia'=> "Madrid",
+            'pais_nacimiento'=> "España",
+            'rango_edad'=>"26-35",
+            'genero'=>'hombre',
+            'programa_elegido'=>"analisis-de-datos",
+            'canal_captacion'=>"amigo-familiar",
+            'situacion_profesional'=>"becario-aprendiz",
+            'situacion_actual'=>"sin-expectativas-profesionales",
+            'nivel_educacion'=>"master",
+            'permiso_trabajo_es'=>"si",
+            'disponibilidad_ordenador'=>"si",
+            'disponibilidad_horaria'=>"tardes",
+            'nivel_ingles'=>"algo-de-ingles",
+            'presentacion_breve'=>"lorem ipsum",
+        ]);
+
+
+
+
             
     }
 }

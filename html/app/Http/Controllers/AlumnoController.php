@@ -101,15 +101,19 @@ class AlumnoController extends Controller
             'situacion_profesional'=>'required',
         ]);
 
-        if(empty($request->session()->get('alumno'))) {
-            $alumno = new Alumno();
-            $alumno->fill($validatedData);
-            $request->session()->put('alumno', $alumno);
-        }else{
-            $alumno = $request->session()->get('alumno');
-            $alumno->fill($validatedData);
-            $request->session()->put('alumno', $alumno);
-        }
+        $alumno = $request->session()->get('alumno');
+        $alumno->fill($validatedData);
+        $request->session()->put('alumno', $alumno);
+
+        // if(empty($request->session()->get('alumno'))) {
+        //     $alumno = new Alumno();
+        //     $alumno->fill($validatedData);
+        //     $request->session()->put('alumno', $alumno);
+        // }else{
+        //     $alumno = $request->session()->get('alumno');
+        //     $alumno->fill($validatedData);
+        //     $request->session()->put('alumno', $alumno);
+        // }
 
         return redirect()->route('formulario.step.four');
     }
@@ -130,15 +134,19 @@ class AlumnoController extends Controller
             'disponibilidad_ordenador'=>'required',
         ]);
 
-        if(empty($request->session()->get('alumno'))) {
-            $alumno = new Alumno();
-            $alumno->fill($validatedData);
-            $request->session()->put('alumno', $alumno);
-        }else{
-            $alumno = $request->session()->get('alumno');
-            $alumno->fill($validatedData);
-            $request->session()->put('alumno', $alumno);
-        }
+        $alumno = $request->session()->get('alumno');
+        $alumno->fill($validatedData);
+        $request->session()->put('alumno', $alumno);
+
+        // if(empty($request->session()->get('alumno'))) {
+        //     $alumno = new Alumno();
+        //     $alumno->fill($validatedData);
+        //     $request->session()->put('alumno', $alumno);
+        // }else{
+        //     $alumno = $request->session()->get('alumno');
+        //     $alumno->fill($validatedData);
+        //     $request->session()->put('alumno', $alumno);
+        // }
 
         return redirect()->route('formulario.step.five');
     }
@@ -162,18 +170,11 @@ class AlumnoController extends Controller
         $alumno->fill($validatedData);
         $alumno->save();
 
-        // $request->session()->forget('alumno');
+        $request->session()->forget('alumno');
       
 
-        return redirect()->route('welcome');
+        return redirect()->route('formulario.step.one');
     }
-
-
-
-
-
-
-   
        
 }
 
