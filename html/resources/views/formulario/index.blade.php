@@ -28,7 +28,7 @@
                         <tbody>
                         @foreach($products as $product)
                             <tr>
-                                <th scope="row">{{$product->id}}</th>
+                                <th scope="row">{{$alumno->id}}</th>
                                 <td>{{$alumno->nombres}}</td>
                                 <td>{{$alumno->apellidos}}</td>
                                 <td>{{$alumno->email}}</td>

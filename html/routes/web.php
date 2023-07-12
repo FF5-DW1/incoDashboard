@@ -55,7 +55,7 @@ Route::post('formulario/step-five', [AlumnoController::class, 'storeStepFive'])-
     
 //     Route::get('/formulario/registro',[AlumnoController::class,'create'])->name('registro');
     
-//     Route::post('/formulario/guardar_registro',[AlumnoController::class, 'store'])->name('guardar_registro');
+Route::post('/formulario/guardar_registro',[AlumnoController::class, 'store'])->name('guardar_registro');
 
     
 // });
