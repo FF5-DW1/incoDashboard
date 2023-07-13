@@ -1,7 +1,10 @@
 <?php
 
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\AlumnoController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AppController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -9,12 +12,31 @@ use App\Http\Controllers\AppController;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
 |
 */
 
-Route::get('/', [AppController::class, 'dashboard'])->name('dashboard');
-Route::get('/charts', [AppController::class, 'charts'])->name('charts');
-Route::get('registros', [AppController::class, 'registros'])->name('registros');
-// Route::get('/', [AppController::class, 'registros'])->name('registros');
+//Formulario de inscripción
+
+Route::get('/', [AlumnoController::class, 'createStepOne'])->name('formulario.step.one');
+Route::post('formulario/step-one', [AlumnoController::class, 'storeStepOne'])->name('formulario.step.one.store');
+
+Route::get('formulario/step-two', [AlumnoController::class, 'createStepTwo'])->name('formulario.step.two');
+Route::post('formulario/step-two', [AlumnoController::class, 'storeStepTwo'])->name('formulario.step.two.store');
+
+Route::get('formulario/step-three', [AlumnoController::class, 'createStepThree'])->name('formulario.step.three');
+Route::post('formulario/step-three', [AlumnoController::class, 'storeStepThree'])->name('formulario.step.three.store');
+
+Route::get('formulario/step-four', [AlumnoController::class, 'createStepFour'])->name('formulario.step.four');
+Route::post('formulario/step-four', [AlumnoController::class, 'storeStepFour'])->name('formulario.step.four.store');
+
+Route::get('formulario/step-five', [AlumnoController::class, 'createStepFive'])->name('formulario.step.five');
+Route::post('formulario/step-five', [AlumnoController::class, 'storeStepFive'])->name('formulario.step.five.store');
+    
+Route::post('/formulario/guardar_registro',[AlumnoController::class, 'store'])->name('guardar_registro');
+
+// Dashboard routes
+Route::get('app/dashboard', [AppController::class, 'dashboard'])->name('dashboard');
+Route::get('app/registros', [AppController::class, 'registros'])->name('registros');
+Route::get('app/charts', [AppController::class, 'charts'])->name('charts');
