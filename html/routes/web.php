@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/formulario/registro',[AlumnoController::class,'create'])->name('registro');
 
-Route::get('formulario', [AlumnoController::class, 'index'])->name('formulario.index');
+Route::get('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
 
 Route::get('formulario/step-one', [AlumnoController::class, 'createStepOne'])->name('formulario.step.one');
 Route::post('formulario/step-one', [AlumnoController::class, 'storeStepOne'])->name('formulario.step.one.store');
@@ -55,7 +55,8 @@ Route::post('formulario/step-five', [AlumnoController::class, 'storeStepFive'])-
     
 //     Route::get('/formulario/registro',[AlumnoController::class,'create'])->name('registro');
     
-Route::post('/formulario/guardar_registro',[AlumnoController::class, 'store'])->name('guardar_registro');
+Route::post('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
+
 
     
 // });

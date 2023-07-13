@@ -11,9 +11,9 @@ class AlumnoController extends Controller
     //traer los datos
     public function index(Request $request){
 
-        $alumno = alumno::orderBy('updated_at','DESC')->get();
+        $alumnos = Alumno::all();
 
-        return view('formulario.index', compact('alumno'));
+        return view('formulario.index', compact('alumnos'));
 
             // return view('formulario.index', ['alumnos' => $alumno]);
         #dump('$alumno');
@@ -173,7 +173,7 @@ class AlumnoController extends Controller
         $request->session()->forget('alumno');
       
 
-        return redirect()->route('formulario.step.one');
+        return redirect()->route('layout.default');
     }
        
 }

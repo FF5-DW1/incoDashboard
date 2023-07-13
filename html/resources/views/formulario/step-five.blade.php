@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="form-outer">
-        <form action="{{ route('formulario.step.five.store') }}" method="POST" >
+        <form  id="fomulario" action="{{ route('formulario.step.five.store') }}" method="POST" >
             @csrf
             @if ($errors->any())
                 <div class="alert alert-danger">

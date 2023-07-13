@@ -16,7 +16,7 @@
 </head>
 <body>   
     <div class="container-form" >
-        @yield('content')
+        <h1>GRACIAS POR COMPLETAR EL FORMULARIO</h1>
     </div>    
 </body>
   
