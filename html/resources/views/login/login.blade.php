@@ -62,7 +62,7 @@
             color: white;
             width: 21.5rem;
             text-align: center;
-            letter-spacing: 2rem;
+            letter-spacing: 1rem;
             
         }
         .enlace{
@@ -92,7 +92,7 @@
                 </div>
 
                 <div>
-                    <input class="boton" type="submit" value="Intrar">
+                    <input class="boton" type="submit" value="Entrar">
                 </div>
 
                 <div>

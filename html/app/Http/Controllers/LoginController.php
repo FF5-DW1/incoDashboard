@@ -7,6 +7,18 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller 
 {
+//
+    // public function index(){
+    //     $user = user::all();
+    //     return view('login.user.lis',compact('users'));
+    // }
+
+    // public function create(){
+    //     return view('create');
+    // }
+
+    //public function store(Request)esta es igual que login
+    /// falta funciones
 
     public function login(){
         return view('login.login');
