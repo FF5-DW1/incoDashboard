@@ -1,6 +1,6 @@
 {{-- <!DOCTYPE html>
 <!-- Website - www.codingnepalweb.com -->
-<html lang="en" dir="ltr">
+< lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8" />
@@ -13,7 +13,12 @@
 </head> --}}
 @extends('layout.default')
 
-<body>
+@section('script')
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+@endsection
+
+
+@section ('content')
     <div class="sidebar">
         <div class="logo-details">
             <i class='bx bxs-dashboard'></i>
@@ -130,6 +135,4 @@
         });
     </script>
         
-</body>
-
-</html>
+@endsection
