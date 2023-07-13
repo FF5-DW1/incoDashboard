@@ -1,20 +1,22 @@
 @extends('layout.default')
-  
+@section('css')
+<link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet">
+@endsection
 @section('content')
 <div>
     <div>
         <div>
             <div>
-                <div>Manage Product</div>
+                <div>Control de Usuarios</div>
   
                 <div>
                       
-                    <a href="{{ route('formulario.step.one') }}">Añadir Alumno</a>
+                    <a href="{{ route('formulario.step.one') }}">Añadir Usuario</a>
   
                     @if (Session::has('message'))
                         <div class="alert alert-info">{{ Session::get('message') }}</div>
                     @endif
-                    <table class="table">
+                    <table class="display nowrap" style="width:100%" id="myTable">
                         <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
@@ -73,4 +75,14 @@
         </div>
     </div>
 </div>
+@section('js')
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+<script>
+    // let table = new DataTable('#myTable');
+    new DataTable('#myTable', {
+    scrollX: true
+});;
+</script>
+@endsection
 @endsection

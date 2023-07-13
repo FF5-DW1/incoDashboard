@@ -12,12 +12,13 @@
 
     <!-- Estilos -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" class="rel">
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.css" />
+    @yield('css')
 </head>
 <body>   
     <div class="container-form" >
-        <h1>GRACIAS POR COMPLETAR EL FORMULARIO</h1>
-    </div>    
+        @yield('content')
+    </div>
+    @yield('js')    
 </body>
-  
 </html>

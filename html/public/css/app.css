@@ -12,7 +12,7 @@
     /* align-items: center; */
     justify-content: space-between;
     min-height: 100vh;
-    overflow: hidden;
+    overflow: hidden; 
     background-color: rgb(62, 173, 162,0.9);
 }
 
