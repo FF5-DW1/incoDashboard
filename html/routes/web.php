@@ -19,13 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 //Formulario de inscripción
 
-// Route::get('/', [AlumnoController::class, 'index'])->name('home');
-
-// Route::get('/formulario/registro',[AlumnoController::class,'create'])->name('registro');
-
-Route::get('formulario', [AlumnoController::class, 'index'])->name('formulario.index');
-
-Route::get('formulario/step-one', [AlumnoController::class, 'createStepOne'])->name('formulario.step.one');
+Route::get('/', [AlumnoController::class, 'createStepOne'])->name('formulario.step.one');
 Route::post('formulario/step-one', [AlumnoController::class, 'storeStepOne'])->name('formulario.step.one.store');
 
 Route::get('formulario/step-two', [AlumnoController::class, 'createStepTwo'])->name('formulario.step.two');
@@ -39,24 +33,11 @@ Route::post('formulario/step-four', [AlumnoController::class, 'storeStepFour'])-
 
 Route::get('formulario/step-five', [AlumnoController::class, 'createStepFive'])->name('formulario.step.five');
 Route::post('formulario/step-five', [AlumnoController::class, 'storeStepFive'])->name('formulario.step.five.store');
-
-
- //guardo un registro
-// Route::post('/formulario/guardar_registro',[AlumnoController::class, 'store'])->name('guardar_registro');
-
-// Route::get('/login', [LoginController::class, 'index'])->name('login');
-// Route::post('/login', [LoginController::class, 'store']);
-// Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
-
-
-
-// Route::controller(AlumnoController::class)->group(function(){
-//     Route::get('/', [AlumnoController::class, 'index'])->name('home');
-    
-//     Route::get('/formulario/registro',[AlumnoController::class,'create'])->name('registro');
     
 Route::post('/formulario/guardar_registro',[AlumnoController::class, 'store'])->name('guardar_registro');
 
-    
-// });
-//Route::get('/','/formulario/registro');
+// Dashboard routes
+Route::get('app/dashboard', [AppController::class, 'dashboard'])->name('dashboard');
+Route::get('app/registros', [AppController::class, 'registros'])->name('registros');
+Route::get('app/charts', [AppController::class, 'charts'])->name('charts');
+Route::post('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
