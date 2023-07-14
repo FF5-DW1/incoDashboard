@@ -40,3 +40,4 @@ Route::post('/formulario/guardar_registro',[AlumnoController::class, 'store'])->
 Route::get('app/dashboard', [AppController::class, 'dashboard'])->name('dashboard');
 Route::get('app/registros', [AppController::class, 'registros'])->name('registros');
 Route::get('app/charts', [AppController::class, 'charts'])->name('charts');
+Route::post('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');

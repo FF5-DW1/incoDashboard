@@ -13,10 +13,9 @@
     <!-- Estilos -->
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}" class="rel">
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
-    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.css" />
     @yield('script')
-    
-
+    @yield('css')
 
 </head>
 <body>
@@ -29,6 +28,8 @@
     <div class="container-form" >
         @yield('content')
     </div>    
+    @yield('js')    
 </body>
   
-</html>
+
+</head>
