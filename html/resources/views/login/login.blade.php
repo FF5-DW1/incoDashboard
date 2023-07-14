@@ -7,9 +7,15 @@
     <title>Login</title>
     <style>
        * {
-            -margin: 0;
-            -padding: 0;
-            -box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        body{
+            background-color: rgb(62, 173, 162,0.7);
+            -background-image: url('{{ url("/public/images/logo.png") }}');
+            background-size: cover;
         }
         .logo_principal{
             width: 50%;
@@ -17,7 +23,6 @@
             padding-top: 5rem;
             }
         main{
-            -background-image: url("../../../public/logo.png");
             width: 70%;
             margin: auto;
             border-radius: 5px;
@@ -26,27 +31,27 @@
             justify-content: center;
             align-content: center;
             align-items: center;
-            padding-top: 2rem;
-            background-color: rgb(161, 161, 161); 
+            padding-top: 4rem;
+            margin-top: 4rem;
+            background-color: rgb(232, 229, 229); 
         }
         .formulario {
 
-            padding: 1rem;
+            -padding: 1rem;
             font-size: 18px;
             width: 70%;
             
         }
 
-        .logo_titulo{
+        .login_titulo{
             padding: 2rem;
-            letter-spacing: 1rem;
             font-weight: bolder;
-        
+            color:#012060;
         }
         
     
         .input{
-            width: 15rem;
+            width: 16rem;
             float: right;
             border-radius: 5px;
             padding-bottom: .5rem; 
@@ -57,16 +62,24 @@
         }
         .boton{
             padding: 1rem;
-            border-radius: 5px;
-            background-color: #012060;
+            border-radius: 6px;
+            background: linear-gradient(180deg, #65bce8 0%, #306485 100%);
+            -background-color: #012060;
             color: white;
-            width: 21.5rem;
+            width: 21.7rem;
             text-align: center;
             letter-spacing: 1rem;
+            font-size: 20px;
+        }
+        .boton:focus{
             
+            background-position: 0 -50px;
+            transition: all .3s;
+            cursor: pointer;
         }
         .enlace{
             padding: 4rem;
+            padding-bottom: 1rem;
         }
     </style>
 </head>
