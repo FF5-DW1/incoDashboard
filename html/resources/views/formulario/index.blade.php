@@ -26,6 +26,7 @@
     <header>
         @auth
         Estoy logado
+        <!--del que esta logado me devuelve la home-->
         {{Auth::user()->email}}
         @endauth
     </header>

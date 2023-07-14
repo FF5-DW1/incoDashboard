@@ -9,9 +9,9 @@ class LoginController extends Controller
 {
 //
     // public function index(){
-    //     $user = user::all();
+    //    $user = user::all();
     //     return view('login.user.lis',compact('users'));
-    // }
+    //  }
 
     // public function create(){
     //     return view('create');
@@ -21,7 +21,9 @@ class LoginController extends Controller
     /// falta funciones
 
     public function login(){
+        //visualiza el formulario login.blade.php
         return view('login.login');
+       
     }
     public function authenticate(Request $request){
         //Validar
@@ -29,6 +31,8 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
+        dd('Logado correctamente');
+        dd( $validados);
         //Comprobar pass 
         if (Auth::attempt($validados)){
            //si login ok regenero la seccion
@@ -36,7 +40,7 @@ class LoginController extends Controller
             //se redireciona a la home
             //dd('Logado correctamente');
         
-            return redirect()->intended(route ("home"))
+            return redirect()->intended(route('home'))
             ->withSuccess('Logado Correctamente');
         }
         //return redirect("/")->withSuccess('Los datos introducidos no son correctos');
@@ -44,8 +48,4 @@ class LoginController extends Controller
             'email' => 'Los datos ingresados no coinciden con el registro.',
         ])->onlyInput('email');
     }
-    public function logout(Request $request) {
-
-    }
-
 }
