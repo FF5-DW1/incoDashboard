@@ -10,7 +10,7 @@
                 <div>Control de Usuarios</div>
   
                 <div>
-                      
+        
                     <a href="{{ route('formulario.step.one') }}">Añadir Usuario</a>
   
                     @if (Session::has('message'))
