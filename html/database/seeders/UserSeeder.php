@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
@@ -25,7 +26,8 @@ class UserSeeder extends Seeder
         'name' => 'Angel',
         'apellido'=>'Ruiz',
          'email' => 'angel@Inco.com',
-         'password' => Hash::make('hola123')
+         'password' => Hash::make('hola123'),
+         'remember_token' => Str::random(10),
      ])->assignRole('$role1');
     //  esta persona va tener solo un rol el rol1 de admin
 
@@ -33,7 +35,8 @@ class UserSeeder extends Seeder
          'name' => 'Ana',
         'apellido'=>'Martines',
          'email' => 'ana@Inco.com',
-         'password' => Hash::make('hola1234')
+         'password' => Hash::make('hola1234'),
+         'remember_token' => Str::random(10),
         ])->assignRole('$role2');   
      //]);
 

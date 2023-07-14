@@ -13,8 +13,8 @@
             
         }
         body{
-            background-color: rgb(62, 173, 162,0.7);
-            -background-image: url('{{ url("/public/images/logo.png") }}');
+            -background-color: rgb(62, 173, 162,0.7);
+            background-image: linear-gradient(rgba(62,173,162,0.7),rgba(62,173,162,0.7)),url('{{ url("images/logo.png") }}');
             background-size: cover;
         }
         .logo_principal{
