@@ -35,10 +35,21 @@ return new class extends Migration
             $table->longText('presentacion_breve')->nullable();
             $table->string('estado')->default('pendiente');
             $table->string('id_inco')->default(' ');
+<<<<<<< HEAD:html/database/migrations/2023_06_30_120706_create_alumnos_table.php
             $table->timestamps();
             #$table->bigInteger('id')->unsigned(); 
             #&table->foreignid('user_id')->references('id')->on('users'); 
             #$table->rememberToken();
+=======
+
+            #$table->unsignedBigInteger('provincias_id');
+            #$table->unsignedBigInteger('paises_id');
+            #$table->rememberToken();
+            $table->timestamps();
+            
+            #$table->foreign('provincias_id')->references('id')->on('provincias');
+            #$table->foreign('paises_id')->references('id')->on('paises');
+>>>>>>> featureBaseDatos:html/database/migrations/2023_06_30_160706_create_alumnos_table.php
         });
     }
 

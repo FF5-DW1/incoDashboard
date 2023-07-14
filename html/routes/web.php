@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 

@@ -2,8 +2,13 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\User;
+use App\Models\Tag;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,8 +17,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+      //borra los directorios llamados post
+      //Storage::deleteDirectory('post');
+      //Storage::makeDirectory('post');
 
+      //llamar y ejecutar el RoleSeeder y se generarán los registros 
+      //de roles en la base de datos según la lógica definida
+      
+      $this->call(RoleSeeder::class);
+      $this->call(UserSeeder::class);
+      
+      //$this->call(UserSeederSeeder::class);
+      //Category::factory(4)->create();
+      //Tag::factory(8)->create();
+      //$this->call(PostSeeder::class);
+
+
+<<<<<<< HEAD
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
@@ -92,5 +112,7 @@ class DatabaseSeeder extends Seeder
 
 
             
+=======
+>>>>>>> featureBaseDatos
     }
 }
