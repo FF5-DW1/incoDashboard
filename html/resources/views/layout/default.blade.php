@@ -27,8 +27,7 @@
     </li>
     <div class="container-form" >
         @yield('content')
-    </div>    
-    @yield('js')    
+    </div>
 </body>
   
 

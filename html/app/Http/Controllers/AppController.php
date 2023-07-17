@@ -1,14 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\alumno;
+use Illuminate\Http\Request;
 
 class AppController extends Controller
 {
-    public function dashboard()
-    {
-        return view('app.dashboard',[
+      public function dashboard(Request $request){
 
-        ]);
+        $alumnos = Alumno::all();
+
+        return view('app.dashboard', compact('alumnos'));
+
     }
     public function registros()
     {
