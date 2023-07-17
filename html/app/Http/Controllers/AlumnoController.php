@@ -65,7 +65,7 @@ class AlumnoController extends Controller
         $validatedData = $request->validate ([
             'ciudad_residencia'=>'required',
             'pais_nacimiento'=>'required',
-            'rango_edad'=>'required',
+            'edad'=>'required',
             'genero'=>'required',
         ]);
 

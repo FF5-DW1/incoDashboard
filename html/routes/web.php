@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 //Formulario de inscripción
 
-Route::get('/', [AlumnoController::class, 'createStepOne'])->name('formulario.step.one');
+Route::get('formulario/step-one', [AlumnoController::class, 'createStepOne'])->name('formulario.step.one');
 Route::post('formulario/step-one', [AlumnoController::class, 'storeStepOne'])->name('formulario.step.one.store');
 
 Route::get('formulario/step-two', [AlumnoController::class, 'createStepTwo'])->name('formulario.step.two');

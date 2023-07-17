@@ -17,7 +17,7 @@ class alumno extends Model
         'residente',
         'ciudad_residencia',
         'pais_nacimiento',
-        'rango_edad',
+        'edad',
         'genero',
         'programa_elegido',
         'canal_captacion',

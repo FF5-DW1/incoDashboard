@@ -5,7 +5,7 @@
     <div class="form-outer">
         <form action="{{ route('formulario.step.four.store') }}" method="POST" >
             @csrf
-            @if ($errors->any())
+            <!-- @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -13,7 +13,7 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif
+            @endif -->
 
             <!-- pagina 4 -->
             <div class="page">
@@ -34,7 +34,7 @@
                             <label for="situacion_actual">¿que situación que define mejor? 
                                 <div class="radio-control">
                                     <div class="radio-control-option">
-                                        <input type="radio" name="situacion_actual" id="acceso-limitado-a-educacion" value="acceso-limitado-a-educacion" checked>Tengo acceso limitado a la educación superior
+                                        <input type="radio" name="situacion_actual" id="acceso-limitado-a-educacion" value="acceso-limitado-a-educacion">Tengo acceso limitado a la educación superior
                                     </div>
 
                                     <div class="radio-control-option">
@@ -62,6 +62,11 @@
                                     </div>
                                 </div>
                             </label>
+                            @error('situacion_actual')
+                            <span class="error-message">
+                                {{ $message }}
+                            </span>
+                            @enderror
                         </div>
                     </div>
 
@@ -71,7 +76,7 @@
                             <label for="nivel_educacion">¿cuál es tu nivel de educación?
                                 <div class="radio-control">
                                     <div class="radio-control-option">
-                                        <input type="radio" name="nivel_educacion" id="sin-estudios-primaria-incompleta" value="sin-estudios-primaria-incompleta" checked>Sin estudios o enseñanza primaria incompleta
+                                        <input type="radio" name="nivel_educacion" id="sin-estudios-primaria-incompleta" value="sin-estudios-primaria-incompleta">Sin estudios o enseñanza primaria incompleta
                                     </div>
 
                                     <div class="radio-control-option">
@@ -95,6 +100,11 @@
                                     </div>
                                 </div>
                             </label>
+                            @error('nivel_educacion')
+                            <span class="error-message">
+                                {{ $message }}
+                            </span>
+                            @enderror
                         </div>
                     </div>
 
@@ -105,7 +115,7 @@
                                 <label for="disponibilidad_ordenador">¿tienes ordenador/tablet y conexión a internet? 
                                     <div class="radio-control">
                                         <div class="radio-control-option">
-                                            <input type="radio" name="disponibilidad_ordenador" id="si" value="si" checked>Si  
+                                            <input type="radio" name="disponibilidad_ordenador" id="si" value="si">Si  
                                         </div>
 
                                         <div class="radio-control-option">
@@ -113,6 +123,11 @@
                                         </div>
                                     </div>
                                 </label>
+                                @error('disponibilidad_ordenador')
+                                <span class="error-message">
+                                    {{ $message }}
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -122,7 +137,7 @@
                                 <label for="permiso_trabajo_es">¿tienes permiso de trabajo en España?
                                     <div class="radio-control">
                                         <div class="radio-control-option">
-                                            <input type="radio" name="permiso_trabajo_es" id="si" value="si" checked>Si  
+                                            <input type="radio" name="permiso_trabajo_es" id="si" value="si">Si  
                                         </div>
 
                                         <div class="radio-control-option">
@@ -134,6 +149,11 @@
                                         </div>
                                     </div>
                                 </label>
+                                @error('permiso_trabajo_es')
+                                <span class="error-message">
+                                    {{ $message }}
+                                </span>
+                                @enderror
                             </div>
                         </div>
                     </div>

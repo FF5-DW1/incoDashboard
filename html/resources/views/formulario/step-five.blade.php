@@ -4,7 +4,7 @@
     <div class="form-outer">
         <form  id="fomulario" action="{{ route('formulario.step.five.store') }}" method="POST" >
             @csrf
-            @if ($errors->any())
+            <!-- @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -12,7 +12,7 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif
+            @endif -->
 
              <!-- pagina 5 -->
              <div class="page">
@@ -34,7 +34,7 @@
                             <label for="disponibilidad_horaria">Como parte del programa ofrecemos sesiones prácticas técnicas y de habilidades sociales en directo: ¿Qué horario se ajustaría más a tu disponibilidad?
                                 <div class="radio-control">
                                     <div class="radio-control-option">
-                                        <input type="radio" name="disponibilidad_horaria" id="mananas" value="mananas" checked>Mañanas
+                                        <input type="radio" name="disponibilidad_horaria" id="mananas" value="mananas">Mañanas
                                     </div>
 
                                     <div class="radio-control-option">
@@ -46,6 +46,11 @@
                                     </div>
                                 </div>
                             </label>
+                            @error('disponibilidad_horaria')
+                            <span class="error-message">
+                                {{ $message }}
+                            </span>
+                            @enderror
                         </div>
                     </div>
 
@@ -55,7 +60,7 @@
                             <label for="nivel_ingles">Para realizar este programa NO es necesario hablar inglés, todos los materiales tienen su versión en español. Sin embargo, en ocasiones organizamos eventos a nivel global en inglés: ¿te sientes cómodo participando en una sesión en inglés?
                                 <div class="radio-control">
                                     <div class="radio-control-option">
-                                        <input type="radio" name="nivel_ingles" id="si" value="si" checked>¡Si!
+                                        <input type="radio" name="nivel_ingles" id="si" value="si">¡Si!
                                     </div>
 
                                     <div class="radio-control-option">
@@ -67,14 +72,25 @@
                                     </div>
                                 </div>
                             </label>
+                            @error('nivel_ingles')
+                            <span class="error-message">
+                                {{ $message }}
+                            </span>
+                            @enderror
                         </div>
                     </div>
 
                     <!--campo 19-->
                     <div class="field">
                         <div class="label_input">
-                            <label for="presentacion_breve">Cuéntanos en menos de 300 palabras por qué quieres entrar en el programa</label>
-                            <textarea name="presentacion_breve" id="" cols="30" rows="10"></textarea>
+                            <label for="presentacion_breve">Cuéntanos en menos de 300 palabras por qué quieres entrar en el programa elegido.
+                                <textarea name="presentacion_breve" id="" cols="30" rows="10"></textarea>
+                            </label>
+                            @error('presentacion_breve')
+                            <span class="error-message">
+                                {{ $message }}
+                            </span>
+                            @enderror
                         </div>
                     </div>
 

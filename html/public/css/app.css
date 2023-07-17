@@ -51,13 +51,14 @@
 }
 
 .error-message {
-    background-color: red;
-    color: white;
+    color:#B42818;
+    background-color: #b4281822;
     margin: 1% 0;
-    border-radius: 20px;
     font-size: 0.8rem;
+    border-radius: 10px;
+    font-weight: 200;
     padding: 1%;
-    text-align: center;
+    text-align: left;
 }
 
 .form-content {
@@ -83,6 +84,8 @@
 }
 
 .label_input label {
+    display: flex;
+    flex-direction: column;
     font-weight: 300;
     margin-bottom: 1%;
     font-size: 0.9rem;
@@ -179,7 +182,7 @@ input[type="radio"] {
     /* Remove most all native input styles */
     appearance: none;
     /* Not removed via appearance */
-    margin: 0 5px;
+    margin: 0 2px;
     width: 1.1rem;
     height: 1.1rem;
     border: 1px solid #012060;
@@ -202,6 +205,14 @@ input[type="radio"]::before {
 
 input[type="radio"]:checked::before {
     transform: scale(2);
+}
+
+input[type="date"] {
+    height: 45px;
+    font-weight: 200;
+    font-size: 0.8rem;
+    color: gray;
+    padding: 0 1%;
 }
 
 .radio-control {

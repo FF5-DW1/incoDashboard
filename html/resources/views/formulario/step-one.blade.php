@@ -1,4 +1,5 @@
 @extends('layout.default')
+
 @section('content')
 <div class="form-outer">
     <form action="{{ route('formulario.step.one.store') }}" method="POST">
@@ -31,12 +32,14 @@
                 <div class="field">
                     <div class="label_input">
                         <label for="nombres">Nombres</label>
-                        <input class="input-box @error('nombres') Este campo es obligatorio @enderror" type="text" id= "nombres" name="nombres" placeholder="Escribe tu nombre" value="{{ $alumno->nombres ?? '' }}">
+                        <input class="input-box" type="text" id= "nombres" name="nombres" placeholder="Escribe tu nombre" value="{{ $alumno->nombres ?? '' }}">
                     </div>
                     @error('nombres')
-                    <div class="alert alert-danger error-message">
-                        {{ $message }}
-                    </div>
+                    <p class="error-message">
+                        
+                            {{ $message }} 
+                       
+                    </p>
                     @enderror
                 </div>
 
@@ -44,7 +47,7 @@
                 <div class="field">
                     <div class="label_input">
                         <label for="apellidos">Apellidos</label>
-                        <input class="input-box" type="text" placeholder="Escribe tu apellidos" required id= "apellidos" name="apellidos" value="{{{ $alumno->apellidos ?? '' }}}">
+                        <input class="input-box" type="text" placeholder="Escribe tu apellidos" id= "apellidos" name="apellidos" value="{{{ $alumno->apellidos ?? '' }}}">
                     </div>
                     @error('apellidos')
                     <p class="error-message">
@@ -71,7 +74,7 @@
                     <div class="field">
                         <div class="label_input">
                             <label for="dni_nie_pasaporte">DNI/NIE/Pasaporte</label>
-                            <input class="input-box" type="text" placeholder="12345678X" required id= "dni_nie_pasaporte" name="dni_nie_pasaporte" value="{{{ $alumno->dni_nie_pasaporte ?? '' }}}">
+                            <input class="input-box" type="text" placeholder="12345678X" id= "dni_nie_pasaporte" name="dni_nie_pasaporte" value="{{{ $alumno->dni_nie_pasaporte ?? '' }}}">
                         </div>
                         @error('dni_nie_pasaporte')
                         <p class="error-message">
@@ -110,9 +113,9 @@
                                 </div>
                             </label>
                             @error('email')
-                            <p class="error-message">
+                            <span class="error-message">
                                 {{ $message }}
-                            </p>
+                            </span>
                             @enderror
                         </div>
                     </div>

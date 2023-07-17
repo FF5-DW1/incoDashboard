@@ -4,7 +4,7 @@
     <div class="form-outer">
         <form action="{{ route('formulario.step.three.store') }}" method="POST" >
             @csrf
-            @if ($errors->any())
+            <!-- @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -12,7 +12,7 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif
+            @endif -->
 
             <!-- pagina 3 -->
             <div class="page">
@@ -31,26 +31,32 @@
                     <!--campo 11-->
                     <div class="field">
                         <div class="label_input">
-                            <label for="programa_elegido">¿qué programa te interesa?</label>
+                            <label for="programa_elegido">¿qué programa te interesa?
                                 <div class="radio-control">
                                     <div class="radio-control-option">
-                                        <input type="radio" name="programa_elegido" id="analisis-de-datos" value="analisis-de-datos" checked>Certificado de Análisis de Datos
+                                        <input type="radio" name="programa_elegido" id="analisis-de-datos" value="analisis-de-datos">Certificado de Análisis de Datos
                                     </div>
 
                                     <div class="radio-control-option">
                                         <input type="radio" name="programa_elegido" id="soporte-de-ti" value="soporte-de-ti">Certificado de Soporte en TI
                                     </div>
                                 </div>
+                            </label>
+                            @error('programa_elegido')
+                            <span class="error-message">
+                                {{ $message }}
+                            </span>
+                            @enderror
                         </div>
                     </div>
 
                     <!--campo 12-->
                     <div class="field">
                         <div class="label_input">
-                            <label for="canal_captacion">¿cómo has conocido este programa?</label>
+                            <label for="canal_captacion">¿cómo has conocido este programa?
                                 <div class="radio-control">
                                     <div class="radio-control-option">
-                                        <input type="radio" name="canal_captacion" id="influencer-veritechie" value="influencer-veritechie" checked>Influencer - @veritechie
+                                        <input type="radio" name="canal_captacion" id="influencer-veritechie" value="influencer-veritechie">Influencer - @veritechie
                                     </div>
 
                                     <div class="radio-control-option">
@@ -89,16 +95,22 @@
                                         <input type="radio" name="canal_captacion" id="otro" value="otro">Otro
                                     </div>
                                 </div>
+                            </label>
+                            @error('programa_elegido')
+                            <span class="error-message">
+                                {{ $message }}
+                            </span>
+                            @enderror    
                         </div>
                     </div>
 
                     <!--campo 13-->
                     <div class="field">
                         <div class="label_input">
-                            <label for="situacion_profesional">¿cuál es tu situación profesional actual?</label>
+                            <label for="situacion_profesional">¿cuál es tu situación profesional actual?
                                 <div class="radio-control">
                                     <div class="radio-control-option">
-                                        <input type="radio" name="situacion_profesional" id="desempleado-busca-trabajo" value="desempleado-busca-trabajo" checked>Desempleado, en busca de trabajo
+                                        <input type="radio" name="situacion_profesional" id="desempleado-busca-trabajo" value="desempleado-busca-trabajo">Desempleado, en busca de trabajo
                                     </div>
 
                                     <div class="radio-control-option">
@@ -129,6 +141,12 @@
                                         <input type="radio" name="situacion_profesional" id="otro" value="otro">Otro
                                     </div>
                                 </div>
+                            </label>
+                            @error('situacion_profesional')
+                            <span class="error-message">
+                                {{ $message }}
+                            </span>
+                            @enderror
                         </div>
                     </div>
 
