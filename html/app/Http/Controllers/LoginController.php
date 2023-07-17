@@ -18,10 +18,10 @@ class LoginController extends Controller
 
     public function login(){
         if (Auth::check()){
-            return view('app.dashboard');
-        }
+            return view('dashboard');
+        }else{
         return view('login.login');
-       
+        }
     }
     
     public function authenticate(Request $request){
@@ -30,16 +30,16 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        //dd('Logado correctamente');
+        
        
         //Comprobar pass 
         if (Auth::attempt($validar)){
            //si login ok regenero la seccion
            $request->session()->regenerate();
             //se redireciona a la dashboard
-            dd('Logado correctamente');
+            //dd('Logado correctamente');
 
-            return redirect()->intended('dashboard');
+            return redirect()->route('dashboard');
         
              //return redirect()->intended(route('dashboard'))
             //->withSuccess('Logado Correctamente');
