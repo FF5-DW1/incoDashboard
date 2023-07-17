@@ -34,6 +34,8 @@
                         <label for="ciudad_residencia">Ciudad de Residencia
                             <!--lista desplegable de provincias de españa -->
                             <select name="ciudad_residencia" id="ciudad_residencia">
+                                @foreach ($alumnos as $alumno)
+                                    <option value="{{ $alumno['id'] }}">{{ $alumno['nombre']}}</option>
                                 <option value="" disabled selected>Selecciona una ciudad</option>               
                                 <option value="Álava/Araba">Álava/Araba</option>
                                 <option value="Albacete">Albacete</option>
