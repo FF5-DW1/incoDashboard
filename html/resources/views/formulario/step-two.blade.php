@@ -343,7 +343,7 @@
                 <div class="field">
                     <div class="label_input">
                         <label for="edad">¿cuál es tu edad?
-                            <input type="date" name="edad" id="edad">
+                            <input type="date" name="edad" id="edad" value="{{{ $alumno->edad ?? '' }}}>
                         </label>
                         @error('edad')
                             <span class="error-message">
@@ -359,28 +359,23 @@
                         <label for="genero">¿con qué género te identificas?
                             <div class="radio-control">
                                 <div class="radio-control-option">
-                                    <!-- @if ($alumno->genero=="mujer")  -->
-                                    <input type="radio" name="genero" id="mujer" value="mujer" checked>Mujer
-                                    <!-- @else -->
-                                    <input type="radio" name="genero" id="mujer" value="mujer">Mujer
-                                    <!-- @endif      -->
-                                
+                                    <input type="radio" name="genero" id="mujer" value="mujer" {{ $alumno->genero == 'mujer' ? 'checked' : '' }}>Mujer
                                 </div>
 
                                 <div class="radio-control-option">
-                                    <input type="radio" name="genero" id="hombre" value="hombre">Hombre
+                                    <input type="radio" name="genero" id="hombre" value="hombre" {{ $alumno->genero == 'hombre' ? 'checked' : '' }}>Hombre
                                 </div>
 
                                 <div class="radio-control-option">
-                                    <input type="radio" id="nb" name="genero" value="nb">No binario
+                                    <input type="radio" id="nb" name="genero" value="nb" {{ $alumno->genero == 'nb' ? 'checked' : '' }}>No binario
                                 </div>
 
                                 <div class="radio-control-option">
-                                    <input type="radio" id="otra" name="genero" value="otra">Otra
+                                    <input type="radio" id="otra" name="genero" value="otra" {{ $alumno->genero == 'otra' ? 'checked' : '' }} >Otra
                                 </div>
 
                                 <div class="radio-control-option">
-                                    <input type="radio" id="no-responde" name="genero" value="no-responde">Prefiero no responder
+                                    <input type="radio" id="no-responde" name="genero" value="no-responde" {{ $alumno->genero == 'no-responde' ? 'checked' : '' }}>Prefiero no responder
                                 </div>
                             </div>
                         </label>

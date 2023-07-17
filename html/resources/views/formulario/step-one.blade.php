@@ -95,11 +95,11 @@
                             <label for="residente">¿resides en España?
                                 <div class="radio-control">
                                     <div class="radio-control-option">
-                                        <input type="radio" name="residente" id="si" value="si">Si  
+                                        <input type="radio" name="residente" id="si" value="si" {{ $alumno->residente == 'si' ? 'checked' : '' }}>Si  
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="residente" id="no" value="no">No  
+                                        <input type="radio" name="residente" id="no" value="no" {{ $alumno->residente == 'no' ? 'checked' : '' }}>No  
                                     </div>
                                 </div>
                             </label>
