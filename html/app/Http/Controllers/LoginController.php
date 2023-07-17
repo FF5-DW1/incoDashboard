@@ -8,40 +8,41 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller 
 {
 //
-    // public function index(){
-    //    $user = user::all();
-    //     return view('login.user.lis',compact('users'));
+    //  public function index(){
+    //    // Comprobamos si el usuario ya está logado
+    //     if (Auth::check()){
+    //         return view('dashboard');
+    //     }
+    //     return view('login.login');
     //  }
 
-    // public function create(){
-    //     return view('create');
-    // }
-
-    //public function store(Request)esta es igual que login
-    /// falta funciones
-
     public function login(){
-        //visualiza el formulario login.blade.php
+        if (Auth::check()){
+            return view('app.dashboard');
+        }
         return view('login.login');
        
     }
+    
     public function authenticate(Request $request){
         //Validar
-        $validados = $request->validate([
+        $validar =  $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        dd('Logado correctamente');
-        dd( $validados);
+        //dd('Logado correctamente');
+       
         //Comprobar pass 
-        if (Auth::attempt($validados)){
+        if (Auth::attempt($validar)){
            //si login ok regenero la seccion
            $request->session()->regenerate();
-            //se redireciona a la home
-            //dd('Logado correctamente');
+            //se redireciona a la dashboard
+            dd('Logado correctamente');
+
+            return redirect()->intended('dashboard');
         
-            return redirect()->intended(route('home'))
-            ->withSuccess('Logado Correctamente');
+             //return redirect()->intended(route('dashboard'))
+            //->withSuccess('Logado Correctamente');
         }
         //return redirect("/")->withSuccess('Los datos introducidos no son correctos');
         return back()->withErrors([

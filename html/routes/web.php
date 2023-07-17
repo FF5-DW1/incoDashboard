@@ -17,10 +17,21 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//formulario de registo
+// Route::get('/', function () {
+//     return view('welcome');
+// })->middleware('login.login');
+// Route::get('/', function () {
+//     return view('login.login');
+// });
+
+Route::get('/',[LoginController::class,'login']);
+Route::post('/login',[LoginController::class,'authenticate']);
+
 
 //Formulario de inscripción
 
-Route::get('/', [AlumnoController::class, 'createStepOne'])->name('formulario.step.one');
+Route::get('/formulario/step-one', [AlumnoController::class, 'createStepOne'])->name('formulario.step.one');
 Route::post('formulario/step-one', [AlumnoController::class, 'storeStepOne'])->name('formulario.step.one.store');
 
 Route::get('formulario/step-two', [AlumnoController::class, 'createStepTwo'])->name('formulario.step.two');
@@ -43,3 +54,8 @@ Route::get('app/registros', [AppController::class, 'registros'])->name('registro
 Route::get('app/charts', [AppController::class, 'charts'])->name('charts');
 Route::get('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
 Route::post('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
+
+//
+
+
+

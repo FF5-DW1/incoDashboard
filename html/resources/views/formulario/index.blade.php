@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('layout.default')
 @section('css')
 <link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -6,42 +5,6 @@
 @section('content')
 <div>
     <div>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lista de Alumnos Registrados</title>
-    <style>
-        main{
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            width: 80%;
-            margin: auto;
-        }
-        .listado{
-            border:1px solid red;
-            display:flex;
-            flex-direction: row;
-            margin-bottom: 1rem;
-        }
-
-    </style>
-</head>
-<body>
-    <header>
-        @auth
-        Estoy logado
-        <!--del que esta logado me devuelve la home-->
-        {{Auth::user()->email}}
-        @endauth
-    </header>
-    <main>
-        <p><a href="./formulario/registro"> crear nuevo</a></p>
->>>>>>> featureBaseDatos
         <div>
             <div>
                 <div>Control de Usuarios</div>
@@ -103,6 +66,7 @@
                                 <td>{{$alumno->disponibilidad_horaria}}</td>
                                 <td>{{$alumno->nivel_ingles}}</td>
                                 <td>{{$alumno->presentacion_breve}}</td>
+                                
                             </tr>
                         @endforeach
                         </tbody>
