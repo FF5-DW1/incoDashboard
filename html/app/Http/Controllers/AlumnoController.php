@@ -28,6 +28,39 @@ class AlumnoController extends Controller
         return view('formulario.step-one', compact('alumno'));
     }
 
+    public function editar(Request $request)
+    {
+        // Validación de los campos del formulario (puedes agregar más campos si es necesario)
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            // Agrega aquí la validación para el resto de campos que desees
+        ]);
+
+        // Si hay un campo oculto 'id' en el formulario, entonces estamos editando un perfil existente
+        // De lo contrario, estamos creando un nuevo perfil
+        if ($request->has('id')) {
+            // Edición de perfil existente
+            $alumno = alumno::findOrFail($request->input('id'));
+        } else {
+            // Crear nuevo perfil
+            $alumno = new alumno();
+        }
+
+        // Actualizar los campos del perfil con los nuevos datos
+        $alumno->nombre = $request->input('nombres');
+        $alumno->apellido = $request->input('apellidos');
+        $alumno->identificacion = $request->input('dni_nie_pasaporte');
+        $alumno->telefono = $request->input('telefono');
+
+        // Guardar los cambios en la base de datos
+        $alumno->save();
+
+        // Después de guardar, redirecciona a la página de perfil o a donde desees
+        return redirect('/dashboard/' . $alumno->id)->with('success', 'Perfil actualizado exitosamente');
+    }
+
+
     public function storeStepOne(Request $request) {
        
         $validatedData = $request->validate ([

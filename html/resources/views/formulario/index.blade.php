@@ -40,6 +40,7 @@
                             <th scope="col">Disponibilidad</th>
                             <th scope="col">Nivel Ingles</th>
                             <th scope="col">Presentación</th>
+                            <th scope="col">Estado</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -66,6 +67,7 @@
                                 <td>{{$alumno->disponibilidad_horaria}}</td>
                                 <td>{{$alumno->nivel_ingles}}</td>
                                 <td>{{$alumno->presentacion_breve}}</td>
+                                <td>{{$alumno->estado}}</td>
                                 
                             </tr>
                         @endforeach

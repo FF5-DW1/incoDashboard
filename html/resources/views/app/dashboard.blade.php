@@ -84,12 +84,14 @@
                             <th scope="col">Disponibilidad</th>
                             <th scope="col">Nivel Ingles</th>
                             <th scope="col">Presentación</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($alumnos as $alumno)
                             <tr>
-                                <th scope="row">{{$alumno->id}}</th>
+                                <td>{{$alumno->id}}</td>
                                 <td>{{$alumno->nombres}}</td>
                                 <td>{{$alumno->apellidos}}</td>
                                 <td>{{$alumno->email}}</td>
@@ -110,6 +112,10 @@
                                 <td>{{$alumno->disponibilidad_horaria}}</td>
                                 <td>{{$alumno->nivel_ingles}}</td>
                                 <td>{{$alumno->presentacion_breve}}</td>
+                                <td>{{$alumno->estado}}</td>
+                                <td>
+                                    <a href="#">Editar</a> 
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -127,3 +133,4 @@
 </script>
 @endsection
 @endsection
+
