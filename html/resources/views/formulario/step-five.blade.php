@@ -82,6 +82,8 @@
                         <a class="button-style" href="{{ route('formulario.step.four') }}">Anterior</a>
                         <button class="button-style" type="submit">Enviar</button>
                     </div>
+
+                    <!-- agregar un mensaje de aviso de completado y un boton de volver al inicio. -->
                 </div>
              </div>
         </form>

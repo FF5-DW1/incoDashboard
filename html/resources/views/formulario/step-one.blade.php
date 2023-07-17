@@ -31,12 +31,12 @@
                 <div class="field">
                     <div class="label_input">
                         <label for="nombres">Nombres</label>
-                        <input class="input-box" type="text" id= "nombres" name="nombres" placeholder="Escribe tu nombre" value="{{ $alumno->nombres ?? '' }}">
+                        <input class="input-box @error('nombres') Este campo es obligatorio @enderror" type="text" id= "nombres" name="nombres" placeholder="Escribe tu nombre" value="{{ $alumno->nombres ?? '' }}">
                     </div>
                     @error('nombres')
-                    <p>
+                    <div class="alert alert-danger error-message">
                         {{ $message }}
-                    </p>
+                    </div>
                     @enderror
                 </div>
 
@@ -47,7 +47,7 @@
                         <input class="input-box" type="text" placeholder="Escribe tu apellidos" required id= "apellidos" name="apellidos" value="{{{ $alumno->apellidos ?? '' }}}">
                     </div>
                     @error('apellidos')
-                    <p>
+                    <p class="error-message">
                         {{ $message }}
                     </p>
                     @enderror
@@ -61,7 +61,7 @@
                             <input  class="input-box" type="email" placeholder="email@example.com" id= "email" name="email" value="{{{ $alumno->email ?? '' }}}">
                         </div>
                         @error('email')
-                        <p>
+                        <p class="error-message">
                             {{ $message }}
                         </p>
                         @enderror
@@ -74,7 +74,7 @@
                             <input class="input-box" type="text" placeholder="12345678X" required id= "dni_nie_pasaporte" name="dni_nie_pasaporte" value="{{{ $alumno->dni_nie_pasaporte ?? '' }}}">
                         </div>
                         @error('dni_nie_pasaporte')
-                        <p class="bg-red text-white my-2 rounded-lg text-sm p-2 text-center">
+                        <p class="error-message">
                             {{ $message }}
                         </p>
                         @enderror
@@ -89,7 +89,7 @@
                             <input class="input-box" type="text" placeholder="+34 666 66 66 66" id= "telefono" name="telefono"  value="{{{ $alumno->telefono ?? '' }}}">
                         </div>
                         @error('telefono')
-                        <p>
+                        <p class="error-message">
                             {{ $message }}
                         </p>
                         @enderror
@@ -110,7 +110,7 @@
                                 </div>
                             </label>
                             @error('email')
-                            <p>
+                            <p class="error-message">
                                 {{ $message }}
                             </p>
                             @enderror
