@@ -4,16 +4,7 @@
 <div class="form-outer">
     <form action="{{ route('formulario.step.one.store') }}" method="POST">
         @csrf
-        <!-- @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif -->
-
+       
         <!-- pagina 1 -->
         <div class="page slide-page">
 

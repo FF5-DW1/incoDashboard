@@ -5,17 +5,8 @@
 <div class="form-outer">
     <form action="{{ route('formulario.step.two.store') }}" method="POST">
         @csrf
-        <!-- @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif -->
-            <!-- pagina 2 -->
-            <div class="page">
+        <!-- pagina 2 -->
+        <div class="page">
 
             <div class="title-page">
                 <p>2/5</p>
@@ -34,8 +25,6 @@
                         <label for="ciudad_residencia">Ciudad de Residencia
                             <!--lista desplegable de provincias de españa -->
                             <select name="ciudad_residencia" id="ciudad_residencia">
-                                <!-- @foreach ($countries as $countries)
-                                    <option value="{{ $countries['id'] }}">{{ $countries['namespace']}}</option> -->
                                 <option value="" disabled selected>Selecciona una ciudad</option>               
                                 <option value="Álava/Araba">Álava/Araba</option>
                                 <option value="Albacete">Albacete</option>
@@ -361,23 +350,6 @@
                                 {{ $message }}
                             </span>
                         @enderror  
-                            <!-- <div class="radio-control">
-                                <div class="radio-control-option">
-                                    <input type="radio" name="rango_edad" id="15-25" value="15-25" checked>15-25 
-                                </div>
-
-                                <div class="radio-control-option">
-                                    <input type="radio" name="rango_edad" id="26-35" value="26-35">26-35
-                                </div>
-
-                                <div class="radio-control-option">
-                                    <input type="radio" name="rango_edad" id="36-45" value="36-45">36-45
-                                </div>
-
-                                <div class="radio-control-option">
-                                    <input type="radio" name="rango_edad" id="46-a-mas" value="46-a-mas">46 a más
-                                </div>
-                            </div> -->
                     </div>
                 </div>
 
@@ -387,12 +359,12 @@
                         <label for="genero">¿con qué género te identificas?
                             <div class="radio-control">
                                 <div class="radio-control-option">
-                                    @if ($alumno->genero=="mujer") 
+                                    <!-- @if ($alumno->genero=="mujer")  -->
                                     <input type="radio" name="genero" id="mujer" value="mujer" checked>Mujer
-                                    @else
+                                    <!-- @else -->
                                     <input type="radio" name="genero" id="mujer" value="mujer">Mujer
-                                    @endif     
-                                   
+                                    <!-- @endif      -->
+                                
                                 </div>
 
                                 <div class="radio-control-option">
@@ -425,32 +397,9 @@
                     <button class="button-style" type="submit">Siguiente</button>
                 </div>
 
-</div>
-</div>
-
-                    <!-- <div class="form-group">
-                        <label for="description">Product Status</label><br/>
-                        <label class="radio-inline"><input type="radio" name="residente" value="1" {{{ (isset($alumno->residente) && $alumno->residente == '1') ? "checked" : "" }}}> Active</label>
-                        <label class="radio-inline"><input type="radio" name="residente" value="0" {{{ (isset($alumno->residente) && $alumno->status == '0') ? "checked" : "" }}}> DeActive</label>
-                    </div> -->
-
-                    <!-- <div class="form-group">
-                        <label for="description">Product Stock</label>
-                        <input type="text"  value="{{{ $product->stock ?? '' }}}" class="form-control" id="productAmount" name="stock"/>
-                    </div> -->
-
-            <!-- </div>
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col-md-6 text-left">
-                        <a href="{{ route('formulario.step.one') }}" class="btn btn-danger pull-right">Previous</a>
-                    </div>
-                    <div class="col-md-6 text-right">
-                        <button type="submit" class="btn btn-primary">Next</button>
-                    </div> -->
-                </div>
             </div>
         </div>
+
     </form>
 </div>
 @endsection
