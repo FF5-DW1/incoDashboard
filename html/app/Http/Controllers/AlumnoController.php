@@ -173,7 +173,7 @@ class AlumnoController extends Controller
         $request->session()->forget('alumno');
       
 
-        return redirect()->route('layout.default');
+        return redirect()->route('formulario.step-one');
     }
        
 }

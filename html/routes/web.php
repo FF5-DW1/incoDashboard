@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -16,6 +17,17 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//formulario de registo
+// Route::get('/', function () {
+//     return view('welcome');
+// })->middleware('login.login');
+// Route::get('/', function () {
+//     return view('login.login');
+// });
+
+Route::get('/',[LoginController::class,'login']);
+Route::post('/login',[LoginController::class,'authenticate']);
+
 
 //Formulario de inscripción
 
@@ -42,3 +54,8 @@ Route::get('app/registros', [AppController::class, 'registros'])->name('registro
 Route::get('app/charts', [AppController::class, 'charts'])->name('charts');
 Route::get('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
 Route::post('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
+
+//
+
+
+

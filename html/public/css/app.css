@@ -528,6 +528,11 @@ nav .profile-details i {
     justify-content: space-between;
 }
 
+.data_table {
+    width: 98%;
+    margin: 0 1%;
+}
+
 .sales-boxes .box .title {
     font-size: 24px;
     font-weight: 500;

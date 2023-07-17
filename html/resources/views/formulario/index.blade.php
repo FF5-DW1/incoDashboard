@@ -66,6 +66,7 @@
                                 <td>{{$alumno->disponibilidad_horaria}}</td>
                                 <td>{{$alumno->nivel_ingles}}</td>
                                 <td>{{$alumno->presentacion_breve}}</td>
+                                
                             </tr>
                         @endforeach
                         </tbody>
