@@ -144,14 +144,18 @@ class AlumnoController extends Controller
         return redirect()->route('formulario.thank.you');
     }
 
+    public function createInicio(Request $request) {
+
+        $alumno = $request->session()->get('alumno');
+
+        return view('formulario.inicio', compact('alumno'));
+    }
+
     public function createThankYou(Request $request) {
 
         $alumno = $request->session()->get('alumno');
 
         return view('formulario.thank-you', compact('alumno'));
     }
-    
 
-
-       
 }

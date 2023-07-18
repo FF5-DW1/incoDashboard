@@ -26,6 +26,8 @@ Route::post('/login',[LoginController::class,'authenticate']);
 
 //Formulario de inscripción
 
+Route::get('formulario/inicio', [AlumnoController::class, 'createInicio'])->name('formulario.inicio');
+
 Route::get('formulario/step-one', [AlumnoController::class, 'createStepOne'])->name('formulario.step.one');
 Route::post('formulario/step-one', [AlumnoController::class, 'storeStepOne'])->name('formulario.step.one.store');
 
