@@ -55,3 +55,20 @@ Route::put('/formulario/{id}', 'FormularioController@update')->name('formulario.
 
 
 
+
+
+//rutas:
+//login administradores
+//logout administradores
+//dashboard/principal
+//Dashboard/registros
+//dashboard/graficos
+//dashboard para usuario invitado
+
+//rutas:
+//formulario/inicio
+//formulario/paso-uno
+//formulario/paso-dos
+//formulario/paso-tres
+//formulario/paso-cuatro
+//formulario/paso-cinco
