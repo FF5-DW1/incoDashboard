@@ -18,6 +18,9 @@
             <div class="login-titulo">
                 <h2>Entra a tu cuenta</h2>
                 <p>Ingresa tus datos correctamente</p>
+
+                <h2 class="uppercase text-xl font-bold text-center">Inicia sesión</h2>
+                <p class="font-extralight text-zinc-900 text-center">Bienvenido/a, ingresa tus datos para iniciar sesión</p>
             </div>
 
             <div class=formulario-login>

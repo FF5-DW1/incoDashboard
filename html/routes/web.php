@@ -40,6 +40,9 @@ Route::post('formulario/step-four', [AlumnoController::class, 'storeStepFour'])-
 
 Route::get('formulario/step-five', [AlumnoController::class, 'createStepFive'])->name('formulario.step.five');
 Route::post('formulario/step-five', [AlumnoController::class, 'storeStepFive'])->name('formulario.step.five.store');
+
+Route::get('formulario/thank-you', [AlumnoController::class, 'createThankYou'])->name('formulario.thank.you');
+
     
 Route::post('/formulario/guardar_registro',[AlumnoController::class, 'store'])->name('guardar_registro');
 
