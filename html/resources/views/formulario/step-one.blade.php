@@ -1,18 +1,10 @@
 @extends('layout.default')
+
 @section('content')
 <div class="form-outer">
     <form action="{{ route('formulario.step.one.store') }}" method="POST">
         @csrf
-        <!-- @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif -->
-
+       
         <!-- pagina 1 -->
         <div class="page slide-page">
 
@@ -34,8 +26,10 @@
                         <input class="input-box" type="text" id= "nombres" name="nombres" placeholder="Escribe tu nombre" value="{{ $alumno->nombres ?? '' }}">
                     </div>
                     @error('nombres')
-                    <p>
-                        {{ $message }}
+                    <p class="error-message">
+                        
+                            {{ $message }} 
+                       
                     </p>
                     @enderror
                 </div>
@@ -44,10 +38,10 @@
                 <div class="field">
                     <div class="label_input">
                         <label for="apellidos">Apellidos</label>
-                        <input class="input-box" type="text" placeholder="Escribe tu apellidos" required id= "apellidos" name="apellidos" value="{{{ $alumno->apellidos ?? '' }}}">
+                        <input class="input-box" type="text" placeholder="Escribe tu apellidos" id= "apellidos" name="apellidos" value="{{{ $alumno->apellidos ?? '' }}}">
                     </div>
                     @error('apellidos')
-                    <p>
+                    <p class="error-message">
                         {{ $message }}
                     </p>
                     @enderror
@@ -61,7 +55,7 @@
                             <input  class="input-box" type="email" placeholder="email@example.com" id= "email" name="email" value="{{{ $alumno->email ?? '' }}}">
                         </div>
                         @error('email')
-                        <p>
+                        <p class="error-message">
                             {{ $message }}
                         </p>
                         @enderror
@@ -71,10 +65,10 @@
                     <div class="field">
                         <div class="label_input">
                             <label for="dni_nie_pasaporte">DNI/NIE/Pasaporte</label>
-                            <input class="input-box" type="text" placeholder="12345678X" required id= "dni_nie_pasaporte" name="dni_nie_pasaporte" value="{{{ $alumno->dni_nie_pasaporte ?? '' }}}">
+                            <input class="input-box" type="text" placeholder="12345678X" id= "dni_nie_pasaporte" name="dni_nie_pasaporte" value="{{{ $alumno->dni_nie_pasaporte ?? '' }}}">
                         </div>
                         @error('dni_nie_pasaporte')
-                        <p class="bg-red text-white my-2 rounded-lg text-sm p-2 text-center">
+                        <p class="error-message">
                             {{ $message }}
                         </p>
                         @enderror
@@ -89,7 +83,7 @@
                             <input class="input-box" type="text" placeholder="+34 666 66 66 66" id= "telefono" name="telefono"  value="{{{ $alumno->telefono ?? '' }}}">
                         </div>
                         @error('telefono')
-                        <p>
+                        <p class="error-message">
                             {{ $message }}
                         </p>
                         @enderror
@@ -101,18 +95,18 @@
                             <label for="residente">¿resides en España?
                                 <div class="radio-control">
                                     <div class="radio-control-option">
-                                        <input type="radio" name="residente" id="si" value="si">Si  
+                                        <input type="radio" name="residente" id="si" value="si" {{ $alumno && $alumno->residente == 'si' ? 'checked' : '' }}>Si  
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="residente" id="no" value="no">No  
+                                        <input type="radio" name="residente" id="no" value="no" {{ $alumno && $alumno->residente == 'no' ? 'checked' : '' }}>No  
                                     </div>
                                 </div>
                             </label>
-                            @error('email')
-                            <p>
+                            @error('residente')
+                            <span class="error-message">
                                 {{ $message }}
-                            </p>
+                            </span>
                             @enderror
                         </div>
                     </div>

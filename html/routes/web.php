@@ -49,7 +49,27 @@ Route::get('app/charts', [AppController::class, 'charts'])->name('charts');
 Route::get('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
 Route::post('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
 
+<<<<<<< HEAD
 Route::put('/formulario/{id}', 'FormularioController@update')->name('formulario.update');
 
 
 
+=======
+
+
+//rutas:
+//login administradores
+//logout administradores
+//dashboard/principal
+//Dashboard/registros
+//dashboard/graficos
+//dashboard para usuario invitado
+
+//rutas:
+//formulario/inicio
+//formulario/paso-uno
+//formulario/paso-dos
+//formulario/paso-tres
+//formulario/paso-cuatro
+//formulario/paso-cinco
+>>>>>>> featureValidaciones

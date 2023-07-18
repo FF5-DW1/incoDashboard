@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 use App\Models\alumno;
 use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+
 class AppController extends Controller
 {
       public function dashboard(Request $request){

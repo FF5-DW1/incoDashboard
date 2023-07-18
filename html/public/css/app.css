@@ -13,7 +13,9 @@
     justify-content: space-between;
     min-height: 100vh;
     overflow: hidden;
-    background-color: rgb(62, 173, 162, 0.9);
+    background-image: linear-gradient(rgba(62, 173, 162, 0.7), rgba(62, 173, 162, 0.7)), url("/assets/img/mimi-thian-vdXMSiX-n6M-unsplash.jpg");
+    background-size: cover;
+
 }
 
 .page {
@@ -50,6 +52,17 @@
     margin-bottom: 5%;
 }
 
+.error-message {
+    color:#B42818;
+    background-color: #b4281822;
+    margin: 1% 0;
+    font-size: 0.8rem;
+    border-radius: 10px;
+    font-weight: 200;
+    padding: 1%;
+    text-align: left;
+}
+
 .form-content {
     flex: 0 0 65%;
     background-color: rgba(255, 255, 255, 0.75);
@@ -73,6 +86,8 @@
 }
 
 .label_input label {
+    display: flex;
+    flex-direction: column;
     font-weight: 300;
     margin-bottom: 1%;
     font-size: 0.9rem;
@@ -169,7 +184,7 @@ input[type="radio"] {
     /* Remove most all native input styles */
     appearance: none;
     /* Not removed via appearance */
-    margin: 0 5px;
+    margin: 0 2px;
     width: 1.1rem;
     height: 1.1rem;
     border: 1px solid #012060;
@@ -192,6 +207,14 @@ input[type="radio"]::before {
 
 input[type="radio"]:checked::before {
     transform: scale(2);
+}
+
+input[type="date"] {
+    height: 45px;
+    font-weight: 200;
+    font-size: 0.8rem;
+    color: gray;
+    padding: 0 1%;
 }
 
 .radio-control {
@@ -242,13 +265,13 @@ input[type="radio"]:checked::before {
     font-weight: 500;
     color: #fff;
     min-width: 60px;
-    text-align: center
+    text-align: center;
 }
 
 .sidebar .logo-details .logo_name {
     color: #fff;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .sidebar .nav-links {
@@ -281,14 +304,14 @@ input[type="radio"]:checked::before {
 .sidebar .nav-links li i {
     min-width: 60px;
     text-align: center;
-    font-size: 18px;
+    font-size: 1.4rem;
     color: #fff;
 }
 
 .sidebar .nav-links li a .links_name {
     color: #fff;
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 0.9rem;
+    font-weight: 200;
     white-space: nowrap;
 }
 
@@ -360,7 +383,8 @@ nav .search-box input {
     background: #F5F6FA;
     border: 2px solid #EFEEF1;
     border-radius: 6px;
-    font-size: 18px;
+    font-size: 0.9rem;
+    font-weight: 200;
     padding: 0 15px;
 }
 

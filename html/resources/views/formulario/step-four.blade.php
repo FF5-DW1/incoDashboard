@@ -5,7 +5,7 @@
     <div class="form-outer">
         <form action="{{ route('formulario.step.four.store') }}" method="POST" >
             @csrf
-            @if ($errors->any())
+            <!-- @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -13,7 +13,7 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif
+            @endif -->
 
             <!-- pagina 4 -->
             <div class="page">
@@ -34,34 +34,39 @@
                             <label for="situacion_actual">¿que situación que define mejor? 
                                 <div class="radio-control">
                                     <div class="radio-control-option">
-                                        <input type="radio" name="situacion_actual" id="acceso-limitado-a-educacion" value="acceso-limitado-a-educacion" checked>Tengo acceso limitado a la educación superior
+                                        <input type="radio" name="situacion_actual" id="acceso-limitado-a-educacion" value="acceso-limitado-a-educacion" {{ $alumno && $alumno->situacion_actual == 'acceso-limitado-a-educacion' ? 'checked' : '' }}>Tengo acceso limitado a la educación superior
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="situacion_actual" id="origen-migrante" value="origen-migrante">Tengo origen migrante
+                                        <input type="radio" name="situacion_actual" id="origen-migrante" value="origen-migrante" {{ $alumno && $alumno->situacion_actual == 'origen-migrante' ? 'checked' : '' }}>Tengo origen migrante
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="situacion_actual" id="sin-expectativas-profesionales" value="sin-expectativas-profesionales">No tengo expectativas profesionales
+                                        <input type="radio" name="situacion_actual" id="sin-expectativas-profesionales" value="sin-expectativas-profesionales" {{ $alumno && $alumno->situacion_actual == 'sin-expectativas-profesionales' ? 'checked' : '' }}>No tengo expectativas profesionales
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="situacion_actual" id="cuido-miembro-de-familia" value="cuido-miembro-de-familia">Cuido a un miembro de mi familia
+                                        <input type="radio" name="situacion_actual" id="cuido-miembro-de-familia" value="cuido-miembro-de-familia" {{ $alumno && $alumno->situacion_actual == 'cuido-miembro-de-familia' ? 'checked' : '' }}>Cuido a un miembro de mi familia
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="situacion_actual" id="madre-padre-soltero" value="madre-padre-soltero">Soy madre/padre soltero
+                                        <input type="radio" name="situacion_actual" id="madre-padre-soltero" value="madre-padre-soltero" {{ $alumno && $alumno->situacion_actual == 'madre-padre-soltero' ? 'checked' : '' }}>Soy madre/padre soltero
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="situacion_actual" id="mundo-rural" value="mundo-rural">Vivo en el mundo rural
+                                        <input type="radio" name="situacion_actual" id="mundo-rural" value="mundo-rural" {{ $alumno && $alumno->situacion_actual == 'mundo-rural' ? 'checked' : '' }}>Vivo en el mundo rural
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="situacion_actual" id="prefiero-no-decir" value="prefiero-no-decir">Prefiero no decirlo
+                                        <input type="radio" name="situacion_actual" id="prefiero-no-decir" value="prefiero-no-decir" {{ $alumno && $alumno->situacion_actual == 'prefiero-no-decir' ? 'checked' : '' }}>Prefiero no decirlo
                                     </div>
                                 </div>
                             </label>
+                            @error('situacion_actual')
+                            <span class="error-message">
+                                {{ $message }}
+                            </span>
+                            @enderror
                         </div>
                     </div>
 
@@ -71,30 +76,35 @@
                             <label for="nivel_educacion">¿cuál es tu nivel de educación?
                                 <div class="radio-control">
                                     <div class="radio-control-option">
-                                        <input type="radio" name="nivel_educacion" id="sin-estudios-primaria-incompleta" value="sin-estudios-primaria-incompleta" checked>Sin estudios o enseñanza primaria incompleta
+                                        <input type="radio" name="nivel_educacion" id="sin-estudios-primaria-incompleta" value="sin-estudios-primaria-incompleta" {{ $alumno && $alumno->nivel_educacion == 'sin-estudios-primaria-incompleta' ? 'checked' : '' }}>Sin estudios o enseñanza primaria incompleta
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="nivel_educacion" id="secundaria-eso" value="secundaria-eso">Secundaria (ESO)
+                                        <input type="radio" name="nivel_educacion" id="secundaria-eso" value="secundaria-eso" {{ $alumno && $alumno->nivel_educacion == 'secundaria-eso' ? 'checked' : '' }}>Secundaria (ESO)
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="nivel_educacion" id="formacion-profesional" value="formacion-profesional">Formación profesional
+                                        <input type="radio" name="nivel_educacion" id="formacion-profesional" value="formacion-profesional" {{ $alumno && $alumno->nivel_educacion == 'formacion-profesional' ? 'checked' : '' }}>Formación profesional
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="nivel_educacion" id="estudios-universitarios" value="estudios-universitarios">Estudios universitarios
+                                        <input type="radio" name="nivel_educacion" id="estudios-universitarios" value="estudios-universitarios" {{ $alumno && $alumno->nivel_educacion == 'estudios-universitarios' ? 'checked' : '' }}>Estudios universitarios
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="nivel_educacion" id="master" value="master">Máster
+                                        <input type="radio" name="nivel_educacion" id="master" value="master" {{ $alumno && $alumno->nivel_educacion == 'master' ? 'checked' : '' }}>Máster
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="nivel_educacion" id="doctorado" value="doctorado">Doctorado
+                                        <input type="radio" name="nivel_educacion" id="doctorado" value="doctorado" {{ $alumno && $alumno->nivel_educacion == 'doctorado' ? 'checked' : '' }}>Doctorado
                                     </div>
                                 </div>
                             </label>
+                            @error('nivel_educacion')
+                            <span class="error-message">
+                                {{ $message }}
+                            </span>
+                            @enderror
                         </div>
                     </div>
 
@@ -105,14 +115,19 @@
                                 <label for="disponibilidad_ordenador">¿tienes ordenador/tablet y conexión a internet? 
                                     <div class="radio-control">
                                         <div class="radio-control-option">
-                                            <input type="radio" name="disponibilidad_ordenador" id="si" value="si" checked>Si  
+                                            <input type="radio" name="disponibilidad_ordenador" id="si" value="si" {{ $alumno && $alumno->disponibilidad_ordenador == 'si' ? 'checked' : '' }}>Si  
                                         </div>
 
                                         <div class="radio-control-option">
-                                            <input type="radio" name="disponibilidad_ordenador" id="no" value="no">No  
+                                            <input type="radio" name="disponibilidad_ordenador" id="no" value="no" {{ $alumno && $alumno->disponibilidad_ordenador == 'no' ? 'checked' : '' }}>No  
                                         </div>
                                     </div>
                                 </label>
+                                @error('disponibilidad_ordenador')
+                                <span class="error-message">
+                                    {{ $message }}
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -122,18 +137,23 @@
                                 <label for="permiso_trabajo_es">¿tienes permiso de trabajo en España?
                                     <div class="radio-control">
                                         <div class="radio-control-option">
-                                            <input type="radio" name="permiso_trabajo_es" id="si" value="si" checked>Si  
+                                            <input type="radio" name="permiso_trabajo_es" id="si" value="si" {{ $alumno && $alumno->permiso_trabajo_es == 'si' ? 'checked' : '' }}>Si  
                                         </div>
 
                                         <div class="radio-control-option">
-                                            <input type="radio" name="permiso_trabajo_es" id="no" value="no">No  
+                                            <input type="radio" name="permiso_trabajo_es" id="no" value="no" {{ $alumno && $alumno->permiso_trabajo_es == 'no' ? 'checked' : '' }}>No  
                                         </div>
 
                                         <div class="radio-control-option">
-                                            <input type="radio" name="permiso_trabajo_es" id="no" value="no">No, en proceso
+                                            <input type="radio" name="permiso_trabajo_es" id="en-proceso" value="en-proceso" {{ $alumno && $alumno->permiso_trabajo_es == 'en-proceso' ? 'checked' : '' }}>No, en proceso
                                         </div>
                                     </div>
                                 </label>
+                                @error('permiso_trabajo_es')
+                                <span class="error-message">
+                                    {{ $message }}
+                                </span>
+                                @enderror
                             </div>
                         </div>
                     </div>
