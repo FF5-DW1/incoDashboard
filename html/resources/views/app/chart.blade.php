@@ -1,41 +1,35 @@
 @extends('layout.home')
 
 @section('script')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 @endsection
 
-
 @section ('content')
-
-    <div>
-        <canvas id="myChart" height="100px"></canvas>
+    <div class="sales-boxes">
+        <canvas id="myChart"></canvas>
     </div>
+    <script>
+        const ctx = document.getElementById('myChart');
+        const datos_backend = [{{ implode(",", $datos['edades']) }}]
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+            labels: ['18-23', '24-28', '29-33', '34-40', '41-50', '51+'],
+            datasets: [{
+                label: '# of Votes',
+                data: datos_backend,
+                borderWidth: 1
+            }]
+            },
+            options: {
+            scales: {
+                y: {
+                beginAtZero: true
+                }
+            }
+            }
+        });
+    </script>
+        
 @endsection
-    <script type="text/javascript">
-  
-      var labels =  {{ Js::from($labels) }};
-      var alumnos =  {{ Js::from($data) }};
-  
-      const data = {
-        labels: labels,
-        datasets: [{
-          label: 'My First dataset',
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
-          data: alumnos,
-        }]
-      };
-  
-      const config = {
-        type: 'line',
-        data: data,
-        options: {}
-      };
-  
-      const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-      );
-</script>
 

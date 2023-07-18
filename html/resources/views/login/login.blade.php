@@ -30,8 +30,8 @@
                     </div>
                     
                     <div class="label-input">
-                        <label for="password">Password
-                        <input type="password" name="password" id ="password" placeholder="Ingresa tu email"></label>
+                        <label for="password">Contraseña
+                        <input type="password" name="password" id ="password" placeholder="Ingresa tu contraseña"></label>
                     </div>
 
                     <div>
