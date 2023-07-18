@@ -95,15 +95,15 @@
                             <label for="residente">¿resides en España?
                                 <div class="radio-control">
                                     <div class="radio-control-option">
-                                        <input type="radio" name="residente" id="si" value="si" {{ $alumno->residente == 'si' ? 'checked' : '' }}>Si  
+                                        <input type="radio" name="residente" id="si" value="si" {{ $alumno && $alumno->residente == 'si' ? 'checked' : '' }}>Si  
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="residente" id="no" value="no" {{ $alumno->residente == 'no' ? 'checked' : '' }}>No  
+                                        <input type="radio" name="residente" id="no" value="no" {{ $alumno && $alumno->residente == 'no' ? 'checked' : '' }}>No  
                                     </div>
                                 </div>
                             </label>
-                            @error('email')
+                            @error('residente')
                             <span class="error-message">
                                 {{ $message }}
                             </span>

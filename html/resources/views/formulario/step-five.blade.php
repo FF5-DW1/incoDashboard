@@ -34,15 +34,15 @@
                             <label for="disponibilidad_horaria">Como parte del programa ofrecemos sesiones prácticas técnicas y de habilidades sociales en directo: ¿Qué horario se ajustaría más a tu disponibilidad?
                                 <div class="radio-control">
                                     <div class="radio-control-option">
-                                        <input type="radio" name="disponibilidad_horaria" id="mananas" value="mananas" {{ $alumno->disponibilidad_horaria == 'mananas' ? 'checked' : '' }}>Mañanas
+                                        <input type="radio" name="disponibilidad_horaria" id="mananas" value="mananas" {{ $alumno && $alumno->disponibilidad_horaria == 'mananas' ? 'checked' : '' }}>Mañanas
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="disponibilidad_horaria" id="tardes" value="tardes" {{ $alumno->disponibilidad_horaria == 'tardes' ? 'checked' : '' }}>Tardes
+                                        <input type="radio" name="disponibilidad_horaria" id="tardes" value="tardes" {{ $alumno && $alumno->disponibilidad_horaria == 'tardes' ? 'checked' : '' }}>Tardes
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="disponibilidad_horaria" id="ambas" value="ambas" {{ $alumno->disponibilidad_horaria == 'ambas' ? 'checked' : '' }}>Ambas
+                                        <input type="radio" name="disponibilidad_horaria" id="ambas" value="ambas" {{ $alumno && $alumno->disponibilidad_horaria == 'ambas' ? 'checked' : '' }}>Ambas
                                     </div>
                                 </div>
                             </label>
@@ -60,15 +60,15 @@
                             <label for="nivel_ingles">Para realizar este programa NO es necesario hablar inglés, todos los materiales tienen su versión en español. Sin embargo, en ocasiones organizamos eventos a nivel global en inglés: ¿te sientes cómodo participando en una sesión en inglés?
                                 <div class="radio-control">
                                     <div class="radio-control-option">
-                                        <input type="radio" name="nivel_ingles" id="si" value="si" {{ $alumno->nivel_ingles == 'si' ? 'checked' : '' }}>¡Si!
+                                        <input type="radio" name="nivel_ingles" id="si" value="si" {{ $alumno && $alumno->nivel_ingles == 'si' ? 'checked' : '' }}>¡Si!
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="nivel_ingles" id="algo-de-ingles" value="algo-de-ingles" {{ $alumno->nivel_ingles == 'algo-de-ingles' ? 'checked' : '' }}>No entiendo al 100% pero puedo hacerme entender
+                                        <input type="radio" name="nivel_ingles" id="algo-de-ingles" value="algo-de-ingles" {{ $alumno && $alumno->nivel_ingles == 'algo-de-ingles' ? 'checked' : '' }}>No entiendo al 100% pero puedo hacerme entender
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="nivel_ingles" id="no-sabe-ingles" value="no-sabe-ingles" {{ $alumno->nivel_ingles == 'no-sabe-ingles' ? 'checked' : '' }}>No, no me siento cómodo para participar en una sesión en inglés
+                                        <input type="radio" name="nivel_ingles" id="no-sabe-ingles" value="no-sabe-ingles" {{ $alumno && $alumno->nivel_ingles == 'no-sabe-ingles' ? 'checked' : '' }}>No, no me siento cómodo para participar en una sesión en inglés
                                     </div>
                                 </div>
                             </label>
@@ -84,7 +84,7 @@
                     <div class="field">
                         <div class="label_input">
                             <label for="presentacion_breve">Cuéntanos en menos de 300 palabras por qué quieres entrar en el programa elegido.
-                                <textarea name="presentacion_breve" id="" cols="30" rows="10">{{ $alumno->presentacion_breve }}</textarea>
+                                <textarea name="presentacion_breve" id="presentacion_breve" cols="30" rows="10">{{ $alumno ? $alumno->presentacion_breve : old('presentacion_breve') }}</textarea>
                             </label>
                             @error('presentacion_breve')
                             <span class="error-message">

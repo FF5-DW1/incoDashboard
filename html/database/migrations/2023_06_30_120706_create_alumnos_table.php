@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('residente')->nullable();
             $table->string('ciudad_residencia')->nullable();
             $table->string('pais_nacimiento')->nullable();
-            $table->string('rango_edad')->nullable();
+            $table->string('edad')->nullable();
             $table->string('genero')->nullable();
             $table->string('programa_elegido')->nullable();
             $table->string('canal_captacion')->nullable();
