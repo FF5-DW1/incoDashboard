@@ -338,22 +338,22 @@
                 <!--campo 9-->
                 <div class="field">
                     <div class="label_input">
-                        <label for="rango_edad">¿cuál es tu edad?</label>
+                        <label for="edad">¿cuál es tu edad?</label>
                             <div class="radio-control">
                                 <div class="radio-control-option">
-                                    <input type="radio" name="rango_edad" id="15-25" value="15-25" checked>15-25 
+                                    <input type="radio" name="edad" id="15-25" value="15-25" checked>15-25 
                                 </div>
 
                                 <div class="radio-control-option">
-                                    <input type="radio" name="rango_edad" id="26-35" value="26-35">26-35
+                                    <input type="radio" name="edad" id="26-35" value="26-35">26-35
                                 </div>
 
                                 <div class="radio-control-option">
-                                    <input type="radio" name="rango_edad" id="36-45" value="36-45">36-45
+                                    <input type="radio" name="edad" id="36-45" value="36-45">36-45
                                 </div>
 
                                 <div class="radio-control-option">
-                                    <input type="radio" name="rango_edad" id="46-a-mas" value="46-a-mas">46 a más
+                                    <input type="radio" name="edad" id="46-a-mas" value="46-a-mas">46 a más
                                 </div>
                             </div>
                     </div>
