@@ -54,7 +54,7 @@ Route::put('/formulario/{id}', 'FormularioController@update')->name('formulario.
 
 
 
-
+=========
 
 
 //rutas:
@@ -72,3 +72,4 @@ Route::put('/formulario/{id}', 'FormularioController@update')->name('formulario.
 //formulario/paso-tres
 //formulario/paso-cuatro
 //formulario/paso-cinco
+>>>>>>>>> Temporary merge branch 2
