@@ -15,9 +15,6 @@ class AlumnoController extends Controller
 
         return view('formulario.index', compact('alumnos'));
 
-            // return view('formulario.index', ['alumnos' => $alumno]);
-        #dump('$alumno');
-          //return view('formulario.registro');
     }
     
     //recibimos y guardamos datos pagina a pagina
@@ -49,8 +46,8 @@ class AlumnoController extends Controller
 
         // Actualizar los campos del perfil con los nuevos datos
         $alumno->nombre = $request->input('nombres');
-        $alumno->apellido = $request->input('apellidos');
-        $alumno->identificacion = $request->input('dni_nie_pasaporte');
+        $alumno->apellidos = $request->input('apellidos');
+        $alumno->dni_nie_pasaporte = $request->input('dni_nie_pasaporte');
         $alumno->telefono = $request->input('telefono');
 
         // Guardar los cambios en la base de datos
