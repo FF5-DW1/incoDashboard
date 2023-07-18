@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\alumno;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class AlumnoController extends Controller
 {
@@ -98,7 +98,7 @@ class AlumnoController extends Controller
         $validatedData = $request->validate ([
             'ciudad_residencia'=>'required',
             'pais_nacimiento'=>'required',
-            'rango_edad'=>'required',
+            'edad'=>'required',
             'genero'=>'required',
         ]);
 
@@ -208,6 +208,7 @@ class AlumnoController extends Controller
 
         return redirect()->route('formulario.step-one');
     }
+
        
 }
 

@@ -100,7 +100,7 @@
                                 <td>{{$alumno->residente}}</td>
                                 <td>{{$alumno->ciudad_residencia}}</td>
                                 <td>{{$alumno->pais_nacimiento}}</td>
-                                <td>{{$alumno->rango_edad}}</td>
+                                <td>{{$alumno->edad}}</td>
                                 <td>{{$alumno->genero}}</td>
                                 <td>{{$alumno->programa_elegido}}</td>
                                 <td>{{$alumno->canal_captacion}}</td>

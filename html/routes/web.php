@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ChartsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -50,6 +51,7 @@ Route::get('formulario/index', [AlumnoController::class, 'index'])->name('formul
 Route::post('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
 
 Route::put('/formulario/{id}', 'FormularioController@update')->name('formulario.update');
+
 
 
 
