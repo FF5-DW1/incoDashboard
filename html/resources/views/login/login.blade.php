@@ -16,18 +16,16 @@
     <body class="container-form">
         <div class="container-login" >   
             <div class="login-titulo">
-                <h2>Entra a tu cuenta</h2>
-                <p>Ingresa tus datos correctamente</p>
-
-                <h2 class="uppercase text-xl font-bold text-center">Inicia sesión</h2>
-                <p class="font-extralight text-zinc-900 text-center">Bienvenido/a, ingresa tus datos para iniciar sesión</p>
+                <img src="{{ asset('/images/inco_logo.png') }}" alt="Logo-inco">
+                <h2>Inicia sesión</h2>
+                <p>Bienvenido/a, ingresa tus datos para iniciar sesión</p>
             </div>
 
             <div class=formulario-login>
                 <form action="/login" method="POST">
                     @csrf
                     <div class="label-input">
-                        <label for="email">Email:
+                        <label for="email">Email
                         <input type="email" name ="email" id="email" placeholder="Ingresa tu email"></label>
                     </div>
                     
@@ -36,8 +34,8 @@
                         <input type="password" name="password" id ="password" placeholder="Ingresa tu email"></label>
                     </div>
 
-                    <div class="label-input">
-                        <input type="submit" value="Entrar">
+                    <div>
+                        <input class="btn" type="submit" value="Entrar">
                     </div>
 
                     <div class="label-input">

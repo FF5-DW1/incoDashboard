@@ -31,12 +31,17 @@
 
 }
 
+.formulario-login {
+    width: 100%;
+}
+
 .login-titulo h2 {
     text-align: center;
     color: #012060;
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 2%;
+    text-transform: uppercase;
 }
 
 .login-titulo p {
@@ -69,8 +74,44 @@
 
 .label_input input::placeholder {
     padding-left: 1%;
-    font-weight: 900;
-    font-size: 0.8rem;
+    font-weight: 200;
+    font-size: 1.8rem;
     color: gray;
 }
 
+.label-input a {
+    text-decoration: none;
+    color: #012060;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.login-titulo {
+    text-align: center;
+}
+
+.login-titulo img {
+    width: 30%;
+    margin-bottom: 10%;
+}
+
+.btn {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    height: 45px;
+    padding: 0 5%;
+    background-color: #012060;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 5%;
+    width: 100%;
+    transition: 0.5s ease;
+}
+
+.btn:hover {
+    background: #009BD9;
+    color: white;
+    border: white;
+}

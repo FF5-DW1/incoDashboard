@@ -9,14 +9,5 @@
         <h4>¡Muchas gracias por tu interés!</h4>
         <p>Pronto nos pondremos en contacto.</p>
     </div>
-
-    <div>
-
-    </div>
-    
-      
-    
-    
-
 </div>
 @endsection
