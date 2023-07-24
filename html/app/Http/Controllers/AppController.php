@@ -12,9 +12,12 @@ class AppController extends Controller
 {
       public function dashboard(Request $request){
 
+        $totalAlumnos = Alumno::count();
+        $totalMujeres = Alumno::where('genero', 'mujer')->count();
+        $totalAceptados = Alumno::where('estado', 'aceptados')->count();
+        $totalPendientes = Alumno::where('estado', 'pendiente')->count();
         $alumnos = Alumno::all();
-
-        return view('app.dashboard', compact('alumnos'));
+        return view('app.dashboard', compact('totalAlumnos','totalMujeres','totalAceptados', 'totalPendientes', 'alumnos'));
 
     }
     public function registros()

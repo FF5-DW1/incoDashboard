@@ -7,48 +7,48 @@
                 <div class="box">
                     <div class="right-side">
                         <div class="box-topic">Total Registrados</div>
-                        <div class="number">40,876</div>
-                        <div class="indicator">
+                        <div class="number">{{$totalAlumnos}}</div>
+                        {{-- <div class="indicator">
                             <i class="bx bx-up-arrow-alt"></i>
                             <span class="text">Up from yesterday</span>
-                        </div>
+                        </div> --}}
                     </div>
                     <!-- <i class="bx bx-cart-alt cart"></i> -->
                 </div>
                 <div class="box">
                     <div class="right-side">
                         <div class="box-topic">Total Aceptados</div>
-                        <div class="number">38,876</div>
-                        <div class="indicator">
+                        <div class="number">{{$totalAceptados}}</div>
+                        {{-- <div class="indicator">
                             <i class="bx bx-up-arrow-alt"></i>
                             <span class="text">Up from yesterday</span>
-                        </div>
+                        </div> --}}
                     </div>
                     <!-- <i class="bx bxs-cart-add cart two"></i> -->
                 </div>
                 <div class="box">
                     <div class="right-side">
                         <div class="box-topic">Total Mujeres</div>
-                        <div class="number">12,876</div>
-                        <div class="indicator">
+                        <div class="number">{{$totalMujeres}}</div>
+                        {{-- <div class="indicator">
                             <i class="bx bx-up-arrow-alt"></i>
                             <span class="text">Up from yesterday</span>
-                        </div>
+                        </div> --}}
                     </div>
                     <!-- <i class="bx bx-cart cart three"></i> -->
                 </div>
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Total Inmigrantes</div>
-                        <div class="number">11,086</div>
-                        <div class="indicator">
+                        <div class="box-topic">Total Pendientes</div>
+                        <div class="number">{{$totalPendientes}}</div>
+                        {{-- <div class="indicator">
                             <i class="bx bx-down-arrow-alt down"></i>
                             <span class="text">Down From Today</span>
-                        </div>
+                        </div> --}}
                     </div>
                     <!-- <i class="bx bxs-cart-download cart four"></i> -->
                 </div>
-            </div>
+</div>
 
             <div class="data_table">
                 <div>Control de Usuarios</div>
