@@ -708,9 +708,6 @@ nav .profile-details i {
 }
 
 
-
-
-
 /* Responsive Media Query */
 @media (max-width: 1240px) {
     .sidebar {
@@ -793,6 +790,7 @@ nav .profile-details i {
     .sidebar.active~.home-section nav .profile-details {
         display: none;
     }
+
 }
 
 @media (max-width: 400px) {
@@ -822,5 +820,211 @@ nav .profile-details i {
     .sidebar.active~.home-section nav {
         left: 60px;
         width: calc(100% - 60px);
+    }   
+
+    .container-form {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: space-between;
+        overflow: hidden;
+        background-image: linear-gradient(rgba(62, 173, 162, 0.7), rgba(62, 173, 162, 0.7)), url("/assets/img/mimi-thian-vdXMSiX-n6M-unsplash.jpg");
+        background-size: cover;
     }
+
+    .form-content {
+        padding: 10% 10%;
+    }
+    
+    .page {
+        display: block;
+        padding: 10% 10%;
+        gap: 5%;
+        transition: margin-left 0.3s ease-in-out;
+    }
+
+    .title-page {
+        padding-top: 5%;
+    }
+
+    .title-page h2{
+        text-align: center;
+        margin-bottom: 5%;
+        font-size: 3.5rem;
+    }
+
+    .title-page p {
+        text-align: center;
+        margin-bottom: 2%;
+        font-size: 2.5rem;
+    }
+
+    .label_field_part {
+        display: block;
+    }
+
+    .page-step-title p {
+        font-size: 2.5rem;
+    }
+
+    .label_input label {
+        font-size: 2rem;
+    }
+
+    .label_input input::placeholder {
+        padding-left: 1%;
+        font-weight: 200;
+        font-size: 1.2rem;
+        color: gray;
+    }
+
+    .input-box {
+        height: 50px;
+        border: solid #012060 1px;
+    }
+
+    .button-style {    
+        font-size: 1.4rem;
+        align-items: center;
+    }
+
+    .error-message {
+        color:#B42818;
+        background-color: #b4281822;
+        margin: 1% 0;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        font-weight: 200;
+        padding: 1%;
+        text-align: left;
+    }
+
+    input[type="radio"] {
+       margin: 0 8px;
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    
+    input[type="radio"]::before {
+        width: 0.85em;
+        height: 0.85em;
+    }
+
+    .label_input input {
+        font-size: 1.2rem;
+    }
+
+    .label_input select {
+        font-size: 1.2rem;
+    }
+
+    .btns a {
+        font-size: 1.4rem;
+        padding: 1% 5%;
+    }
+
+
+}
+
+@media (min-width: 400px) {
+    .container-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        background-image: linear-gradient(rgba(62, 173, 162, 0.7), rgba(62, 173, 162, 0.7)), url("/assets/img/mimi-thian-vdXMSiX-n6M-unsplash.jpg");
+        background-size: cover;
+    }
+
+    .form-content {
+        padding: 10% 10%;
+    }
+    
+    .page {
+        display: block;
+        padding: 10% 10%;
+        gap: 5%;
+        transition: margin-left 0.3s ease-in-out;
+    }
+
+    .title-page {
+        padding-top: 5%;
+    }
+
+    .title-page h2{
+        text-align: center;
+        margin-bottom: 5%;
+        font-size: 3.5rem;
+    }
+
+    .title-page p {
+        text-align: center;
+        margin-bottom: 2%;
+        font-size: 2.5rem;
+    }
+
+    .label_field_part {
+        display: block;
+    }
+
+    .page-step-title p {
+        font-size: 2.5rem;
+    }
+
+    .label_input label {
+        font-size: 2rem;
+    }
+
+    .label_input input::placeholder {
+        padding-left: 1%;
+        font-weight: 200;
+        font-size: 1.2rem;
+        color: gray;
+    }
+
+    .input-box {
+        height: 50px;
+        border: solid #012060 1px;
+    }
+
+    .button-style {    
+        font-size: 1.4rem;
+        align-items: center;
+    }
+
+    .error-message {
+        color:#B42818;
+        background-color: #b4281822;
+        margin: 1% 0;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        font-weight: 200;
+        padding: 1%;
+        text-align: left;
+    }
+
+    input[type="radio"] {
+       margin: 0 8px;
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    
+    input[type="radio"]::before {
+        width: 0.85em;
+        height: 0.85em;
+    }
+
+    .label_input input {
+        font-size: 1.2rem;
+    }
+
+    .label_input select {
+        font-size: 1.2rem;
+    }
+
+    .btns a {
+        font-size: 1.4rem;
+        padding: 1% 5%;
+    }
+
 }
