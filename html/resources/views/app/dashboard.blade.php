@@ -58,10 +58,11 @@
 </div>
 
             <div class="data_table">
+                @can('formulario.step.one')
                 <div>Control de Usuarios</div>
   
                 <div>
-                      
+                    
                     <a href="{{ route('formulario.step.one') }}">Añadir Usuario</a>
   
                     @if (Session::has('message'))
@@ -127,6 +128,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    @endcan
                 </div>
 </div>
 @section('js')

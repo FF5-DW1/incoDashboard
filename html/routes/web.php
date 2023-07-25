@@ -20,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/',[LoginController::class,'login']);
+
+Route::get('/',[LoginController::class,'login'])->name('login')->middleware('auth');
 Route::post('/login',[LoginController::class,'authenticate']);
 
 
@@ -51,11 +52,9 @@ Route::post('/formulario/guardar_registro',[AlumnoController::class, 'store'])->
 // Dashboard routes
 Route::get('app/dashboard', [AppController::class, 'dashboard'])->name('dashboard')->middleware('auth');
 
-//Route::get('app/dashboard', [AppController::class, 'dashboard'])->name('dashboard');
-// Route::get('app/registros', [AppController::class, 'registros'])->name('registros');
+
 Route::get('app/charts', [AppController::class, 'charts'])->name('charts');
-//Route::get('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
-//Route::post('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
+
 
 Route::put('/formulario/{id}', 'FormularioController@update')->name('formulario.update');
 

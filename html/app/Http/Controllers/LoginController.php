@@ -33,20 +33,31 @@ class LoginController extends Controller
         
        
         //Comprobar pass 
-        if (Auth::attempt($validar)){
-           //si login ok regenero la seccion
-           $request->session()->regenerate();
-            //se redireciona a la dashboard
-            //dd('Logado correctamente');
+        // if (Auth::attempt($validar)){
+        //    //si login ok regenero la seccion
+        //    $request->session()->regenerate();
+        //     //se redireciona a la dashboard
+        //     //dd('Logado correctamente');
 
-            return redirect()->route('dashboard');
+        //     return redirect()->route('dashboard');
         
-             //return redirect()->intended(route('dashboard'))
-            //->withSuccess('Logado Correctamente');
+        //      //return redirect()->intended(route('dashboard'))
+        //     //->withSuccess('Logado Correctamente');
+        // }
+        // //return redirect("/")->withSuccess('Los datos introducidos no son correctos');
+        // return back()->withErrors([
+        //     'email' => 'Los datos ingresados no coinciden con el registro.',
+        // ])->onlyInput('email');
+        
+        if (Auth::attempt($validar)) {
+            // Autenticación exitosa, regenerar la sesión y redirigir al usuario a la página de inicio
+            Auth::login(Auth::user());
+            return redirect()->route('dashboard');
+        } else {
+            // Autenticación fallida, redirigir de nuevo al login con un mensaje de error
+            return back()->withErrors([
+                'email' => 'Los datos ingresados no coinciden con el registro.',
+            ])->onlyInput('email');
         }
-        //return redirect("/")->withSuccess('Los datos introducidos no son correctos');
-        return back()->withErrors([
-            'email' => 'Los datos ingresados no coinciden con el registro.',
-        ])->onlyInput('email');
     }
 }

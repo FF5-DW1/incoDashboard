@@ -77,12 +77,12 @@
             </div>
             <div class="profile-details">
                 <!-- <img src="images/profile.jpg" alt="" /> -->
-                <header>
+                <div>
                     @auth
                     Bienvenido: 
                     {{Auth::user()->nombre}} 
                     @endauth
-                </header>
+                </div>
                 {{-- <span class="admin_name">Usuario</span>
                 <i class="bx bx-chevron-down"></i> --}}
             </div>
