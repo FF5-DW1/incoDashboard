@@ -8,10 +8,10 @@
                     <div class="right-side">
                         <div class="box-topic">Total Registrados</div>
                         <div class="number">{{$totalAlumnos}}</div>
-                        {{-- <div class="indicator">
+                        <div class="indicator">
                             <i class="bx bx-up-arrow-alt"></i>
-                            <span class="text">Up from yesterday</span>
-                        </div> --}}
+                            <span class="text">En aumento desde ayer</span>
+                        </div>
                     </div>
                     <!-- <i class="bx bx-cart-alt cart"></i> -->
                 </div>
@@ -19,10 +19,10 @@
                     <div class="right-side">
                         <div class="box-topic">Total Aceptados</div>
                         <div class="number">{{$totalAceptados}}</div>
-                        {{-- <div class="indicator">
+                        <div class="indicator">
                             <i class="bx bx-up-arrow-alt"></i>
-                            <span class="text">Up from yesterday</span>
-                        </div> --}}
+                            <span class="text">En aumento desde ayer</span>
+                        </div>
                     </div>
                     <!-- <i class="bx bxs-cart-add cart two"></i> -->
                 </div>
@@ -30,10 +30,10 @@
                     <div class="right-side">
                         <div class="box-topic">Total Mujeres</div>
                         <div class="number">{{$totalMujeres}}</div>
-                        {{-- <div class="indicator">
+                        <div class="indicator">
                             <i class="bx bx-up-arrow-alt"></i>
-                            <span class="text">Up from yesterday</span>
-                        </div> --}}
+                            <span class="text">En aumento desde ayer</span>
+                        </div>
                     </div>
                     <!-- <i class="bx bx-cart cart three"></i> -->
                 </div>
@@ -41,34 +41,36 @@
                     <div class="right-side">
                         <div class="box-topic">Total Pendientes</div>
                         <div class="number">{{$totalPendientes}}</div>
-                        {{-- <div class="indicator">
+                        <div class="indicator">
                             <i class="bx bx-down-arrow-alt down"></i>
-                            <span class="text">Down From Today</span>
-                        </div> --}}
+                            <span class="text">En descenso hoy</span>
+                        </div>
                     </div>
                     <!-- <i class="bx bxs-cart-download cart four"></i> -->
                 </div>
 </div>
 
             <div class="data_table">
-                <div>Control de Usuarios</div>
-  
-                <div>
-                      
-                    <a href="{{ route('formulario.step.one') }}">Añadir Usuario</a>
-  
+                
+                <div>            
+                  
                     @if (Session::has('message'))
                         <div class="alert alert-info">{{ Session::get('message') }}</div>
                     @endif
+                    <div class="table_header_dashboard">
+                        <p>Últimos registros</p>
+                        <a href="{{ route('formulario.step.one') }}">Añadir inscripción</a>   
+                    </div>
+  
                     <table class="display nowrap" style="width:100%" id="myTable">
                         <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
+                            <th scope="col">Apellidos</th>
                             <th scope="col">Email</th>
                             <th scope="col">Identificación</th>
-                            <th scope="col">Telefono</th>
+                            <th scope="col">Teléfono</th>
                             <th scope="col">Residente</th>
                             <th scope="col">Ciudad</th>
                             <th scope="col">Pais Nac.</th>

@@ -19,13 +19,7 @@
 
     </head>
     <body>
-        <li>
-            <a href="{{ route('dashboard') }}" class="active">
-                <i class="bx bx-grid-alt"></i>
-                <span class="links_name">Dashboard</span>
-            </a>
-        </li>
-        <div class="container-form" >
+        <div>
             @yield('content')
         </div>    
         @yield('js')    

@@ -6,70 +6,65 @@
     box-sizing: border-box;
 }
 
+/*--Estilos generales de formulario--*/
 .container-form {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: space-between;
     min-height: 100vh;
     overflow: hidden;
     background-image: linear-gradient(rgba(62, 173, 162, 0.7), rgba(62, 173, 162, 0.7)), url("/assets/img/mimi-thian-vdXMSiX-n6M-unsplash.jpg");
     background-size: cover;
 }
 
-.page {
-    display: flex;
-    padding: 2% 10%;
-    gap: 5%;
-    min-height: 100vh;
-    transition: margin-left 0.3s ease-in-out;
-}
-
-.title-page {
-    flex: 0 0 25%;
-    text-align: right;
-    padding-top: 30vh;
+.title-page h2 {
+    font-weight: 900;
+    color: white;
     text-transform: uppercase;
 }
 
 .title-page p {
-    font-size: 1.2rem;
     font-weight: 700;
     color: #012060;
-}
-
-.title-page h2 {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: white;
 }
 
 .page-step-title {
     color: #012060;
     font-weight: 500;
-    font-size: 0.9rem;
-    margin-bottom: 5%;
+}
+
+.form-content {
+    background-color: rgba(255, 255, 255, 0.80);
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .error-message {
     color:#B42818;
     background-color: #b4281822;
     margin: 1% 0;
-    font-size: 0.8rem;
     border-radius: 10px;
     font-weight: 200;
     padding: 1%;
     text-align: left;
 }
 
-.form-content {
-    flex: 0 0 65%;
-    background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    padding: 4% 6%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+.button-style {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    height: 45px;
+    padding: 0 5%;
+    border: 1px solid #012060;
+    background-color: rgba(255, 255, 255, 0);
+    color: #012060;
+    margin-top: 3%;
+    transition: 0.5s ease;
+}
+
+.button-style:hover {
+    background: #009BD9;
+    color: white;
+    border: white;
 }
 
 .field {
@@ -87,42 +82,11 @@
 .label_input label {
     display: flex;
     flex-direction: column;
-    font-weight: 300;
-    margin-bottom: 1%;
-    font-size: 0.9rem;
-}
-
-.input-box {
-    height: 40px;
-    border: solid #012060 1px;
-}
-
-.label_field_part {
-    display: flex;
-    /* justify-content: space-between; */
-    gap: 5%;
-    width: 100%;
 }
 
 .label_input input {
     padding-left: 1%;
     font-weight: 200;
-    font-size: 0.8rem;
-}
-
-.label_input input::placeholder {
-    padding-left: 1%;
-    font-weight: 200;
-    font-size: 0.8rem;
-    color: gray;
-}
-
-.btns {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 5%;
 }
 
 .btns a {
@@ -132,49 +96,32 @@
     height: 45px;
     padding: 2.5% 5%;
     border: 1px solid #012060;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0);
     color: #012060;
-    cursor: pointer;
-    margin-top: 3%;
-    transition: 0.5s ease;
-    font-size: 0.8rem;
-    align-items: center;
-}
-
-.button-style {
-    text-decoration: none;
-    font-weight: 600;
-    text-transform: uppercase;
-    height: 45px;
-    padding: 0 5%;
-    border: 1px solid #012060;
-    background-color: rgba(255, 255, 255, 0.75);
-    color: #012060;
-    cursor: pointer;
     margin-top: 3%;
     transition: 0.5s ease;
 }
 
-.field button:hover {
+.btns a:hover {
     background: #009BD9;
     color: white;
     border: white;
 }
 
-.label_input select {
-    height: 45px;
+.label_input input::placeholder {
+    padding-left: 1%;
     font-weight: 200;
-    font-size: 0.8rem;
     color: gray;
-    padding: 0 1%;
 }
 
-.form-part-title {
-    color: #012060;
-    font-weight: 700;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    margin-bottom: 4%;
+.input-box {
+    border: solid #012060 1px;
+}
+
+input[type="date"] {
+    font-weight: 200;
+    color: gray;
+    padding: 0 1%;
 }
 
 input[type="radio"] {
@@ -184,8 +131,8 @@ input[type="radio"] {
     appearance: none;
     /* Not removed via appearance */
     margin: 0 2px;
-    width: 1.1rem;
-    height: 1.1rem;
+    width: 1.15rem;
+    height: 1.15rem;
     border: 1px solid #012060;
     border-radius: 50%;
     transform: translateY(-0.025em);
@@ -208,18 +155,9 @@ input[type="radio"]:checked::before {
     transform: scale(2);
 }
 
-input[type="date"] {
-    height: 45px;
-    font-weight: 200;
-    font-size: 0.8rem;
-    color: gray;
-    padding: 0 1%;
-}
-
 .radio-control {
     display: flex;
     flex-wrap: wrap;
-    /* width: 80%; */
 }
 
 .radio-control-option {
@@ -239,6 +177,7 @@ input[type="date"] {
 .next {
     margin-left: 70%;
 }
+
 
 /* Estilos Dashboard */
 .sidebar {
@@ -457,22 +396,24 @@ nav .profile-details i {
     align-items: center;
     justify-content: center;
     width: calc(100% / 4 - 15px);
-    background: #fff;
+    background: #3eada247;
     padding: 15px 14px;
     border-radius: 12px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .overview-boxes .box-topic {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 300;
 }
 
 .home-content .box .number {
-    display: inline-block;
-    font-size: 35px;
-    margin-top: -6px;
-    font-weight: 500;
+    /* display: inline-block; */
+    font-size: 3rem;
+    /* margin-top: -6px; */
+    font-weight: 700;
+    color: #012060;
+   
 }
 
 .home-content .box .indicator {
@@ -497,7 +438,8 @@ nav .profile-details i {
 }
 
 .home-content .box .indicator .text {
-    font-size: 12px;
+    font-size: 0.6rem;
+    font-weight: 300;
 }
 
 .home-content .box .cart {
@@ -646,13 +588,13 @@ nav .profile-details i {
 .thank-you-content {
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 20px;
-    margin: auto;
-    padding: 4% 6%;
-    display: flex;
+    padding: 10% 10%;
+    display: flex; 
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: 70%;
+    align-content: center;
+    width: 90%; 
+    margin: 15% 5%;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);   
 }
 
@@ -707,6 +649,86 @@ nav .profile-details i {
     border: white;
 }
 
+/*---Estilos tabla de dashboard---*/
+.table_header_dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    padding-left: 1%;  
+    padding-right: 1%; 
+}
+
+.data_table a {
+        position: relative;
+        text-decoration: none;
+        color:#012060;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        background-color: #0121601e;
+        border-radius: 10px;
+        padding: 1% 2%;
+        
+        &:hover,
+        &:focus,
+        &:active {
+          cursor: pointer;
+          background-color: #01216054;
+          &:after {
+            width: 100%;
+          }
+        }
+}
+
+.data_table a:hover {
+    background-size: 100% 100%;
+}
+
+.data_table p {
+    font-size: 1.4rem;
+    font-weight: 500;   
+}
+
+table {
+    padding-top: 0.5%;
+    font-size: 0.8rem;
+    padding-right: 2%;
+}
+.dataTables_length {
+    font-size: 0.8rem;
+    font-weight: 200;
+    padding-left: 1%;
+}
+
+th {
+    font-weight: 200; 
+    font-size: 0.8rem;
+    color:#012060;
+}
+
+.dataTables_length select{
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.dataTables_filter {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.dataTables_filter input {
+    width: 500px;
+    height: 30px;
+}
+
+.dataTables_info {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+
 
 /* Responsive Media Query */
 @media (max-width: 1240px) {
@@ -738,6 +760,121 @@ nav .profile-details i {
         width: calc(100% - 220px);
         left: 220px;
     }
+
+    /*--Estilos de formulario--*/
+
+    .page {
+        display: flex;
+        flex-direction: row;
+        padding: 10% 10%;
+        gap: 5%;
+        transition: margin-left 0.5s ease-in-out;
+    }
+
+    .title-page {
+        flex: 0 0 25%;
+        text-align: right;
+        padding-top: 25vh;
+    } 
+    
+    .form-content {
+        flex: 0 0 65%;
+        padding: 5% 5%;
+    }
+
+    .title-page p {
+        font-size: 2rem;
+    }
+
+    .title-page h2 {
+        font-size: 2.5rem;
+    }
+
+    .page-step-title {
+        font-size: 1.2rem;
+        margin-bottom: 5%;
+    }
+
+    .error-message {
+        font-size: 0.8rem;
+    }
+
+    .label_input label {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        font-weight: 400;
+    }
+
+    .input-box {
+        height: 45px;
+    }
+
+    .label_field_part {
+        display: flex;
+        gap: 5%;
+        width: 100%;
+    }
+
+    .label_input input {
+        font-size: 0.8rem;
+    }
+
+    .label_input input::placeholder {      
+        font-size: 0.8rem;
+    }
+
+    .btns {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5%;
+    }
+
+    .btns a {   
+        font-size: 0.9rem;
+    }
+
+    .button-style {
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+
+    .label_input select {
+        height: 45px;
+        font-weight: 200;
+        font-size: 0.8rem;
+        color: gray;
+        padding: 0 1%;
+    }
+
+    input[type="date"] {
+        font-size: 1rem;
+    }
+
+    .radio-control {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .radio-control-option {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 10px;
+        margin-right: 5px;
+        padding: 1% 5% 1% 2%;
+        border-radius: 20px;
+        border: 1px solid #012060;
+        background-color: white;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+
+    .next {
+        margin-left: 70%;
+    }
+
 }
 
 @media (max-width: 1150px) {
@@ -761,6 +898,105 @@ nav .profile-details i {
         width: calc(100% / 2 - 15px);
         margin-bottom: 15px;
     }
+
+    /*--Estilos de formulario--*/
+    .page {
+        display: block;
+        padding: 0 4%;     
+        transition: margin-left 0.5s ease-in-out;
+    }
+
+    .title-page {   
+        text-align: center;
+        padding: 5% 0;
+    } 
+    
+    .form-content {
+        padding: 10% 10%;
+    }
+
+    .title-page p {
+        font-size: 2.5rem;
+    }
+
+    .title-page h2 {
+        font-size: 3.5rem;
+    }
+
+    .page-step-title {
+        font-size: 1.5rem;
+        margin-bottom: 10%;
+    }
+
+    .error-message {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .label_input label {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    .input-box {
+        height: 60px;
+    }
+
+    .label_field_part {
+        display: block;
+        width: 100%;
+    }
+
+    .label_input input {
+        font-size: 1.2rem;
+    }
+
+    .label_input input::placeholder {      
+        font-size: 1.2rem;
+    }
+
+    .btns a {   
+        font-size: 1.2rem;
+        padding-top: 1.2%;
+    }
+
+    .button-style {
+        font-size: 1.2rem;
+    }
+
+    .label_input select {
+        height: 60px;
+        font-weight: 200;
+        font-size: 1.2em;
+        padding: 0 1%;
+    }
+
+    input[type="date"] {
+        font-size: 1.2rem;
+        height: 60px;
+    }
+
+    input[type="radio"] {    
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+    
+    input[type="radio"]::before { 
+        width: 0.55em;
+        height: 0.55em;
+    }
+
+    .radio-control-option { 
+        font-size: 1.2rem;   
+    }
+
+    .next {
+        margin-left: 70%;
+    }
+
+    .btn-start a {    
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 700px) {
@@ -779,6 +1015,106 @@ nav .profile-details i {
     .home-content .sales-boxes .sales-details {
         width: 560px;
     }
+
+    /*--Estilos de formulario--*/
+    .page {
+        display: block;
+        padding: 0 4%;     
+        transition: margin-left 0.5s ease-in-out;
+    }
+
+    .title-page {   
+        text-align: center;
+        padding: 5% 0;
+    } 
+    
+    .form-content {
+        padding: 10% 10%;
+    }
+
+    .title-page p {
+        font-size: 2.5rem;
+    }
+
+    .title-page h2 {
+        font-size: 3.5rem;
+    }
+
+    .page-step-title {
+        font-size: 1.5rem;
+        margin-bottom: 10%;
+    }
+
+    .error-message {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .label_input label {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    .input-box {
+        height: 60px;
+    }
+
+    .label_field_part {
+        display: block;
+        width: 100%;
+    }
+
+    .label_input input {
+        font-size: 1.2rem;
+    }
+
+    .label_input input::placeholder {      
+        font-size: 1.2rem;
+    }
+
+    .btns a {   
+        font-size: 1.2rem;
+        padding-top: 1.2%;
+    }
+
+    .button-style {
+        font-size: 1.2rem;
+    }
+
+    .label_input select {
+        height: 60px;
+        font-weight: 200;
+        font-size: 1.2em;
+        padding: 0 1%;
+    }
+
+    input[type="date"] {
+        font-size: 1.2rem;
+        height: 60px;
+    }
+
+    input[type="radio"] {    
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+    
+    input[type="radio"]::before { 
+        width: 0.55em;
+        height: 0.55em;
+    }
+
+    .radio-control-option { 
+        font-size: 1.2rem;   
+    }
+
+    .next {
+        margin-left: 70%;
+    }
+
+    .btn-start a {    
+        font-size: 1.2rem;
+    }
+
 }
 
 @media (max-width: 550px) {
@@ -790,6 +1126,106 @@ nav .profile-details i {
     .sidebar.active~.home-section nav .profile-details {
         display: none;
     }
+
+    /*--Estilos de formulario--*/
+    .page {
+        display: block;
+        padding: 0 4%;     
+        transition: margin-left 0.5s ease-in-out;
+    }
+
+    .title-page {   
+        text-align: center;
+        padding: 5% 0;
+    } 
+    
+    .form-content {
+        padding: 10% 10%;
+    }
+
+    .title-page p {
+        font-size: 2.5rem;
+    }
+
+    .title-page h2 {
+        font-size: 3.5rem;
+    }
+
+    .page-step-title {
+        font-size: 1.5rem;
+        margin-bottom: 10%;
+    }
+
+    .error-message {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .label_input label {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    .input-box {
+        height: 60px;
+    }
+
+    .label_field_part {
+        display: block;
+        width: 100%;
+    }
+
+    .label_input input {
+        font-size: 1.2rem;
+    }
+
+    .label_input input::placeholder {      
+        font-size: 1.2rem;
+    }
+
+    .btns a {   
+        font-size: 1.2rem;
+        padding-top: 1.2%;
+    }
+
+    .button-style {
+        font-size: 1.2rem;
+    }
+
+    .label_input select {
+        height: 60px;
+        font-weight: 200;
+        font-size: 1.2em;
+        padding: 0 1%;
+    }
+
+    input[type="date"] {
+        font-size: 1.2rem;
+        height: 60px;
+    }
+
+    input[type="radio"] {    
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+    
+    input[type="radio"]::before { 
+        width: 0.55em;
+        height: 0.55em;
+    }
+
+    .radio-control-option { 
+        font-size: 1.2rem;   
+    }
+
+    .next {
+        margin-left: 70%;
+    }
+
+    .btn-start a {    
+        font-size: 1.2rem;
+    }
+
 
 }
 
@@ -822,209 +1258,104 @@ nav .profile-details i {
         width: calc(100% - 60px);
     }   
 
-    .container-form {
-        display: flex;
-        flex-direction: column;
-        /* align-items: center; */
-        justify-content: space-between;
-        overflow: hidden;
-        background-image: linear-gradient(rgba(62, 173, 162, 0.7), rgba(62, 173, 162, 0.7)), url("/assets/img/mimi-thian-vdXMSiX-n6M-unsplash.jpg");
-        background-size: cover;
+    /*--Estilos de formulario--*/
+    .page {
+        display: block;
+        padding: 0 4%;     
+        transition: margin-left 0.5s ease-in-out;
     }
 
+    .title-page {   
+        text-align: center;
+        padding: 5% 0;
+    } 
+    
     .form-content {
         padding: 10% 10%;
     }
-    
-    .page {
-        display: block;
-        padding: 10% 10%;
-        gap: 5%;
-        transition: margin-left 0.3s ease-in-out;
+
+    .title-page p {
+        font-size: 2.5rem;
     }
 
-    .title-page {
-        padding-top: 5%;
-    }
-
-    .title-page h2{
-        text-align: center;
-        margin-bottom: 5%;
+    .title-page h2 {
         font-size: 3.5rem;
     }
 
-    .title-page p {
-        text-align: center;
-        margin-bottom: 2%;
-        font-size: 2.5rem;
+    .page-step-title {
+        font-size: 1.5rem;
+        margin-bottom: 10%;
+    }
+
+    .error-message {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .label_input label {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    .input-box {
+        height: 60px;
     }
 
     .label_field_part {
         display: block;
-    }
-
-    .page-step-title p {
-        font-size: 2.5rem;
-    }
-
-    .label_input label {
-        font-size: 2rem;
-    }
-
-    .label_input input::placeholder {
-        padding-left: 1%;
-        font-weight: 200;
-        font-size: 1.2rem;
-        color: gray;
-    }
-
-    .input-box {
-        height: 50px;
-        border: solid #012060 1px;
-    }
-
-    .button-style {    
-        font-size: 1.4rem;
-        align-items: center;
-    }
-
-    .error-message {
-        color:#B42818;
-        background-color: #b4281822;
-        margin: 1% 0;
-        font-size: 1.2rem;
-        border-radius: 10px;
-        font-weight: 200;
-        padding: 1%;
-        text-align: left;
-    }
-
-    input[type="radio"] {
-       margin: 0 8px;
-        width: 1.8rem;
-        height: 1.8rem;
-    }
-    
-    input[type="radio"]::before {
-        width: 0.85em;
-        height: 0.85em;
+        width: 100%;
     }
 
     .label_input input {
         font-size: 1.2rem;
     }
 
-    .label_input select {
+    .label_input input::placeholder {      
         font-size: 1.2rem;
     }
 
-    .btns a {
-        font-size: 1.4rem;
-        padding: 1% 5%;
-    }
-
-
-}
-
-@media (min-width: 400px) {
-    .container-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        overflow: hidden;
-        background-image: linear-gradient(rgba(62, 173, 162, 0.7), rgba(62, 173, 162, 0.7)), url("/assets/img/mimi-thian-vdXMSiX-n6M-unsplash.jpg");
-        background-size: cover;
-    }
-
-    .form-content {
-        padding: 10% 10%;
-    }
-    
-    .page {
-        display: block;
-        padding: 10% 10%;
-        gap: 5%;
-        transition: margin-left 0.3s ease-in-out;
-    }
-
-    .title-page {
-        padding-top: 5%;
-    }
-
-    .title-page h2{
-        text-align: center;
-        margin-bottom: 5%;
-        font-size: 3.5rem;
-    }
-
-    .title-page p {
-        text-align: center;
-        margin-bottom: 2%;
-        font-size: 2.5rem;
-    }
-
-    .label_field_part {
-        display: block;
-    }
-
-    .page-step-title p {
-        font-size: 2.5rem;
-    }
-
-    .label_input label {
-        font-size: 2rem;
-    }
-
-    .label_input input::placeholder {
-        padding-left: 1%;
-        font-weight: 200;
+    .btns a {   
         font-size: 1.2rem;
-        color: gray;
+        padding-top: 1.2%;
     }
 
-    .input-box {
-        height: 50px;
-        border: solid #012060 1px;
-    }
-
-    .button-style {    
-        font-size: 1.4rem;
-        align-items: center;
-    }
-
-    .error-message {
-        color:#B42818;
-        background-color: #b4281822;
-        margin: 1% 0;
-        font-size: 1.2rem;
-        border-radius: 10px;
-        font-weight: 200;
-        padding: 1%;
-        text-align: left;
-    }
-
-    input[type="radio"] {
-       margin: 0 8px;
-        width: 1.8rem;
-        height: 1.8rem;
-    }
-    
-    input[type="radio"]::before {
-        width: 0.85em;
-        height: 0.85em;
-    }
-
-    .label_input input {
+    .button-style {
         font-size: 1.2rem;
     }
 
     .label_input select {
+        height: 60px;
+        font-weight: 200;
+        font-size: 1.2em;
+        padding: 0 1%;
+    }
+
+    input[type="date"] {
+        font-size: 1.2rem;
+        height: 60px;
+    }
+
+    input[type="radio"] {    
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+    
+    input[type="radio"]::before { 
+        width: 0.55em;
+        height: 0.55em;
+    }
+
+    .radio-control-option { 
+        font-size: 1.2rem;   
+    }
+
+    .next {
+        margin-left: 70%;
+    }
+    
+    .btn-start a {    
         font-size: 1.2rem;
     }
 
-    .btns a {
-        font-size: 1.4rem;
-        padding: 1% 5%;
-    }
-
 }
+

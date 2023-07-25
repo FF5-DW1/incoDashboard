@@ -1,19 +1,9 @@
 @extends('layout.default')
 @section('content')
-
-
+<div class="container-form">
     <div class="form-outer">
         <form action="{{ route('formulario.step.four.store') }}" method="POST" >
             @csrf
-            <!-- @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif -->
 
             <!-- pagina 4 -->
             <div class="page">
@@ -166,6 +156,7 @@
             </div>
         </form>
     </div>
+</div>
 @endsection
 
 

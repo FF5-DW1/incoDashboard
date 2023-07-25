@@ -1,6 +1,6 @@
 @extends('layout.default')
 @section('content')
-
+<div class="container-form">
     <div class="form-outer">
         <form action="{{ route('formulario.step.three.store') }}" method="POST" >
             @csrf
@@ -159,6 +159,7 @@
             
         </form>
     </div>
+</div>
 @endsection
 
 

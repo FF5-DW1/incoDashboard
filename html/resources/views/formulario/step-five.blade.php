@@ -1,6 +1,6 @@
 @extends('layout.default')
 @section('content')
-
+<div class="container-form">
     <div class="form-outer">
         <form  id="fomulario" action="{{ route('formulario.step.five.store') }}" method="POST" >
             @csrf
@@ -104,6 +104,7 @@
              </div>
         </form>
     </div>
+</div>
 @endsection
 
 
