@@ -14,7 +14,7 @@ class AppController extends Controller
 
         $totalAlumnos = Alumno::count();
         $totalMujeres = Alumno::where('genero', 'mujer')->count();
-        $totalAceptados = Alumno::where('estado', 'aceptados')->count();
+        $totalAceptados = Alumno::where('estado', 'aceptado')->count();
         $totalPendientes = Alumno::where('estado', 'pendiente')->count();
         $alumnos = Alumno::all();
         return view('app.dashboard', compact('totalAlumnos','totalMujeres','totalAceptados', 'totalPendientes', 'alumnos'));

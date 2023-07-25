@@ -63,6 +63,8 @@
                     <table class="display nowrap" style="width:100%" id="myTable">
                         <thead class="thead-dark">
                         <tr>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Estado</th>
                             <th scope="col">#</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido</th>
@@ -84,13 +86,18 @@
                             <th scope="col">Disponibilidad</th>
                             <th scope="col">Nivel Ingles</th>
                             <th scope="col">Presentación</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Acciones</th>
+                            
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($alumnos as $alumno)
                             <tr>
+                                <td>
+                                <a href="{{ route('formulario.edit.dashboard', $alumno->id) }}">
+                                    <i class="fas fa-edit"></i> 
+                                </a>
+                                </td>
+                                <td>{{$alumno->estado}}</td>
                                 <td>{{$alumno->id}}</td>
                                 <td>{{$alumno->nombres}}</td>
                                 <td>{{$alumno->apellidos}}</td>
@@ -112,10 +119,7 @@
                                 <td>{{$alumno->disponibilidad_horaria}}</td>
                                 <td>{{$alumno->nivel_ingles}}</td>
                                 <td>{{$alumno->presentacion_breve}}</td>
-                                <td>{{$alumno->estado}}</td>
-                                <td>
-                                    <a href="#">Editar</a> 
-                                </td>
+                                
                             </tr>
                         @endforeach
                         </tbody>
