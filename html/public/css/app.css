@@ -823,3 +823,47 @@ nav .profile-details i {
         width: calc(100% - 60px);
     }
 }
+/* Estilos para el modal */
+.modal {
+    display: none; /* Ocultar el modal inicialmente */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    word-break: break-all !important;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Ajusta el margen superior para cambiar la posición vertical */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%; /* Ajusta el ancho del modal */
+    max-width: 600px;
+    word-break: break-all !important;
+}
+
+/* Agrega un estilo para el botón de cierre (la "X") */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalText {
+    width: 90%;
+    text-align: center;
+    word-break: break-all !important;
+}

@@ -77,9 +77,9 @@
         <div class="label_input">
             <label for="estado">Estado</label>
                 <select class="input-box" id="estado" name="estado">
-                    <option value="pendiente" @if(old('estado', $alumno->estado) === 'pendiente') selected @endif>Pendiente</option>
-                    <option value="aceptado" @if(old('estado', $alumno->estado) === 'aceptado') selected @endif>Aceptado</option>
-                    <option value="rechazado" @if(old('estado', $alumno->estado) === 'rechazado') selected @endif>Rechazado</option>
+                    <option value="pendiente" @if(old('estado', $alumno->estado) === 'Pendiente') selected @endif>Pendiente</option>
+                    <option value="aceptado" @if(old('estado', $alumno->estado) === 'Aceptado') selected @endif>Aceptado</option>
+                    <option value="rechazado" @if(old('estado', $alumno->estado) === 'Rechazado') selected @endif>Rechazado</option>
                 </select>
     </div>
     @error('estado')

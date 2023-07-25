@@ -192,6 +192,6 @@ class AlumnoController extends Controller
             'estado' => $request->input('estado'),
         ]);
 
-        return redirect()->route('dashboard')->with('message', 'Registro actualizado correctamente.');
+        return redirect()->route('dashboard');
     }
 }
