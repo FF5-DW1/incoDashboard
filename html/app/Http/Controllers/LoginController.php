@@ -18,14 +18,14 @@ class LoginController extends Controller
 
     public function login(){
         if (Auth::check()){
-            return view('dashboard');
+            return view('app.dashboard');
         }else{
         return view('login.login');
         }
     }
     
     public function authenticate(Request $request){
-        //Validar
+        //Validar datos
         $validar =  $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],

@@ -77,8 +77,14 @@
             </div>
             <div class="profile-details">
                 <!-- <img src="images/profile.jpg" alt="" /> -->
-                <span class="admin_name">Usuario</span>
-                <i class="bx bx-chevron-down"></i>
+                <header>
+                    @auth
+                    Bienvenido: 
+                    {{Auth::user()->nombre}} 
+                    @endauth
+                </header>
+                {{-- <span class="admin_name">Usuario</span>
+                <i class="bx bx-chevron-down"></i> --}}
             </div>
         </nav>
 

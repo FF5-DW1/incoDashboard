@@ -49,11 +49,13 @@ Route::get('formulario/thank-you', [AlumnoController::class, 'createThankYou'])-
 Route::post('/formulario/guardar_registro',[AlumnoController::class, 'store'])->name('guardar_registro');
 
 // Dashboard routes
-Route::get('app/dashboard', [AppController::class, 'dashboard'])->name('dashboard');
+Route::get('app/dashboard', [AppController::class, 'dashboard'])->name('dashboard')->middleware('auth');
+
+//Route::get('app/dashboard', [AppController::class, 'dashboard'])->name('dashboard');
 // Route::get('app/registros', [AppController::class, 'registros'])->name('registros');
 Route::get('app/charts', [AppController::class, 'charts'])->name('charts');
-Route::get('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
-Route::post('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
+//Route::get('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
+//Route::post('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
 
 Route::put('/formulario/{id}', 'FormularioController@update')->name('formulario.update');
 

@@ -17,21 +17,21 @@ class UserSeeder extends Seeder
     {
 
        \App\Models\User::factory()->create([
-          'name' => 'Angel',
+          'nombre' => 'Angel',
           'apellido'=>'Ruiz',
           'email' => 'angel@Inco.com',
           'password' => Hash::make('hola123'),
           'remember_token' => Str::random(10),
-     ])->assignRole('$role1');
+     ])->assignRole('Admin');
     //  esta persona va tener solo un rol el rol1 de admin
 
      \App\Models\User::factory()->create([
-          'name' => 'Ana',
+          'nombre' => 'Ana',
           'apellido'=>'Martines',
           'email' => 'ana@Inco.com',
           'password' => Hash::make('hola1234'),
           'remember_token' => Str::random(10),
-        ])->assignRole('$role2');   
+        ])->assignRole('Coordinador');   
      //]);
 
      // User::factory(9)->create();
