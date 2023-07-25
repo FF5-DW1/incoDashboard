@@ -21,8 +21,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/',[LoginController::class,'login'])->name('login')->middleware('auth');
+Route::get('/',[LoginController::class,'login'])->name('login');
 Route::post('/login',[LoginController::class,'authenticate']);
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 
 //Formulario de inscripción

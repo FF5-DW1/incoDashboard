@@ -13,12 +13,12 @@ class LoginController extends Controller
     //     if (Auth::check()){
     //         return view('dashboard');
     //     }
-    //     return view('login.login');
+    //     return view('login.
     //  }
 
     public function login(){
         if (Auth::check()){
-            return view('app.dashboard');
+            return redirect()->route('dashboard');
         }else{
         return view('login.login');
         }
@@ -33,9 +33,9 @@ class LoginController extends Controller
         
        
         //Comprobar pass 
-        // if (Auth::attempt($validar)){
+         //if (Auth::attempt($validar)){
         //    //si login ok regenero la seccion
-        //    $request->session()->regenerate();
+        //   $request->session()->regenerate();
         //     //se redireciona a la dashboard
         //     //dd('Logado correctamente');
 
@@ -48,10 +48,11 @@ class LoginController extends Controller
         // return back()->withErrors([
         //     'email' => 'Los datos ingresados no coinciden con el registro.',
         // ])->onlyInput('email');
-        
+
         if (Auth::attempt($validar)) {
             // Autenticación exitosa, regenerar la sesión y redirigir al usuario a la página de inicio
-            Auth::login(Auth::user());
+           // Auth::login(Auth::user());
+            $request->session()->regenerate();
             return redirect()->route('dashboard');
         } else {
             // Autenticación fallida, redirigir de nuevo al login con un mensaje de error
@@ -60,4 +61,15 @@ class LoginController extends Controller
             ])->onlyInput('email');
         }
     }
+
+    public function logout(Request $request)
+{
+    Auth::logout();
+ 
+    $request->session()->invalidate();
+ 
+    $request->session()->regenerateToken();
+ 
+    return redirect('/');
+}
 }
