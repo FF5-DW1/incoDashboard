@@ -151,9 +151,9 @@
 <script>
     $(document).ready(function() {
         // Inicializar la tabla
-        new DataTable('#myTable', {
-            scrollX: true
-        });
+        // new DataTable('#myTable', {
+        //     scrollX: true
+        // });
 
         // Configurar evento para el botón "Leer más"
         $('.read-more-btn').on('click', function() {

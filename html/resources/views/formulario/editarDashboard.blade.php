@@ -72,7 +72,7 @@
             @enderror
         </div>
 
-        <!-- Campo 3 -->
+        <!-- Campo 6 -->
     <div class="field">
         <div class="label_input">
             <label for="estado">Estado</label>
