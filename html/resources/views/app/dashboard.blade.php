@@ -39,10 +39,12 @@
 </div>
 
 <div class="data_table">
+    
     <div>
         @if (Session::has('message'))
         <div class="alert alert-info">{{ Session::get('message') }}</div>
         @endif
+        @can('formulario.step.one')
         <div class="table_header_dashboard">
             <p>Últimos registros</p>
             <a href="{{ route('formulario.step.one') }}">Añadir inscripción</a>
@@ -118,6 +120,7 @@
                 @endforeach
             </tbody>
         </table>
+        @endcan
     </div>
 </div>
 <div id="myModal" class="modal">
