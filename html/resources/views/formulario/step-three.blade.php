@@ -130,7 +130,11 @@
                                     </div>
 
                                     <div class="radio-control-option">
-                                        <input type="radio" name="situacion_profesional" id="fp-universidad" value="fp-universidad" {{ $alumno && $alumno->situacion_profesional == 'fp-universidad' ? 'checked' : '' }}>Estudio FP/ Voy a la universidad
+                                        <input type="radio" name="situacion_profesional" id="fp" value="fp" {{ $alumno && $alumno->situacion_profesional == 'fp' ? 'checked' : '' }}>Estudio una FP
+                                    </div>
+
+                                    <div class="radio-control-option">
+                                        <input type="radio" name="situacion_profesional" id="universidad" value="universidad" {{ $alumno && $alumno->situacion_profesional == 'universidad' ? 'checked' : '' }}>Voy a la universidad
                                     </div>
 
                                     <div class="radio-control-option">

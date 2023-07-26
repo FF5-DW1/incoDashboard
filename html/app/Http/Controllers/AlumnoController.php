@@ -34,9 +34,9 @@ class AlumnoController extends Controller
             'nombres'=>'required|max:50',
             'apellidos'=>'required|max:50',
             'email'=>'required|unique:alumnos|email|max:60',
-            'dni_nie_pasaporte' =>'required|unique:alumnos|max:12',
+            'dni_nie_pasaporte' =>'required|unique:alumnos|max:12|regex:/^\d{8}[a-zA-Z]$/',
             'telefono'=>'required',
-            'residente'=>'required',
+            'residente' => 'required|in:si', //asegura que solo sea si o no la respuesta
        ]);
 
         if(empty($request->session()->get('alumno'))) {

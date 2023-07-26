@@ -114,12 +114,11 @@
                     </div>
 
                     <div class="field btns">
-                        <button class="button-style next" type="submit">Siguiente</button>
+                        <button class="button-style next" id="next1" type="submit">Siguiente</button>
                     </div>
                 </div>
             </div>
         </form>
     </div>
 </div>
-
 @endsection
