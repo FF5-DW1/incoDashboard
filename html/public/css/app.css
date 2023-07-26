@@ -732,7 +732,7 @@ nav .profile-details i {
 }
 
 .data_table p {
-    font-size: 0.8rem;
+    font-size: 1.4rem;
     font-weight: 500;
 }
 
@@ -740,8 +740,6 @@ table {
     padding-top: 0.5%;
     font-size: 0.8rem;
     padding-right: 2%;
-    width: 100%;
-    table-layout: fixed;
 }
 .dataTables_length {
     font-size: 0.8rem;
@@ -775,11 +773,6 @@ th {
     font-weight: 300;
 }
 
-.read-more-btn {
-    font-size: 0.9rem; 
-    opacity: 0.8; 
-    text-decoration: none;
-}
 /* Responsive Media Query */
 @media (max-width: 1240px) {
     .sidebar {
