@@ -111,7 +111,7 @@
                     <td class="presentation-column">
                         @if (strlen($alumno->presentacion_breve) > 10)
                         {{ substr($alumno->presentacion_breve, 0, 10) }}...
-                        <button class="read-more-btn" data-full-text="{{ $alumno->presentacion_breve }}">Leer más</button>
+                        <button class="read-more-btn" data-full-text="{{ $alumno->presentacion_breve }}">Más</button>
                         @else
                         {{ $alumno->presentacion_breve }}
                         @endif
