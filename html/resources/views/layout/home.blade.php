@@ -60,9 +60,6 @@
            
             <div class="profile-details">
                 <!-- <img src="images/profile.jpg" alt="" /> -->
-<<<<<<< HEAD
-                <span class="admin_name">Usuario</span>
-=======
                 <div>
                     @auth
                         Bienvenido: 
@@ -76,7 +73,6 @@
                         <a href="{{route('logout')}}">cerrar sesión</a> 
                     @endauth
                 </div> --}}
->>>>>>> featurepermisos
             </div>
             
         </nav>

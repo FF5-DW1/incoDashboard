@@ -55,16 +55,12 @@ Route::get('app/dashboard', [AppController::class, 'dashboard'])->name('dashboar
 
 
 Route::get('app/charts', [AppController::class, 'charts'])->name('charts');
-<<<<<<< HEAD
 // Route::get('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
 // Route::post('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
 
 
 Route::get('/formulario/editarDashboard/{id}', [AlumnoController::class, 'editDashboard'])->name('formulario.edit.dashboard');
 Route::put('/formulario/editarDashboard/{id}', [AlumnoController::class, 'updateDashboard'])->name('formulario.update.dashboard');
-=======
-
->>>>>>> featurepermisos
 
 
 
