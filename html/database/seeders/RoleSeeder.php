@@ -25,7 +25,6 @@ class RoleSeeder extends Seeder
          // assignRole para un solo permiso
         Permission::create(['name'=>'formulario.step.one'])->assignRole([$role1]); 
         Permission::create(['name'=>'registro.index'])->assignRole([$role1]);
-        Permission::create(['name'=>'registro.index'])->assignRole([$role1]);
         Permission::create(['name'=>'registro.create'])->assignRole([$role1]);
         Permission::create(['name'=>'registro.edit'])->assignRole([$role1]);
         Permission::create(['name'=>'registro.destroy'])->assignRole([$role1]);
