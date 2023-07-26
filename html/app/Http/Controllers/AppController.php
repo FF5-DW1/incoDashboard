@@ -36,7 +36,7 @@ class AppController extends Controller
                         ->get();
         $labels = [];
         $data = [];
-        $colors = ['#FF6384', '#36A2EB', '#FFCE56', '#8BC34A', '#FF5722', '#009688', '#795548'];
+        $colors = ['#3EADA2', '#38A09C', '#339396', '#2D8790', '#287A8A', '#226D84', '#1D607E', '#175378', '#124672', '#0C3A6C', '#072D66', '#012060'];
 
         for ($i=1; $i <= 12; $i++) {
             $month = date('F',mktime(0,0,0,$i,1));
@@ -55,7 +55,7 @@ class AppController extends Controller
 
         $datasets = [
             [
-                'label' =>'Users',
+                'label' =>'Alumnos',
                 'data' => $data,
                 'backgroundColor' => $colors
             ]
