@@ -4,38 +4,31 @@
 @endsection
 @section('content')
 
-{{-- <header>
-    @auth
-    Bienvenido: 
-    {{Auth::user()->nombre}} 
-    @endauth
-</header> --}}
 <div class="overview-boxes">
     <div class="box">
         <div class="right-side">
             <div class="box-topic">Total Registrados</div>
             <div class="number">{{$totalAlumnos}}</div>          
         </div>
-</div>
-<div class="box">
-    <div class="right-side">
-        <div class="box-topic">Total Aceptados</div>
-        <div class="number">{{$totalAceptados}}</div>    
     </div>
-
-</div>
-<div class="box">
-    <div class="right-side">
-        <div class="box-topic">Total Mujeres</div>
-        <div class="number">{{$totalMujeres}}</div>
+    <div class="box">
+        <div class="right-side">
+            <div class="box-topic">Total Aceptados</div>
+            <div class="number">{{$totalAceptados}}</div>    
+        </div>
     </div>
-</div>
-<div class="box">
-    <div class="right-side">
-        <div class="box-topic">Total Pendientes</div>
-        <div class="number">{{$totalPendientes}}</div>
+    <div class="box">
+        <div class="right-side">
+            <div class="box-topic">Total Mujeres</div>
+            <div class="number">{{$totalMujeres}}</div>
+        </div>
     </div>
-</div>
+    <div class="box">
+        <div class="right-side">
+            <div class="box-topic">Total Pendientes</div>
+            <div class="number">{{$totalPendientes}}</div>
+        </div>
+    </div>
 </div>
 
 <div class="data_table">

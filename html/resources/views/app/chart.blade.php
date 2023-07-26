@@ -5,31 +5,50 @@
 @endsection
 
 @section ('content')
-    <div class="sales-boxes">
-        <canvas id="myChart"></canvas>
+<div class="overview-boxes">
+    <div class="box">
+        <div class="right-side">
+            <div class="box-topic">Total Registrados</div>
+            <div class="number">{{$totalAlumnos}}</div>          
+        </div>
     </div>
-    <script>
-        const ctx = document.getElementById('myChart');
-        const datos_backend = [{{ implode(",", $datos['edades']) }}]
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-            labels: ['18-23', '24-28', '29-33', '34-40', '41-50', '51+'],
-            datasets: [{
-                label: '# of Votes',
-                data: datos_backend,
-                borderWidth: 1
-            }]
-            },
-            options: {
-            scales: {
-                y: {
-                beginAtZero: true
-                }
-            }
-            }
-        });
-    </script>
+    <div class="box">
+        <div class="right-side">
+            <div class="box-topic">Total Aceptados</div>
+            <div class="number">{{$totalAceptados}}</div>    
+        </div>
+    </div>
+    <div class="box">
+        <div class="right-side">
+            <div class="box-topic">Total Mujeres</div>
+            <div class="number">{{$totalMujeres}}</div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="right-side">
+            <div class="box-topic">Total Pendientes</div>
+            <div class="number">{{$totalPendientes}}</div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="chart-box">
+      <canvas id="myChart"></canvas>
+    </div>
+</div>
+
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var userChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {!! json_encode($labels) !!},
+            datasets: {!! json_encode($datasets) !!}, 
+        }     
+    });
+  
+</script>
         
 @endsection
 

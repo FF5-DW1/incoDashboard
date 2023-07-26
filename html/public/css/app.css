@@ -355,43 +355,6 @@ nav .sidebar-button i {
     cursor: pointer;
 }
 
-.home-section nav .search-box {
-    position: relative;
-    height: 50px;
-    max-width: 550px;
-    width: 100%;
-    margin: 0 20px;
-}
-
-nav .search-box input {
-    height: 100%;
-    width: 100%;
-    outline: none;
-    background: #f5f6fa;
-    border: 1px solid #012160dc;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    font-weight: 200;
-    padding: 0 15px;
-}
-
-nav .search-box .bx-search {
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    background: #012060;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 4px;
-    line-height: 40px;
-    text-align: center;
-    color: #fff;
-    font-size: 22px;
-    transition: all 0.4 ease;
-    cursor: pointer;
-}
-
 .home-section nav .profile-details {
     display: flex;
     align-items: center;
@@ -401,13 +364,6 @@ nav .search-box .bx-search {
     height: 50px; */
     min-width: 100px;
     padding: 0 15px 0 2px;
-}
-
-nav .profile-details img {
-    height: 40px;
-    width: 40px;
-    border-radius: 6px;
-    object-fit: cover;
 }
 
 nav .profile-details .admin_name {
@@ -443,7 +399,7 @@ nav .profile-details i {
     justify-content: center;
     width: calc(100% / 4 - 15px);
     background: #3eada247;
-    padding: 15px 14px;
+    padding: 4% 4%;
     border-radius: 12px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -742,6 +698,7 @@ table {
     /* padding-right: 2%; */
     table-layout: fixed;
 }
+
 .dataTables_length {
     font-size: 0.8rem;
     font-weight: 200;
@@ -772,6 +729,15 @@ th {
 .dataTables_info {
     font-size: 0.8rem;
     font-weight: 300;
+}
+
+.chart-box {
+    display: flex;
+    justify-content: center;
+    margin: 5% 10%;
+    padding: 2%;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Media Query */
