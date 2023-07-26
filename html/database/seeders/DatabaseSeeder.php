@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
       //llamar y ejecutar el RoleSeeder y se generarán los registros 
       //de roles en la base de datos según la lógica definida
       
-      // $this->call(RoleSeeder::class);
+      $this->call(RoleSeeder::class);
       $this->call(UserSeeder::class);
       
       //$this->call(UserSeederSeeder::class);

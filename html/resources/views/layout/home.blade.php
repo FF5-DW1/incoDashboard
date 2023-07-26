@@ -44,7 +44,7 @@
                 </a>
             </li>
             <li class="log_out">
-                <a href="#">
+                <a href="{{route('logout')}}">
                     <i class="bx bx-log-out"></i>
                     <span class="links_name">Log out</span>
                 </a>
@@ -60,8 +60,25 @@
            
             <div class="profile-details">
                 <!-- <img src="images/profile.jpg" alt="" /> -->
+<<<<<<< HEAD
                 <span class="admin_name">Usuario</span>
+=======
+                <div>
+                    @auth
+                        Bienvenido: 
+                        {{Auth::user()->nombre}} 
+                    @endauth
+                </div>
+                {{-- <span class="admin_name">Usuario</span>
+                <i class="bx bx-chevron-down"></i> --}}
+                {{-- <div>
+                    @auth
+                        <a href="{{route('logout')}}">cerrar sesión</a> 
+                    @endauth
+                </div> --}}
+>>>>>>> featurepermisos
             </div>
+            
         </nav>
 
         <div class="home-content">

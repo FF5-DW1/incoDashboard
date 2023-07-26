@@ -20,8 +20,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/',[LoginController::class,'login']);
+
+Route::get('/',[LoginController::class,'login'])->name('login');
 Route::post('/login',[LoginController::class,'authenticate']);
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 
 //Formulario de inscripción
@@ -49,15 +51,20 @@ Route::get('formulario/thank-you', [AlumnoController::class, 'createThankYou'])-
 Route::post('/formulario/guardar_registro',[AlumnoController::class, 'store'])->name('guardar_registro');
 
 // Dashboard routes
-Route::get('app/dashboard', [AppController::class, 'dashboard'])->name('dashboard');
-// Route::get('app/registros', [AppController::class, 'registros'])->name('registros');
+Route::get('app/dashboard', [AppController::class, 'dashboard'])->name('dashboard')->middleware('auth');
+
+
 Route::get('app/charts', [AppController::class, 'charts'])->name('charts');
+<<<<<<< HEAD
 // Route::get('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
 // Route::post('formulario/index', [AlumnoController::class, 'index'])->name('formulario.index');
 
 
 Route::get('/formulario/editarDashboard/{id}', [AlumnoController::class, 'editDashboard'])->name('formulario.edit.dashboard');
 Route::put('/formulario/editarDashboard/{id}', [AlumnoController::class, 'updateDashboard'])->name('formulario.update.dashboard');
+=======
+
+>>>>>>> featurepermisos
 
 
 

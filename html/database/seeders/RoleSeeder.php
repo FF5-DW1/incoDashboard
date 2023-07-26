@@ -23,6 +23,8 @@ class RoleSeeder extends Seeder
         Permission::create(['name'=>'home'])->syncRoles([$role1, $role2]);
          //syncRoles para varios permisos--- minuto 10:15
          // assignRole para un solo permiso
+        Permission::create(['name'=>'formulario.step.one'])->assignRole([$role1]); 
+        Permission::create(['name'=>'registro.index'])->assignRole([$role1]);
         Permission::create(['name'=>'registro.index'])->assignRole([$role1]);
         Permission::create(['name'=>'registro.create'])->assignRole([$role1]);
         Permission::create(['name'=>'registro.edit'])->assignRole([$role1]);
