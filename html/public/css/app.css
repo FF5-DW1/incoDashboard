@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     outline: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
 }
 
@@ -10,7 +10,11 @@
 .container-form {
     min-height: 100vh;
     overflow: hidden;
-    background-image: linear-gradient(rgba(62, 173, 162, 0.7), rgba(62, 173, 162, 0.7)), url("/assets/img/mimi-thian-vdXMSiX-n6M-unsplash.jpg");
+    background-image: linear-gradient(
+            rgba(62, 173, 162, 0.7),
+            rgba(62, 173, 162, 0.7)
+        ),
+        url("/assets/img/mimi-thian-vdXMSiX-n6M-unsplash.jpg");
     background-size: cover;
 }
 
@@ -31,7 +35,7 @@
 }
 
 .form-content {
-    background-color: rgba(255, 255, 255, 0.80);
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 2%;
     display: flex;
     flex-direction: column;
@@ -39,7 +43,7 @@
 }
 
 .error-message {
-    color:#B42818;
+    color: #b42818;
     background-color: #b4281822;
     margin: 1% 0;
     border-radius: 10px;
@@ -62,7 +66,7 @@
 }
 
 .button-style:hover {
-    background: #009BD9;
+    background: #009bd9;
     color: white;
     border: white;
 }
@@ -103,7 +107,7 @@
 }
 
 .btns a:hover {
-    background: #009BD9;
+    background: #009bd9;
     color: white;
     border: white;
 }
@@ -120,7 +124,7 @@
 
 input[type="date"] {
     font-weight: 200;
-    color: gray;
+    color: black;
     padding: 0 1%;
 }
 
@@ -178,13 +182,56 @@ input[type="radio"]:checked::before {
     margin-left: 70%;
 }
 
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    word-break: break-all !important;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 600px;
+    word-break: break-all !important;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalText {
+    width: 90%;
+    text-align: center;
+    word-break: break-all !important;
+}
 
 /* Estilos Dashboard */
 .sidebar {
     position: fixed;
     height: 100%;
     width: 240px;
-    background: #0A2558;
+    background: #0a2558;
     transition: all 0.5s ease;
 }
 
@@ -232,11 +279,11 @@ input[type="radio"]:checked::before {
 }
 
 .sidebar .nav-links li a.active {
-    background: #081D45;
+    background: #081d45;
 }
 
 .sidebar .nav-links li a:hover {
-    background: #081D45;
+    background: #081d45;
 }
 
 .sidebar .nav-links li i {
@@ -268,7 +315,7 @@ input[type="radio"]:checked::before {
     transition: all 0.5s ease;
 }
 
-.sidebar.active~.home-section {
+.sidebar.active ~ .home-section {
     width: calc(100% - 60px);
     left: 60px;
 }
@@ -289,7 +336,7 @@ input[type="radio"]:checked::before {
     transition: all 0.5s ease;
 }
 
-.sidebar.active~.home-section nav {
+.sidebar.active ~ .home-section nav {
     left: 60px;
     width: calc(100% - 60px);
 }
@@ -320,7 +367,7 @@ nav .search-box input {
     height: 100%;
     width: 100%;
     outline: none;
-    background: #F5F6FA;
+    background: #f5f6fa;
     border: 1px solid #012160dc;
     border-radius: 5px;
     font-size: 0.9rem;
@@ -354,7 +401,6 @@ nav .search-box .bx-search {
     height: 50px; */
     min-width: 100px;
     padding: 0 15px 0 2px;
-
 }
 
 nav .profile-details img {
@@ -413,7 +459,6 @@ nav .profile-details i {
     /* margin-top: -6px; */
     font-weight: 700;
     color: #012060;
-   
 }
 
 .home-content .box .indicator {
@@ -424,7 +469,7 @@ nav .profile-details i {
 .home-content .box .indicator i {
     height: 20px;
     width: 20px;
-    background: #8FDACB;
+    background: #8fdacb;
     line-height: 20px;
     text-align: center;
     border-radius: 50%;
@@ -456,8 +501,8 @@ nav .profile-details i {
 }
 
 .home-content .box .cart.two {
-    color: #2BD47D;
-    background: #C0F2D8;
+    color: #2bd47d;
+    background: #c0f2d8;
 }
 
 .home-content .box .cart.three {
@@ -498,6 +543,7 @@ nav .profile-details i {
 }
 
 .data_table {
+    width: 98%;
     margin: 0 1%;
 }
 
@@ -532,7 +578,7 @@ nav .profile-details i {
 
 .sales-boxes .box .button a {
     color: #fff;
-    background: #0A2558;
+    background: #0a2558;
     padding: 4px 12px;
     font-size: 15px;
     font-weight: 400;
@@ -588,13 +634,13 @@ nav .profile-details i {
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 20px;
     padding: 10% 10%;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    width: 90%; 
+    width: 90%;
     margin: 15% 5%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);   
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .thank-you-content h4 {
@@ -643,7 +689,7 @@ nav .profile-details i {
 }
 
 .btn-start a:hover {
-    background-color: #009BD9;
+    background-color: #009bd9;
     color: white;
     border: white;
 }
@@ -655,30 +701,30 @@ nav .profile-details i {
     align-items: center;
     padding-top: 5%;
     padding-bottom: 2%;
-    padding-left: 1%;  
-    padding-right: 1%; 
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 .data_table a {
-        position: relative;
-        text-decoration: none;
-        color:#012060;
-        font-size: 0.8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        background-color: #0121601e;
-        border-radius: 10px;
-        padding: 1% 2%;
-        
-        &:hover,
-        &:focus,
-        &:active {
-          cursor: pointer;
-          background-color: #01216054;
-          &:after {
+    position: relative;
+    text-decoration: none;
+    color: #012060;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #0121601e;
+    border-radius: 10px;
+    padding: 1% 2%;
+
+    &:hover,
+    &:focus,
+    &:active {
+        cursor: pointer;
+        background-color: #01216054;
+        &:after {
             width: 100%;
-          }
         }
+    }
 }
 
 .data_table a:hover {
@@ -687,7 +733,7 @@ nav .profile-details i {
 
 .data_table p {
     font-size: 1.4rem;
-    font-weight: 500;   
+    font-weight: 500;
 }
 
 table {
@@ -702,12 +748,12 @@ table {
 }
 
 th {
-    font-weight: 200; 
+    font-weight: 200;
     font-size: 0.8rem;
-    color:#012060;
+    color: #012060;
 }
 
-.dataTables_length select{
+.dataTables_length select {
     font-size: 0.8rem;
     font-weight: 300;
 }
@@ -726,51 +772,6 @@ th {
     font-size: 0.8rem;
     font-weight: 300;
 }
-/* Estilos para el modal */
-.modal {
-    display: none; /* Ocultar el modal inicialmente */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    word-break: break-all !important;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* Ajusta el margen superior para cambiar la posición vertical */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 100%; /* Ajusta el ancho del modal */
-    max-width: 600px;
-    word-break: break-all !important;
-}
-
-/* Agrega un estilo para el botón de cierre (la "X") */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-#modalText {
-    width: 90%;
-    text-align: center;
-    word-break: break-all !important;
-}
-
 
 /* Responsive Media Query */
 @media (max-width: 1240px) {
@@ -787,7 +788,7 @@ th {
         left: 60px;
     }
 
-    .sidebar.active~.home-section {
+    .sidebar.active ~ .home-section {
         left: 220px;
         width: calc(100% - 220px);
         overflow: hidden;
@@ -798,7 +799,7 @@ th {
         left: 60px;
     }
 
-    .sidebar.active~.home-section nav {
+    .sidebar.active ~ .home-section nav {
         width: calc(100% - 220px);
         left: 220px;
     }
@@ -817,8 +818,8 @@ th {
         flex: 0 0 25%;
         text-align: right;
         padding-top: 25vh;
-    } 
-    
+    }
+
     .form-content {
         flex: 0 0 65%;
         padding: 5% 5%;
@@ -861,7 +862,7 @@ th {
         font-size: 0.8rem;
     }
 
-    .label_input input::placeholder {      
+    .label_input input::placeholder {
         font-size: 0.8rem;
     }
 
@@ -873,7 +874,7 @@ th {
         gap: 5%;
     }
 
-    .btns a {   
+    .btns a {
         font-size: 0.9rem;
     }
 
@@ -886,7 +887,7 @@ th {
         height: 45px;
         font-weight: 200;
         font-size: 0.8rem;
-        color: gray;
+        color: black;
         padding: 0 1%;
     }
 
@@ -916,7 +917,6 @@ th {
     .next {
         margin-left: 70%;
     }
-
 }
 
 @media (max-width: 1150px) {
@@ -944,15 +944,15 @@ th {
     /*--Estilos de formulario--*/
     .page {
         display: block;
-        padding: 0 4%;     
+        padding: 0 4%;
         transition: margin-left 0.5s ease-in-out;
     }
 
-    .title-page {   
+    .title-page {
         text-align: center;
         padding: 5% 0;
-    } 
-    
+    }
+
     .form-content {
         padding: 10% 10%;
     }
@@ -993,11 +993,11 @@ th {
         font-size: 1.2rem;
     }
 
-    .label_input input::placeholder {      
+    .label_input input::placeholder {
         font-size: 1.2rem;
     }
 
-    .btns a {   
+    .btns a {
         font-size: 1.2rem;
         padding-top: 1.2%;
     }
@@ -1018,31 +1018,30 @@ th {
         height: 60px;
     }
 
-    input[type="radio"] {    
+    input[type="radio"] {
         width: 1.4rem;
         height: 1.4rem;
     }
-    
-    input[type="radio"]::before { 
+
+    input[type="radio"]::before {
         width: 0.55em;
         height: 0.55em;
     }
 
-    .radio-control-option { 
-        font-size: 1.2rem;   
+    .radio-control-option {
+        font-size: 1.2rem;
     }
 
     .next {
         margin-left: 70%;
     }
 
-    .btn-start a {    
+    .btn-start a {
         font-size: 1.2rem;
     }
 }
 
 @media (max-width: 700px) {
-
     nav .sidebar-button .dashboard,
     nav .profile-details .admin_name,
     nav .profile-details i {
@@ -1061,15 +1060,15 @@ th {
     /*--Estilos de formulario--*/
     .page {
         display: block;
-        padding: 0 4%;     
+        padding: 0 4%;
         transition: margin-left 0.5s ease-in-out;
     }
 
-    .title-page {   
+    .title-page {
         text-align: center;
         padding: 5% 0;
-    } 
-    
+    }
+
     .form-content {
         padding: 10% 10%;
     }
@@ -1110,11 +1109,11 @@ th {
         font-size: 1.2rem;
     }
 
-    .label_input input::placeholder {      
+    .label_input input::placeholder {
         font-size: 1.2rem;
     }
 
-    .btns a {   
+    .btns a {
         font-size: 1.2rem;
         padding-top: 1.2%;
     }
@@ -1135,28 +1134,27 @@ th {
         height: 60px;
     }
 
-    input[type="radio"] {    
+    input[type="radio"] {
         width: 1.4rem;
         height: 1.4rem;
     }
-    
-    input[type="radio"]::before { 
+
+    input[type="radio"]::before {
         width: 0.55em;
         height: 0.55em;
     }
 
-    .radio-control-option { 
-        font-size: 1.2rem;   
+    .radio-control-option {
+        font-size: 1.2rem;
     }
 
     .next {
         margin-left: 70%;
     }
 
-    .btn-start a {    
+    .btn-start a {
         font-size: 1.2rem;
     }
-
 }
 
 @media (max-width: 550px) {
@@ -1165,22 +1163,22 @@ th {
         margin-bottom: 15px;
     }
 
-    .sidebar.active~.home-section nav .profile-details {
+    .sidebar.active ~ .home-section nav .profile-details {
         display: none;
     }
 
     /*--Estilos de formulario--*/
     .page {
         display: block;
-        padding: 0 4%;     
+        padding: 0 4%;
         transition: margin-left 0.5s ease-in-out;
     }
 
-    .title-page {   
+    .title-page {
         text-align: center;
         padding: 5% 0;
-    } 
-    
+    }
+
     .form-content {
         padding: 10% 10%;
     }
@@ -1221,11 +1219,11 @@ th {
         font-size: 1.2rem;
     }
 
-    .label_input input::placeholder {      
+    .label_input input::placeholder {
         font-size: 1.2rem;
     }
 
-    .btns a {   
+    .btns a {
         font-size: 1.2rem;
         padding-top: 1.2%;
     }
@@ -1246,29 +1244,27 @@ th {
         height: 60px;
     }
 
-    input[type="radio"] {    
+    input[type="radio"] {
         width: 1.4rem;
         height: 1.4rem;
     }
-    
-    input[type="radio"]::before { 
+
+    input[type="radio"]::before {
         width: 0.55em;
         height: 0.55em;
     }
 
-    .radio-control-option { 
-        font-size: 1.2rem;   
+    .radio-control-option {
+        font-size: 1.2rem;
     }
 
     .next {
         margin-left: 70%;
     }
 
-    .btn-start a {    
+    .btn-start a {
         font-size: 1.2rem;
     }
-
-
 }
 
 @media (max-width: 400px) {
@@ -1285,7 +1281,7 @@ th {
         left: 0;
     }
 
-    .sidebar.active~.home-section {
+    .sidebar.active ~ .home-section {
         left: 60px;
         width: calc(100% - 60px);
     }
@@ -1295,23 +1291,23 @@ th {
         left: 0;
     }
 
-    .sidebar.active~.home-section nav {
+    .sidebar.active ~ .home-section nav {
         left: 60px;
         width: calc(100% - 60px);
-    }   
+    }
 
     /*--Estilos de formulario--*/
     .page {
         display: block;
-        padding: 0 4%;     
+        padding: 0 4%;
         transition: margin-left 0.5s ease-in-out;
     }
 
-    .title-page {   
+    .title-page {
         text-align: center;
         padding: 5% 0;
-    } 
-    
+    }
+
     .form-content {
         padding: 10% 10%;
     }
@@ -1352,11 +1348,11 @@ th {
         font-size: 1.2rem;
     }
 
-    .label_input input::placeholder {      
+    .label_input input::placeholder {
         font-size: 1.2rem;
     }
 
-    .btns a {   
+    .btns a {
         font-size: 1.2rem;
         padding-top: 1.2%;
     }
@@ -1377,26 +1373,25 @@ th {
         height: 60px;
     }
 
-    input[type="radio"] {    
+    input[type="radio"] {
         width: 1.4rem;
         height: 1.4rem;
     }
-    
-    input[type="radio"]::before { 
+
+    input[type="radio"]::before {
         width: 0.55em;
         height: 0.55em;
     }
 
-    .radio-control-option { 
-        font-size: 1.2rem;   
+    .radio-control-option {
+        font-size: 1.2rem;
     }
 
     .next {
         margin-left: 70%;
     }
-    
-    .btn-start a {    
+
+    .btn-start a {
         font-size: 1.2rem;
     }
-}    
-
+}

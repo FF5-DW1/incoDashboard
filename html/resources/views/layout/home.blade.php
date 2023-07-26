@@ -31,28 +31,10 @@
                     <span class="links_name">Dashboard</span>
                 </a>
             </li>
-            {{-- <li>
-                <a href="{{ route('registros') }}">
-                    <i class="bx bx-list-ul"></i>
-                    <span class="links_name">Registros</span>
-                </a>
-            </li> --}}
             <li>
                 <a href="{{ route('charts') }}">
                     <i class="bx bx-pie-chart-alt-2"></i>
                     <span class="links_name">Graficos</span>
-                </a>
-            </li>
-            {{-- <li>
-                <a href="#">
-                    <i class="bx bx-coin-stack"></i>
-                    <span class="links_name">Base Datos</span>
-                </a>
-            </li> --}}
-            <li>
-                <a href="#">
-                    <i class="bx bx-user"></i>
-                    <span class="links_name">Equipo</span>
                 </a>
             </li>
             <li>

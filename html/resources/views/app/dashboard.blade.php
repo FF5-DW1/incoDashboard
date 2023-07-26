@@ -4,56 +4,35 @@
 @endsection
 @section('content')
 <div class="overview-boxes">
-    <<<<<<< HEAD <div class="box">
+    <div class="box">
         <div class="right-side">
             <div class="box-topic">Total Registrados</div>
-            <div class="number">{{$totalAlumnos}}</div>
-            <div class="indicator">
-                <i class="bx bx-up-arrow-alt"></i>
-                <span class="text">En aumento desde ayer</span>
-            </div>
+            <div class="number">{{$totalAlumnos}}</div>          
         </div>
-        <!-- <i class="bx bx-cart-alt cart"></i> -->
 </div>
 <div class="box">
     <div class="right-side">
         <div class="box-topic">Total Aceptados</div>
-        <div class="number">{{$totalAceptados}}</div>
-        <div class="indicator">
-            <i class="bx bx-up-arrow-alt"></i>
-            <span class="text">En aumento desde ayer</span>
-        </div>
+        <div class="number">{{$totalAceptados}}</div>    
     </div>
-    <!-- <i class="bx bxs-cart-add cart two"></i> -->
+
 </div>
 <div class="box">
     <div class="right-side">
         <div class="box-topic">Total Mujeres</div>
         <div class="number">{{$totalMujeres}}</div>
-        <div class="indicator">
-            <i class="bx bx-up-arrow-alt"></i>
-            <span class="text">En aumento desde ayer</span>
-        </div>
     </div>
-    <!-- <i class="bx bx-cart cart three"></i> -->
 </div>
 <div class="box">
     <div class="right-side">
         <div class="box-topic">Total Pendientes</div>
         <div class="number">{{$totalPendientes}}</div>
-        <div class="indicator">
-            <i class="bx bx-down-arrow-alt down"></i>
-            <span class="text">En descenso hoy</span>
-        </div>
     </div>
-    <!-- <i class="bx bxs-cart-download cart four"></i> -->
 </div>
 </div>
 
 <div class="data_table">
-
     <div>
-
         @if (Session::has('message'))
         <div class="alert alert-info">{{ Session::get('message') }}</div>
         @endif
@@ -139,7 +118,6 @@
         <span class="close">&times;</span>
         <p id="modalText"></p>
     </div>
-    >>>>>>> featureEdit
 </div>
 @section('js')
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
@@ -148,15 +126,10 @@
     // let table = new DataTable('#myTable');
     new DataTable('#myTable', {
         scrollX: true
-    });;
+    });
 </script>
 <script>
     $(document).ready(function() {
-        // Inicializar la tabla
-        // new DataTable('#myTable', {
-        //     scrollX: true
-        // });
-
         // Configurar evento para el botón "Leer más"
         $('.read-more-btn').on('click', function() {
             var fullText = $(this).data('full-text');
