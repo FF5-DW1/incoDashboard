@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\alumno;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+
 
 class AlumnoController extends Controller
 {
@@ -158,4 +160,38 @@ class AlumnoController extends Controller
         return view('formulario.thank-you', compact('alumno'));
     }
 
+    public function editDashboard($id)
+    {
+        $alumno = Alumno::find($id);
+        return view('formulario.editarDashboard', compact('alumno'));
+    }
+
+    public function updateDashboard(Request $request, $id)
+    {
+        $alumno = Alumno::find($id);
+
+        $validator = Validator::make($request->all(), [
+            'nombres' => 'required|max:50',
+            'apellidos' => 'required|max:50',
+            'email' => 'required|email|max:60',
+            'dni_nie_pasaporte' => 'required|max:12',
+            'telefono' => 'required',
+            'estado' => 'required|in:pendiente,aceptado,rechazado',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $alumno->update([
+            'nombres' => $request->input('nombres'),
+            'apellidos' => $request->input('apellidos'),
+            'email' => $request->input('email'),
+            'dni_nie_pasaporte' => $request->input('dni_nie_pasaporte'),
+            'telefono' => $request->input('telefono'),
+            'estado' => $request->input('estado'),
+        ]);
+
+        return redirect()->route('dashboard');
+    }
 }

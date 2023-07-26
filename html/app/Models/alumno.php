@@ -29,6 +29,7 @@ class alumno extends Model
         'disponibilidad_horaria',
         'nivel_ingles',
         'presentacion_breve',
+        'estado'
         ];
 
 }
