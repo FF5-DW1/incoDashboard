@@ -28,11 +28,21 @@
                         <label for="email">Email
                         <input type="email" name ="email" id="email" placeholder="Ingresa tu email"></label>
                     </div>
+                    @error('email')
+                        <p class="error-message">
+                            {{ $message }}
+                        </p>
+                    @enderror
                     
                     <div class="label-input">
                         <label for="password">Contraseña
                         <input type="password" name="password" id ="password" placeholder="Ingresa tu contraseña"></label>
                     </div>
+                    @error('password')
+                        <p class="error-message">
+                            {{ $message }}
+                        </p>
+                    @enderror
 
                     <div>
                         <input class="btn" type="submit" value="Entrar">
