@@ -32,7 +32,8 @@ php artisan migrate --seed
 * Laravel: https://laravel.com
 * Docker: https://www.docker.com
 * DataTable: https://datatables.net
-
+* SpatiePermissions: https://spatie.be/docs/laravel-permission/v5/introduction
+* ChartsJs: https://www.chartjs.org/
 
 ## Desarrolladores
 [Jesús Cabral](https://github.com/JesCab29)  
