@@ -976,18 +976,6 @@
         },
         {
             "name": "laravel/framework",
-<<<<<<< HEAD
-            "version": "v10.15.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "c7599dc92e04532824bafbd226c2936ce6a905b8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c7599dc92e04532824bafbd226c2936ce6a905b8",
-                "reference": "c7599dc92e04532824bafbd226c2936ce6a905b8",
-=======
             "version": "v10.16.1",
             "source": {
                 "type": "git",
@@ -998,7 +986,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/5c93d2795c393b462481179ce42dedfb30cc19b5",
                 "reference": "5c93d2795c393b462481179ce42dedfb30cc19b5",
->>>>>>> develop
                 "shasum": ""
             },
             "require": {
@@ -1185,11 +1172,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-<<<<<<< HEAD
             "time": "2023-07-11T13:43:52+00:00"
-=======
-            "time": "2023-07-26T03:30:46+00:00"
->>>>>>> develop
         },
         {
             "name": "laravel/sanctum",
@@ -6751,18 +6734,6 @@
         },
         {
             "name": "phpunit/phpunit",
-<<<<<<< HEAD
-            "version": "10.2.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "15a89f123d8ca9c1e1598d6d87a56a8bf28c72cd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/15a89f123d8ca9c1e1598d6d87a56a8bf28c72cd",
-                "reference": "15a89f123d8ca9c1e1598d6d87a56a8bf28c72cd",
-=======
             "version": "10.2.6",
             "source": {
                 "type": "git",
@@ -6773,7 +6744,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1c17815c129f133f3019cc18e8d0c8622e6d9bcd",
                 "reference": "1c17815c129f133f3019cc18e8d0c8622e6d9bcd",
->>>>>>> develop
                 "shasum": ""
             },
             "require": {
@@ -6845,11 +6815,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-<<<<<<< HEAD
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.2.5"
-=======
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/10.2.6"
->>>>>>> develop
             },
             "funding": [
                 {
@@ -6865,11 +6831,7 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
-            "time": "2023-07-14T04:18:47+00:00"
-=======
             "time": "2023-07-17T12:08:28+00:00"
->>>>>>> develop
         },
         {
             "name": "sebastian/cli-parser",
