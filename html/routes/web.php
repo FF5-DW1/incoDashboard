@@ -61,6 +61,7 @@ Route::get('app/charts', [AppController::class, 'charts'])->name('charts');
 
 Route::get('/formulario/editarDashboard/{id}', [AlumnoController::class, 'editDashboard'])->name('formulario.edit.dashboard');
 Route::put('/formulario/editarDashboard/{id}', [AlumnoController::class, 'updateDashboard'])->name('formulario.update.dashboard');
+Route::delete('/formulario/eliminar/{id}', [AlumnoController::class, 'destroy'])->name('eliminar_registro');
 
 
 

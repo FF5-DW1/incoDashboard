@@ -4,11 +4,17 @@
 @endsection
 @section('content')
 
+{{-- <header>
+    @auth
+    Bienvenido: 
+    {{Auth::user()->nombre}}
+@endauth
+</header> --}}
 <div class="overview-boxes">
     <div class="box">
         <div class="right-side">
             <div class="box-topic">Total Registrados</div>
-            <div class="number">{{$totalAlumnos}}</div>          
+            <div class="number">{{$totalAlumnos}}</div>
         </div>
     </div>
     <div class="box">
@@ -32,7 +38,7 @@
 </div>
 
 <div class="data_table">
-    
+
     <div>
         @if (Session::has('message'))
         <div class="alert alert-info">{{ Session::get('message') }}</div>
@@ -68,6 +74,7 @@
                     <th scope="col">Disponibilidad</th>
                     <th scope="col">Nivel Ingles</th>
                     <th scope="col">Presentación</th>
+                    <th scope="col">Delete</th>
 
                 </tr>
             </thead>
@@ -103,12 +110,20 @@
                     <td class="presentation-column">
                         @if (strlen($alumno->presentacion_breve) > 10)
                         {{ substr($alumno->presentacion_breve, 0, 10) }}...
-                        <button class="read-more-btn" data-full-text="{{ $alumno->presentacion_breve }}">Leer más</button>
+                        <button class="read-more-btn" data-full-text="{{ $alumno->presentacion_breve }}">Más</button>
                         @else
                         {{ $alumno->presentacion_breve }}
                         @endif
                     </td>
-
+                    <td>
+                        <form action="{{ route('eliminar_registro', $alumno->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-link" style="color: red;" onclick="return confirm('¿Estás seguro de que deseas eliminar este registro?')">
+                                <i class="fas fa-trash-alt"></i> 
+                            </button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

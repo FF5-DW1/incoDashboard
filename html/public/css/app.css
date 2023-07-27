@@ -695,7 +695,8 @@ nav .profile-details i {
 table {
     padding-top: 0.5%;
     font-size: 0.8rem;
-    /* padding-right: 2%; */
+    padding-right: 2%;
+    width: 100%;
     table-layout: fixed;
 }
 
@@ -740,6 +741,19 @@ th {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+.btn-link i.fas.fa-trash-alt{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fas.fa-edit{
+    font-size: 20px;
+}
+
+.read-more-btn{
+    opacity: 0.8;
+    cursor: pointer;
+}
 /* Responsive Media Query */
 @media (max-width: 1440px) {
     .sidebar {
