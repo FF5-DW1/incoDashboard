@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('charts') }}">
+                <a href="{{ route('charts') }}" class="active">
                     <i class="bx bx-pie-chart-alt-2"></i>
                     <span class="links_name">Graficos</span>
                 </a>

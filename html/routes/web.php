@@ -63,9 +63,6 @@ Route::get('/formulario/editarDashboard/{id}', [AlumnoController::class, 'editDa
 Route::put('/formulario/editarDashboard/{id}', [AlumnoController::class, 'updateDashboard'])->name('formulario.update.dashboard');
 Route::delete('/formulario/eliminar/{id}', [AlumnoController::class, 'destroy'])->name('eliminar_registro');
 
-
-
-
 //rutas:
 //login administradores
 //logout administradores

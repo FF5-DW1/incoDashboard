@@ -4,12 +4,7 @@
 @endsection
 @section('content')
 
-{{-- <header>
-    @auth
-    Bienvenido: 
-    {{Auth::user()->nombre}}
-@endauth
-</header> --}}
+
 <div class="overview-boxes">
     <div class="box">
         <div class="right-side">
