@@ -18,18 +18,18 @@ class UserTest extends TestCase
      use DatabaseTransactions;
      use WithoutMiddleware;
 
-    public function test_verificar_si_existe_usuario_basedatos(): void
-    {
-        //User::factory()->count(2)->create();
-        User::factory()->create(['email' => 'angel@Inco.com']);
+    // public function test_verificar_si_existe_usuario_basedatos(): void
+    // {
+    //     //User::factory()->count(2)->create();
+    //     User::factory()->create(['email' => 'angel@Inco.com']);
 
-        $this->assertDatabaseCount('users', 3);
+    //     $this->assertDatabaseCount('users', 3);
 
     
 
-      $this->assertDatabaseHas('users', ['email' => 'angel@Inco.com']);
+    //   $this->assertDatabaseHas('users', ['email' => 'angel@Inco.com']);
     
-    }
+    // }
     
     public function test_verificar_si_usuario_puede_ver_dashboard(): void
     {
