@@ -25,6 +25,7 @@ class AlumnoFactory extends Factory
             'email' =>fake()->unique()->safeEmail(),
             'dni_nie_pasaporte' =>Str::random(9),
             'edad' => fake()->numberBetween(18, 55),
+            'genero' =>fake()->randomElement($genero),
 
         ];
     }

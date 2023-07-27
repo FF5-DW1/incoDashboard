@@ -45,7 +45,7 @@
         data: {
             labels: {!! json_encode($labels) !!},
             datasets: {!! json_encode($datasets) !!}, 
-        }     
+        }
     });
   
 </script>
