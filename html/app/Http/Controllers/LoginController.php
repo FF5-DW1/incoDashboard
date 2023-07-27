@@ -5,54 +5,45 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller 
+class LoginController extends Controller
 {
-//
-    //  public function index(){
-    //    // Comprobamos si el usuario ya está logado
-    //     if (Auth::check()){
-    //         return view('dashboard');
-    //     }
-    //     return view('login.
-    //  }
 
-    public function login(){
-        if (Auth::check()){
+
+    public function login()
+    {
+        if (Auth::check()) {
             return redirect()->route('dashboard');
-        }else{
-        return view('login.login');
+        } else {
+            return view('login.login');
         }
     }
-    
-    public function authenticate(Request $request){
+
+    public function authenticate(Request $request)
+    {
         //Validar datos
         $validar =  $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        
-       
-        //Comprobar pass 
-         //if (Auth::attempt($validar)){
-        //    //si login ok regenero la seccion
-        //   $request->session()->regenerate();
-        //     //se redireciona a la dashboard
-        //     //dd('Logado correctamente');
-
-        //     return redirect()->route('dashboard');
-        
-        //      //return redirect()->intended(route('dashboard'))
-        //     //->withSuccess('Logado Correctamente');
-        // }
-        // //return redirect("/")->withSuccess('Los datos introducidos no son correctos');
-        // return back()->withErrors([
-        //     'email' => 'Los datos ingresados no coinciden con el registro.',
-        // ])->onlyInput('email');
 
         if (Auth::attempt($validar)) {
             // Autenticación exitosa, regenerar la sesión y redirigir al usuario a la página de inicio
-           // Auth::login(Auth::user());
+            // Auth::login(Auth::user());
+            $user= Auth::getUser();
             $request->session()->regenerate();
+
+//  Comprobar el rol
+
+// Si es Admin 
+        if ($user->hasRole("Admin")){
+            return redirect()->route('dashboard');
+        }else {
+            return redirect()->route('charts');
+        }
+// Redireccionar a dashboard
+// Si es Coordinador
+// Redireccionar a charts
+
             return redirect()->route('dashboard');
         } else {
             // Autenticación fallida, redirigir de nuevo al login con un mensaje de error
@@ -63,13 +54,13 @@ class LoginController extends Controller
     }
 
     public function logout(Request $request)
-{
-    Auth::logout();
- 
-    $request->session()->invalidate();
- 
-    $request->session()->regenerateToken();
- 
-    return redirect('/');
-}
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
 }
