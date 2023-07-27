@@ -1,0 +1,115 @@
+/*login*/
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(1, 32, 96, 0.7), rgba(1, 32, 96, 0.7)), url("/assets/img/mimi-thian-vdXMSiX-n6M-unsplash.jpg");
+    background-size: cover;
+}
+
+.container-login {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    margin: auto;
+    padding: 4% 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.formulario-login {
+    width: 100%;
+}
+
+.login-titulo h2 {
+    text-align: center;
+    color: #012060;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 2%;
+    text-transform: uppercase;
+}
+
+.login-titulo p {
+    text-align: center;
+    color: #012060;
+    font-size: 1rem;
+    font-weight: 200;
+    margin-bottom: 2%;
+}
+
+.label-input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+}
+
+.label-input label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 200;
+    font-size: 0.8rem;
+}
+
+.label-input input {
+    height: 40px;
+    border: solid #012060 1px;
+    padding-left: 2%;
+}
+
+.label-input input::placeholder {
+    
+    font-weight: 200;
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.label-input a {
+    text-decoration: none;
+    color: #012060;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.login-titulo {
+    text-align: center;
+}
+
+.login-titulo img {
+    width: 30%;
+    margin-bottom: 10%;
+}
+
+.btn {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    height: 45px;
+    padding: 0 5%;
+    background-color: #012060;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 5%;
+    width: 100%;
+    transition: 0.5s ease;
+}
+
+.btn:hover {
+    background: #009BD9;
+    color: white;
+    border: white;
+}

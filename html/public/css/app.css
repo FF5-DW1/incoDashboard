@@ -1,0 +1,1378 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+/*--Estilos generales de formulario--*/
+.container-form {
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(
+            rgba(62, 173, 162, 0.7),
+            rgba(62, 173, 162, 0.7)
+        ),
+        url("/assets/img/mimi-thian-vdXMSiX-n6M-unsplash.jpg");
+    background-size: cover;
+}
+
+.title-page h2 {
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+}
+
+.title-page p {
+    font-weight: 700;
+    color: #012060;
+}
+
+.page-step-title {
+    color: #012060;
+    font-weight: 500;
+}
+
+.form-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.error-message {
+    color: #b42818;
+    background-color: #b4281822;
+    margin: 1% 0;
+    border-radius: 10px;
+    font-weight: 200;
+    padding: 1%;
+    text-align: left;
+}
+
+.button-style {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    height: 45px;
+    padding: 0 5%;
+    border: 1px solid #012060;
+    background-color: rgba(255, 255, 255, 0);
+    color: #012060;
+    margin-top: 3%;
+    transition: 0.5s ease;
+}
+
+.button-style:hover {
+    background: #009bd9;
+    color: white;
+    border: white;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6%;
+    width: 100%;
+}
+
+.label_input {
+    display: flex;
+    flex-direction: column;
+}
+
+.label_input label {
+    display: flex;
+    flex-direction: column;
+}
+
+.label_input input {
+    padding-left: 1%;
+    font-weight: 200;
+}
+
+.btns a {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    height: 45px;
+    padding: 2.5% 5%;
+    border: 1px solid #012060;
+    background-color: rgba(255, 255, 255, 0);
+    color: #012060;
+    margin-top: 3%;
+    transition: 0.5s ease;
+}
+
+.btns a:hover {
+    background: #009bd9;
+    color: white;
+    border: white;
+}
+
+.label_input input::placeholder {
+    padding-left: 1%;
+    font-weight: 200;
+    color: gray;
+}
+
+.input-box {
+    border: solid #012060 1px;
+}
+
+input[type="date"] {
+    font-weight: 200;
+    color: black;
+    padding: 0 1%;
+}
+
+input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* Not removed via appearance */
+    margin: 0 2px;
+    width: 1.15rem;
+    height: 1.15rem;
+    border: 1px solid #012060;
+    border-radius: 50%;
+    transform: translateY(-0.025em);
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 0.75em;
+    height: 0.75em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #012060;
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(2);
+}
+
+.radio-control {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.radio-control-option {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 5px;
+    padding: 1% 5% 1% 2%;
+    border-radius: 20px;
+    border: 1px solid #012060;
+    background-color: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.next {
+    margin-left: 70%;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    word-break: break-all !important;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 600px;
+    word-break: break-all !important;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalText {
+    width: 90%;
+    text-align: center;
+    word-break: break-all !important;
+}
+
+/* Estilos Dashboard */
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 240px;
+    background: #0a2558;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active {
+    width: 60px;
+}
+
+.sidebar .logo-details {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .logo-details i {
+    font-size: 28px;
+    font-weight: 500;
+    color: #fff;
+    min-width: 60px;
+    text-align: center;
+}
+
+.sidebar .logo-details .logo_name {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.sidebar .nav-links {
+    margin-top: 10px;
+}
+
+.sidebar .nav-links li {
+    position: relative;
+    list-style: none;
+    height: 50px;
+}
+
+.sidebar .nav-links li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li a.active {
+    background: #081d45;
+}
+
+.sidebar .nav-links li a:hover {
+    background: #081d45;
+}
+
+.sidebar .nav-links li i {
+    min-width: 60px;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.sidebar .nav-links li a .links_name {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 200;
+    white-space: nowrap;
+}
+
+.sidebar .nav-links .log_out {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.home-section {
+    position: relative;
+    background: #f5f5f5;
+    min-height: 100vh;
+    width: calc(100% - 240px);
+    left: 240px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .home-section {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+.home-section nav {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: calc(100% - 240px);
+    left: 240px;
+    z-index: 100;
+    padding: 0 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .home-section nav {
+    left: 60px;
+    width: calc(100% - 60px);
+}
+
+.home-section nav .sidebar-button {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #012060;
+}
+
+nav .sidebar-button i {
+    font-size: 35px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.home-section nav .profile-details {
+    display: flex;
+    align-items: center;
+    /* background: #F5F6FA;
+    border: 2px solid #EFEEF1;
+    border-radius: 6px;
+    height: 50px; */
+    min-width: 100px;
+    padding: 0 15px 0 2px;
+}
+
+nav .profile-details .admin_name {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #012060;
+    margin: 0 10px;
+    white-space: nowrap;
+}
+
+nav .profile-details i {
+    font-size: 1.4rem;
+    color: #012060;
+}
+
+.home-section .home-content {
+    position: relative;
+    padding-top: 104px;
+}
+
+.home-content .overview-boxes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    margin-bottom: 26px;
+}
+
+.overview-boxes .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 4 - 15px);
+    background: #3eada247;
+    padding: 4% 3%;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.overview-boxes .box-topic {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.home-content .box .number {
+    /* display: inline-block; */
+    font-size: 3rem;
+    /* margin-top: -6px; */
+    font-weight: 700;
+    color: #012060;
+}
+
+.home-content .box .indicator {
+    display: flex;
+    align-items: center;
+}
+
+.home-content .box .indicator i {
+    height: 20px;
+    width: 20px;
+    background: #8fdacb;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.box .indicator i.down {
+    background: #e87d88;
+}
+
+.home-content .box .indicator .text {
+    font-size: 0.6rem;
+    font-weight: 300;
+}
+
+.home-content .box .cart {
+    display: inline-block;
+    font-size: 32px;
+    height: 50px;
+    width: 50px;
+    background: #cce5ff;
+    line-height: 50px;
+    text-align: center;
+    color: #66b0ff;
+    border-radius: 12px;
+    margin: -15px 0 0 6px;
+}
+
+.home-content .box .cart.two {
+    color: #2bd47d;
+    background: #c0f2d8;
+}
+
+.home-content .box .cart.three {
+    color: #ffc233;
+    background: #ffe8b3;
+}
+
+.home-content .box .cart.four {
+    color: #e05260;
+    background: #f7d4d7;
+}
+
+.home-content .total-order {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.home-content .sales-boxes {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 0 20px; */
+}
+
+/* left box */
+.home-content .sales-boxes .recent-sales {
+    width: 65%;
+    background: #fff;
+    padding: 20px 30px;
+    margin: 0 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.home-content .sales-boxes .sales-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.data_table {
+    width: 98%;
+    margin: 0 1%;
+}
+
+.sales-boxes .box .title {
+    font-size: 24px;
+    font-weight: 500;
+    /* margin-bottom: 10px; */
+}
+
+.sales-boxes .sales-details li.topic {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sales-boxes .sales-details li {
+    list-style: none;
+    margin: 8px 0;
+}
+
+.sales-boxes .sales-details li a {
+    font-size: 18px;
+    color: #333;
+    font-size: 400;
+    text-decoration: none;
+}
+
+.sales-boxes .box .button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sales-boxes .box .button a {
+    color: #fff;
+    background: #0a2558;
+    padding: 4px 12px;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sales-boxes .box .button a:hover {
+    background: #0d3073;
+}
+
+/* Right box */
+.home-content .sales-boxes .top-sales {
+    width: 35%;
+    background: #fff;
+    padding: 20px 30px;
+    margin: 0 20px 0 0;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sales-boxes .top-sales li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.sales-boxes .top-sales li a img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-right: 10px;
+    background: #333;
+}
+
+.sales-boxes .top-sales li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sales-boxes .top-sales li .product,
+.price {
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+}
+
+.thank-you-content {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    padding: 10% 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 90%;
+    margin: 15% 5%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.thank-you-content h4 {
+    text-align: center;
+    color: #012060;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10%;
+}
+
+.thank-you-content p {
+    text-align: center;
+    color: #012060;
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.thank-you-img {
+    text-align: center;
+}
+
+.thank-you-img img {
+    width: 60%;
+    margin-bottom: 10%;
+}
+
+.btn-start {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    width: 100%;
+}
+
+.btn-start a {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 2.5% 5%;
+    border: 1px solid #012060;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #012060;
+    cursor: pointer;
+    transition: 0.5s ease;
+    font-size: 0.8rem;
+    align-items: center;
+}
+
+.btn-start a:hover {
+    background-color: #009bd9;
+    color: white;
+    border: white;
+}
+
+/*---Estilos tabla de dashboard---*/
+.table_header_dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.data_table a {
+    position: relative;
+    text-decoration: none;
+    color: #012060;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #0121601e;
+    border-radius: 10px;
+    padding: 1% 2%;
+
+    &:hover,
+    &:focus,
+    &:active {
+        cursor: pointer;
+        background-color: #01216054;
+        &:after {
+            width: 100%;
+        }
+    }
+}
+
+.data_table a:hover {
+    background-size: 100% 100%;
+}
+
+.data_table p {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+table {
+    padding-top: 0.5%;
+    font-size: 0.8rem;
+    padding-right: 2%;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.dataTables_length {
+    font-size: 0.8rem;
+    font-weight: 200;
+    padding-left: 1%;
+}
+
+th {
+    font-weight: 200;
+    font-size: 0.8rem;
+    color: #012060;
+}
+
+.dataTables_length select {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.dataTables_filter {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.dataTables_filter input {
+    width: 500px;
+    height: 30px;
+}
+
+.dataTables_info {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.chart-box {
+    display: flex;
+    justify-content: center;
+    margin: 5% 10%;
+    padding: 2%;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-link i.fas.fa-trash-alt{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fas.fa-edit{
+    font-size: 20px;
+}
+
+.read-more-btn{
+    opacity: 0.8;
+    cursor: pointer;
+}
+/* Responsive Media Query */
+@media (max-width: 1440px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar.active {
+        width: 220px;
+    }
+
+    .home-section {
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+
+    .sidebar.active ~ .home-section {
+        left: 220px;
+        width: calc(100% - 220px);
+        overflow: hidden;
+    }
+
+    .home-section nav {
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+
+    .sidebar.active ~ .home-section nav {
+        width: calc(100% - 220px);
+        left: 220px;
+    }
+
+    /*--Estilos de formulario--*/
+
+    .page {
+        display: flex;
+        flex-direction: row;
+        padding: 10% 10%;
+        gap: 5%;
+        transition: margin-left 0.5s ease-in-out;
+    }
+
+    .title-page {
+        flex: 0 0 25%;
+        text-align: right;
+        padding-top: 25vh;
+    }
+
+    .form-content {
+        flex: 0 0 65%;
+        padding: 5% 5%;
+    }
+
+    .title-page p {
+        font-size: 2rem;
+    }
+
+    .title-page h2 {
+        font-size: 2.5rem;
+    }
+
+    .page-step-title {
+        font-size: 1.2rem;
+        margin-bottom: 5%;
+    }
+
+    .error-message {
+        font-size: 0.8rem;
+    }
+
+    .label_input label {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        font-weight: 400;
+    }
+
+    .input-box {
+        height: 45px;
+    }
+
+    .label_field_part {
+        display: flex;
+        gap: 5%;
+        width: 100%;
+    }
+
+    .label_input input {
+        font-size: 0.8rem;
+    }
+
+    .label_input input::placeholder {
+        font-size: 0.8rem;
+    }
+
+    .btns {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5%;
+    }
+
+    .btns a {
+        font-size: 0.9rem;
+    }
+
+    .button-style {
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+
+    .label_input select {
+        height: 45px;
+        font-weight: 200;
+        font-size: 0.8rem;
+        color: black;
+        padding: 0 1%;
+    }
+
+    input[type="date"] {
+        font-size: 1rem;
+    }
+
+    .radio-control {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .radio-control-option {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 10px;
+        margin-right: 5px;
+        padding: 1% 5% 1% 2%;
+        border-radius: 20px;
+        border: 1px solid #012060;
+        background-color: white;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+
+    .next {
+        margin-left: 70%;
+    }
+}
+
+@media (max-width: 1150px) {
+    .home-content .sales-boxes {
+        flex-direction: column;
+    }
+
+    .home-content .sales-boxes .box {
+        width: 100%;
+        overflow-x: scroll;
+        margin-bottom: 30px;
+    }
+
+    .home-content .sales-boxes .top-sales {
+        margin: 0;
+    }
+}
+
+@media (max-width: 1000px) {
+    .overview-boxes .box {
+        width: calc(100% / 2 - 15px);
+        margin-bottom: 15px;
+    }
+
+    /*--Estilos de formulario--*/
+    .page {
+        display: block;
+        padding: 0 4%;
+        transition: margin-left 0.5s ease-in-out;
+    }
+
+    .title-page {
+        text-align: center;
+        padding: 5% 0;
+    }
+
+    .form-content {
+        padding: 10% 10%;
+    }
+
+    .title-page p {
+        font-size: 2.5rem;
+    }
+
+    .title-page h2 {
+        font-size: 3.5rem;
+    }
+
+    .page-step-title {
+        font-size: 1.5rem;
+        margin-bottom: 10%;
+    }
+
+    .error-message {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .label_input label {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    .input-box {
+        height: 60px;
+    }
+
+    .label_field_part {
+        display: block;
+        width: 100%;
+    }
+
+    .label_input input {
+        font-size: 1.2rem;
+    }
+
+    .label_input input::placeholder {
+        font-size: 1.2rem;
+    }
+
+    .btns a {
+        font-size: 1.2rem;
+        padding-top: 1.2%;
+    }
+
+    .button-style {
+        font-size: 1.2rem;
+    }
+
+    .label_input select {
+        height: 60px;
+        font-weight: 200;
+        font-size: 1.2em;
+        padding: 0 1%;
+    }
+
+    input[type="date"] {
+        font-size: 1.2rem;
+        height: 60px;
+    }
+
+    input[type="radio"] {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    input[type="radio"]::before {
+        width: 0.55em;
+        height: 0.55em;
+    }
+
+    .radio-control-option {
+        font-size: 1.2rem;
+    }
+
+    .next {
+        margin-left: 70%;
+    }
+
+    .btn-start a {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 700px) {
+    nav .sidebar-button .dashboard,
+    nav .profile-details .admin_name,
+    nav .profile-details i {
+        display: none;
+    }
+
+    .home-section nav .profile-details {
+        height: 50px;
+        min-width: 40px;
+    }
+
+    .home-content .sales-boxes .sales-details {
+        width: 560px;
+    }
+
+    /*--Estilos de formulario--*/
+    .page {
+        display: block;
+        padding: 0 4%;
+        transition: margin-left 0.5s ease-in-out;
+    }
+
+    .title-page {
+        text-align: center;
+        padding: 5% 0;
+    }
+
+    .form-content {
+        padding: 10% 10%;
+    }
+
+    .title-page p {
+        font-size: 2.5rem;
+    }
+
+    .title-page h2 {
+        font-size: 3.5rem;
+    }
+
+    .page-step-title {
+        font-size: 1.5rem;
+        margin-bottom: 10%;
+    }
+
+    .error-message {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .label_input label {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    .input-box {
+        height: 60px;
+    }
+
+    .label_field_part {
+        display: block;
+        width: 100%;
+    }
+
+    .label_input input {
+        font-size: 1.2rem;
+    }
+
+    .label_input input::placeholder {
+        font-size: 1.2rem;
+    }
+
+    .btns a {
+        font-size: 1.2rem;
+        padding-top: 1.2%;
+    }
+
+    .button-style {
+        font-size: 1.2rem;
+    }
+
+    .label_input select {
+        height: 60px;
+        font-weight: 200;
+        font-size: 1.2em;
+        padding: 0 1%;
+    }
+
+    input[type="date"] {
+        font-size: 1.2rem;
+        height: 60px;
+    }
+
+    input[type="radio"] {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    input[type="radio"]::before {
+        width: 0.55em;
+        height: 0.55em;
+    }
+
+    .radio-control-option {
+        font-size: 1.2rem;
+    }
+
+    .next {
+        margin-left: 70%;
+    }
+
+    .btn-start a {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .overview-boxes .box {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .sidebar.active ~ .home-section nav .profile-details {
+        display: none;
+    }
+
+    /*--Estilos de formulario--*/
+    .page {
+        display: block;
+        padding: 0 4%;
+        transition: margin-left 0.5s ease-in-out;
+    }
+
+    .title-page {
+        text-align: center;
+        padding: 5% 0;
+    }
+
+    .form-content {
+        padding: 10% 10%;
+    }
+
+    .title-page p {
+        font-size: 2.5rem;
+    }
+
+    .title-page h2 {
+        font-size: 3.5rem;
+    }
+
+    .page-step-title {
+        font-size: 1.5rem;
+        margin-bottom: 10%;
+    }
+
+    .error-message {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .label_input label {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    .input-box {
+        height: 60px;
+    }
+
+    .label_field_part {
+        display: block;
+        width: 100%;
+    }
+
+    .label_input input {
+        font-size: 1.2rem;
+    }
+
+    .label_input input::placeholder {
+        font-size: 1.2rem;
+    }
+
+    .btns a {
+        font-size: 1.2rem;
+        padding-top: 1.2%;
+    }
+
+    .button-style {
+        font-size: 1.2rem;
+    }
+
+    .label_input select {
+        height: 60px;
+        font-weight: 200;
+        font-size: 1.2em;
+        padding: 0 1%;
+    }
+
+    input[type="date"] {
+        font-size: 1.2rem;
+        height: 60px;
+    }
+
+    input[type="radio"] {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    input[type="radio"]::before {
+        width: 0.55em;
+        height: 0.55em;
+    }
+
+    .radio-control-option {
+        font-size: 1.2rem;
+    }
+
+    .next {
+        margin-left: 70%;
+    }
+
+    .btn-start a {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 0;
+    }
+
+    .sidebar.active {
+        width: 60px;
+    }
+
+    .home-section {
+        width: 100%;
+        left: 0;
+    }
+
+    .sidebar.active ~ .home-section {
+        left: 60px;
+        width: calc(100% - 60px);
+    }
+
+    .home-section nav {
+        width: 100%;
+        left: 0;
+    }
+
+    .sidebar.active ~ .home-section nav {
+        left: 60px;
+        width: calc(100% - 60px);
+    }
+
+    /*--Estilos de formulario--*/
+    .page {
+        display: block;
+        padding: 0 4%;
+        transition: margin-left 0.5s ease-in-out;
+    }
+
+    .title-page {
+        text-align: center;
+        padding: 5% 0;
+    }
+
+    .form-content {
+        padding: 10% 10%;
+    }
+
+    .title-page p {
+        font-size: 2.5rem;
+    }
+
+    .title-page h2 {
+        font-size: 3.5rem;
+    }
+
+    .page-step-title {
+        font-size: 1.5rem;
+        margin-bottom: 10%;
+    }
+
+    .error-message {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .label_input label {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    .input-box {
+        height: 60px;
+    }
+
+    .label_field_part {
+        display: block;
+        width: 100%;
+    }
+
+    .label_input input {
+        font-size: 1.2rem;
+    }
+
+    .label_input input::placeholder {
+        font-size: 1.2rem;
+    }
+
+    .btns a {
+        font-size: 1.2rem;
+        padding-top: 1.2%;
+    }
+
+    .button-style {
+        font-size: 1.2rem;
+    }
+
+    .label_input select {
+        height: 60px;
+        font-weight: 200;
+        font-size: 1.2em;
+        padding: 0 1%;
+    }
+
+    input[type="date"] {
+        font-size: 1.2rem;
+        height: 60px;
+    }
+
+    input[type="radio"] {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    input[type="radio"]::before {
+        width: 0.55em;
+        height: 0.55em;
+    }
+
+    .radio-control-option {
+        font-size: 1.2rem;
+    }
+
+    .next {
+        margin-left: 70%;
+    }
+
+    .btn-start a {
+        font-size: 1.2rem;
+    }
+}
