@@ -63,18 +63,6 @@ Route::get('/formulario/editarDashboard/{id}', [AlumnoController::class, 'editDa
 Route::put('/formulario/editarDashboard/{id}', [AlumnoController::class, 'updateDashboard'])->name('formulario.update.dashboard');
 Route::delete('/formulario/eliminar/{id}', [AlumnoController::class, 'destroy'])->name('eliminar_registro');
 
-// Route::middleware(['auth', 'role:Admin'])->group(function () {
-//     Route::get('app/dashboard', function () {
-//     })->name('dashboard');
-// });
-
-// // Rutas para el usuario "Coordinador"
-// Route::middleware(['auth', 'role:Coordinador'])->group(function () {
-//     Route::get('app/charts', function () {
-//     })->name('charts');
-// });
-
-
 //rutas:
 //login administradores
 //logout administradores
